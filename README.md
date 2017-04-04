@@ -81,14 +81,14 @@ pip install awscli
 cd ~/clone
 
 # Set Expiration Date Session Var to +1 month of current system time
-EXP_DATE=$(date --date="+1 month" "+'%Y-%m-%dT%H:%M:%SZ'")
+EXP_DATE=$(date --date="+1 week" "+'%Y-%m-%dT%H:%M:%SZ'")
 
 # Delete existing S3 Files
 aws s3 rm s3://dayelostra.co --recursive
 
 # Copy cloned files from GitHub to S3 Bucket
 # Set each file to Public-Read, expires at the EXP_DATE var and Cache-Control header to 30 days max age
-aws s3 mv ~/clone s3://dayelostra.co --exclude '.git/*' --exclude '.gitignore' --exclude 'README.MD' --acl public-read --expires $EXP_DATE --cache-control max-age=604800 --recursive
+aws s3 mv ~/clone s3://dayelostra.co --exclude '.git/*' --exclude '.gitignore' --exclude 'README.md' --acl public-read --expires $EXP_DATE --cache-control max-age=604800 --recursive
 
 # Invalidate the CloudFront cache via preview level features
 aws configure set preview.cloudfront true  
