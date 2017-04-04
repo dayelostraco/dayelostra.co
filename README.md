@@ -64,8 +64,6 @@ aws configure set preview.cloudfront true
 aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_SANFRANCISCO_ID --paths /* 
 ```
 
-TODO: Update the script to invalidate the CloudFront cache.
-
 ## CloudFront
 
 TODO
