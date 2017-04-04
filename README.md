@@ -38,7 +38,7 @@ My personal static website based on the [Slides 3.0.5](https://designmodo.com/sl
 
 ## Deployment
 
-TODO: Add in S3 Bucket details
+Automated CodeShip deployments to the S3 hosted website on all commits to the `master` branch. 
 
 ## CloudFront
 
