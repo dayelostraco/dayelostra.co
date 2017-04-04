@@ -57,7 +57,7 @@ aws s3 rm s3://meetdayel.today --recursive
 
 # Copy cloned files from GitHub to S3 Bucket
 # Set each file to Public-Read, expires at the EXP_DATE var and Cache-Control header to 30 days max age
-aws s3 mv ~/clone s3://meetdayel.today --exclude '.git/*' --acl public-read --expires $EXP_DATE --cache-control max-age=604800 --recursive
+aws s3 mv ~/clone s3://www.meetdayel.today --exclude '.git/*' --acl public-read --expires $EXP_DATE --cache-control max-age=604800 --recursive
 ```
 
 TODO: Update the script to invalidate the CloudFront cache.
