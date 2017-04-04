@@ -61,7 +61,7 @@ aws s3 mv ~/clone s3://www.meetdayel.today --exclude '.git/*' --exclude '.gitign
 
 # Invalidate the CloudFront cache via preview level features
 aws configure set preview.cloudfront true  
-aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths /* 
+aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_SANFRANCISCO_ID --paths /* 
 ```
 
 TODO: Update the script to invalidate the CloudFront cache.
