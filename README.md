@@ -49,11 +49,15 @@ pip install awscli
 # Codeship clones your project into this directory
 cd ~/clone
 
+# Set Expiration Date Session Var to +1 month of current system time
+EXP_DATE=$(date --date="+1 month" "+'%Y-%m-%dT%H:%M:%SZ'")
+
 # Delete existing S3 Files
 aws s3 rm s3://meetdayel.today --recursive
 
-# Copy cloned files from GitHub to S3 Bucket and give the Public Read access
-aws s3 mv ~/clone s3://meetdayel.today --exclude '.git/*' --acl public-read --recursive
+# Copy cloned files from GitHub to S3 Bucket
+# Set each file to Public-Read, expires at the EXP_DATE var and Cache-Control header to 30 days max age
+aws s3 mv ~/clone s3://meetdayel.today --exclude '.git/*' --acl public-read --expires $EXP_DATE --add-header="Cache-Control:max-age=2592000" --recursive
 ```
 
 TODO: Update the script to invalidate the CloudFront cache.
