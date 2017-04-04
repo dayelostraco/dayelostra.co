@@ -38,8 +38,25 @@ My personal static website based on the [Slides 3.0.5](https://designmodo.com/sl
 
 ## Deployment
 
-Automated CodeShip deployments to the S3 hosted website on all commits to the `master` branch. 
-No add the files after you delete them...
+Automated CodeShip deployments to the S3 hosted website on all commits to the `master` branch.
+
+CodeShip deployment uses the Test pipeline to run AWS CLI commands.
+
+```
+# Install AWS CLI
+pip install awscli
+
+# Codeship clones your project into this directory
+cd ~/clone
+
+# Delete existing S3 Files
+aws s3 rm s3://meetdayel.today --recursive
+
+# Copy cloned files from GitHub to S3 Bucket and give the Public Read access
+aws s3 mv ~/clone s3://meetdayel.today --exclude '.git/*' --acl public-read --recursive
+```
+
+TODO: Update the script to invalidate the CloudFront cache.
 
 ## CloudFront
 
