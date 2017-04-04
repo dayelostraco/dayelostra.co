@@ -42,4 +42,4 @@ Automated CodeShip deployments to the S3 hosted website on all commits to the `m
 
 ## CloudFront
 
-TODO: Add in CloudFront details
+Add Cloud Distribution Id Here
