@@ -1,6 +1,8 @@
 # Introduction
 My personal static website based on the [Slides 3.0.5](https://designmodo.com/slides/) framework.
 
+[ ![Codeship Status for dayelostraco/dayelostra.co](https://app.codeship.com/projects/21857230-faee-0134-b168-721cf569a862/status?branch=master)](https://app.codeship.com/projects/211392)
+
 ## Static File Structure
 
 ```
