@@ -81,7 +81,7 @@ pip install awscli
 cd ~/clone
 
 # Set Expiration Date Session Var to +1 month of current system time
-EXP_DATE=$(date --date="+1 month" "+'%Y-%m-%dT%H:%M:%SZ'")
+EXP_DATE=$(date --date="+1 week" "+'%Y-%m-%dT%H:%M:%SZ'")
 
 # Delete existing S3 Files
 aws s3 rm s3://dayelostra.co --recursive
