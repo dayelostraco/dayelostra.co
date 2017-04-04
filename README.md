@@ -39,7 +39,8 @@ My personal static website based on the [Slides 3.0.5](https://designmodo.com/sl
 ## Deployment
 
 Automated CodeShip deployments to the S3 hosted website on all commits to the `master` branch. 
+No add the files after you delete them...
 
 ## CloudFront
 
-Add Cloud Distribution Id Here - Trying again
+TODO
