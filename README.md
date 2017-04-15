@@ -145,5 +145,5 @@ aws s3 mv ~/clone s3://dayelostra.co --exclude '.git/*' --exclude '.gitignore' -
 
 # Invalidate the CloudFront cache via preview level features
 aws configure set preview.cloudfront true  
-aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_SANFRANCISCO_ID --paths /* 
+aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_SANFRANCISCO_ID --paths /index.html /error.html /assets/img/* /assets/svg/* /assets/resume/*
 ````
