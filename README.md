@@ -144,6 +144,6 @@ aws s3 rm s3://dayelostra.co --recursive
 aws s3 mv ~/clone s3://dayelostra.co --exclude '.git/*' --exclude '.gitignore' --exclude 'README.md' --acl public-read --expires $EXP_DATE --cache-control max-age=604800 --recursive
 
 # Invalidate the CloudFront cache via preview level features
-aws configure set preview.cloudfront true  
-aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_SANFRANCISCO_ID --paths /* 
+aws configure set preview.cloudfront true
+aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_CHARLESTON_ID --paths /index.html /error.html /assets/img/* /assets/svg/* /assets/resume/*
 ````
