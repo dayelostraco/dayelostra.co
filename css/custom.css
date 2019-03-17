@@ -1,0 +1,12 @@
+.console {
+    font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+    font-size: 1.5em;
+}
+
+.shiftImageVertical.shiftImageLeft {
+    margin: -13% 0 -6% -100%;
+}
+
+.blackAlpha{
+    background-color: rgba(0, 0, 0, 0.6);
+}
