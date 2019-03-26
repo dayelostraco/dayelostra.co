@@ -9,7 +9,7 @@ $(document).ready(function () {
 function showConsoleMessage() {
     setInterval('cursorAnimation()', 600);
     captionEl = $('#caption');
-    caption = 'Technology Executive, Product Developer, & Amateur Pilot';
+    caption = 'Sales Executive, Product Developer, & Amateur Pilot';
     type()
 }
 
