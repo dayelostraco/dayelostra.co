@@ -44,6 +44,8 @@
 
   <!-- Self-hosted fonts; preload the most-used (Geist Variable) to avoid FOIT -->
   <link rel="preload" href="/assets/fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Structured data for rich-result + knowledge-graph surfacing -->
   <script type="application/ld+json">
@@ -288,7 +290,7 @@
           <!-- Portrait card (left, ~1/3) -->
           <figure class="corners glass relative overflow-hidden lg:col-span-4" data-reveal="from-left" data-reveal-delay="100">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <img src="/assets/img/bio/dayel-mid.webp" alt="Dayel Ostraco" class="block w-full saturate-[0.95]" width="600" height="600">
+            <img src="/assets/img/bio/dayel-400.webp" srcset="/assets/img/bio/dayel-400.webp 1x, /assets/img/bio/dayel-800.webp 2x" alt="Dayel Ostraco" class="block w-full saturate-[0.95]" width="400" height="400" loading="lazy">
             <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg via-bg/80 to-transparent p-5 pt-10">
               <p class="text-lg font-semibold tracking-tight">Dayel Ostraco</p>
               <p class="mt-1 font-mono text-xs uppercase tracking-[0.22em] text-accent">CTO · Accelera Solutions</p>
@@ -409,7 +411,7 @@
     <section id="glyphon" class="acc-gold corners corners-lg divider-gradient tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
       <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
       <!-- PCB macro — gold circuit traces on dark, color-perfect for Glyphon brand -->
-      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.18] saturate-[0.7]" aria-hidden="true" style="background-image:url('/assets/img/bg/pcb-macro.jpg')"></div>
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.18] saturate-[0.7]" aria-hidden="true" style="background-image:url('/assets/img/bg/pcb-macro.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/55" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 dot-grid-gold opacity-30" aria-hidden="true"></div>
       <div class="absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-gold-deep/30 to-transparent"></div>
@@ -565,7 +567,7 @@
     <!-- RECENT MISSIONS -->
     <section id="missions" class="acc-gold divider-gradient tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
       <!-- Operations image — federal mission feel -->
-      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.15] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/operations.jpg')"></div>
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.15] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/operations.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 grain opacity-50" aria-hidden="true"></div>
       <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;" data-watermark="/MISSIONS"></span>
@@ -708,7 +710,7 @@
     <!-- CERTIFICATIONS -->
     <section id="certs" class="acc-gold tint-deep relative overflow-hidden px-6 py-24 lg:px-8">
       <!-- Hubble nebula — warm + cool, deep-space mission-control feel -->
-      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.16] saturate-[0.85]" aria-hidden="true" style="background-image:url('/assets/img/bg/nebula.jpg')"></div>
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.16] saturate-[0.85]" aria-hidden="true" style="background-image:url('/assets/img/bg/nebula.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/60" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 grain opacity-40" aria-hidden="true"></div>
       <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/CLEARED"></span>
