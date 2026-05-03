@@ -70,3 +70,10 @@ test/coverage
 # Bash Scripts #
 ################
 *.sh
+
+# Vite build output
+dist/
+.vite/
+
+# Playwright MCP scratch
+.playwright-mcp/

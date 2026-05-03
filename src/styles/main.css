@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans Pro", system-ui, -apple-system, sans-serif;
+  --font-mono: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+
+  --color-brand-pink: #e91e63;
+  --color-brand-blue: #2196f3;
+  --color-brand-cyan: #00bcd4;
+  --color-brand-green: #4caf50;
+  --color-brand-red: #f54f51;
+  --color-brand-rose: #d03d4d;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    background-color: #0a0a0a;
+    color: #fff;
+  }
+
+  h1, h2, h3 {
+    font-weight: 600;
+  }
+}
+
+@utility btn {
+  @apply inline-block px-6 py-3 font-semibold uppercase tracking-wide transition-colors;
+}
+@utility btn-blue {
+  @apply btn bg-brand-blue text-white hover:bg-blue-700;
+}
+@utility btn-red {
+  @apply btn bg-brand-red text-white hover:bg-red-700;
+}
+@utility btn-pink {
+  @apply btn bg-brand-pink text-white hover:bg-pink-700;
+}
+@utility btn-white {
+  @apply btn bg-white text-neutral-900 hover:bg-neutral-100;
+}
+@utility btn-empty {
+  @apply btn bg-transparent text-white ring-1 ring-white/40 hover:bg-white/10;
+}
+
+@utility section-bg {
+  @apply absolute inset-0 -z-10 bg-cover bg-center;
+}
+@utility section-overlay {
+  @apply absolute inset-0 -z-10 bg-black/60;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 1.5rem, 0);
+  transition: opacity 700ms ease-out, transform 700ms ease-out, filter 700ms ease-out;
+  will-change: opacity, transform;
+}
+[data-reveal="from-left"] {
+  transform: translate3d(-3rem, 0, 0);
+}
+[data-reveal="from-right"] {
+  transform: translate3d(3rem, 0, 0);
+}
+[data-reveal="from-top"] {
+  transform: translate3d(0, -1.5rem, 0);
+}
+[data-reveal="from-center"] {
+  transform: scale(0.9);
+}
+[data-reveal="from-blur"] {
+  transform: none;
+  filter: blur(10px);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+#cursor {
+  display: inline-block;
+  transition: opacity 100ms;
+}
