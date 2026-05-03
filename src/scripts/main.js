@@ -23,11 +23,12 @@ function boot() {
   initCycler({
     target: '#subhead',
     items: [
-      'LLMs in classified enclaves',
-      'Multi-provider AI agent orchestration',
-      'Zero Trust + RMF + ATO',
-      '17 years of secure systems',
-      'AWS GovCloud, Azure, GCP',
+      'LLMs in classified enclaves.',
+      'Multi-provider AI agent orchestration.',
+      'Authority to Operate without the friction.',
+      'Zero Trust by design, not by patch.',
+      'Seventeen years shipping into AWS GovCloud.',
+      'Audit-grade systems for federal missions.',
     ],
     interval: 4500,
   });

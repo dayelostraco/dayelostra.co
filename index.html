@@ -81,8 +81,11 @@
   <main>
 
     <!-- HERO -->
-    <section id="top" class="relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-12 lg:px-8">
+    <section id="top" class="corners corners-lg relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-12 lg:px-8">
+      <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
       <div class="absolute inset-0 -z-10 dot-grid opacity-60"></div>
+      <div class="absolute inset-0 -z-10 grain opacity-50"></div>
+      <div class="absolute inset-x-0 top-0 -z-10 h-2/3 bg-gradient-to-b from-accent-deep/30 via-transparent to-transparent"></div>
       <div class="glow-blob glow-drift" style="width:560px;height:560px;top:8%;left:-15%;"></div>
       <div class="glow-blob-deep glow-drift-slow" style="width:680px;height:680px;bottom:-25%;right:-15%;"></div>
 
@@ -135,62 +138,69 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="relative px-6 py-24 lg:px-8 lg:py-32">
+    <section id="about" class="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 grain opacity-60"></div>
+      <div class="glow-blob-deep glow-drift" style="width:480px;height:480px;top:0;right:-10%;"></div>
       <div class="mx-auto max-w-4xl">
         <p class="eyebrow" data-reveal>About</p>
         <p class="mt-6 text-2xl leading-relaxed md:text-3xl" data-reveal data-reveal-delay="100">
-          Seventeen years engineering secure, full-stack platforms for federal, defense, and public sector missions.
-          I integrate generative AI, LLMs, and data pipelines into systems operating under
-          <span class="text-accent">Zero Trust</span> postures,
-          <span class="text-accent">RMF controls</span>, and
-          <span class="text-accent">FedRAMP / HIPAA</span> compliance — without trading delivery speed for paperwork.
+          Seventeen years engineering secure, full-stack platforms for federal, defense, and public-sector missions. I integrate
+          <span class="text-accent">generative AI</span>,
+          <span class="text-accent">LLMs</span>, and real-time data pipelines into systems that hold under
+          <span class="text-accent">Zero Trust</span>,
+          <span class="text-accent">RMF</span>, and
+          <span class="text-accent">FedRAMP / HIPAA</span> &mdash; without trading delivery speed for paperwork.
         </p>
         <p class="mt-8 text-lg leading-relaxed text-text-dim md:text-xl" data-reveal data-reveal-delay="250">
-          I lead Agile teams, ship code daily, and prefer playbooks over PowerPoints. Trusted by the DoD, DHA, SSA, CMS, and global financial institutions to design platforms that move billions in transactions, scale to millions of daily users, and survive the audit afterward.
+          I lead Agile teams, ship code daily, and prefer playbooks over PowerPoints. Trusted by the DoD, DHA, SSA, CMS, and global financial institutions to architect platforms that move billions in transactions, scale to millions of daily users, and survive the audit afterward.
         </p>
       </div>
     </section>
 
     <!-- WHAT I DO -->
-    <section id="services" class="relative px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <section id="services" class="divider-gradient relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 diagonal-lines opacity-40"></div>
+      <div class="glow-blob-deep" style="width:520px;height:520px;top:30%;left:-15%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>What I do</p>
-        <h2 class="mt-6 text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
-          Three disciplines, one delivery model.
+        <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
+          Three disciplines, <span class="text-accent">one</span> delivery model.
         </h2>
 
         <div class="mt-16 grid gap-6 md:grid-cols-3">
-          <div class="glass glass-hover p-8" data-reveal data-reveal-delay="150">
-            <p class="eyebrow-dim">01 · Tier I</p>
+          <div class="corners glass glass-hover p-8" data-reveal data-reveal-delay="150">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-xs uppercase tracking-[0.28em] text-text-dim">Tier 01</p>
             <h3 class="mt-4 text-2xl font-semibold text-accent">AI Integration</h3>
-            <ul class="mt-6 space-y-2 text-text-dim">
-              <li>Multi-provider LLM orchestration (OpenAI · Claude · Gemini · LLaMA · Mistral · Bedrock)</li>
-              <li>Deterministic agent pipelines with byte-identical artifacts</li>
-              <li>Grounded retrieval, prompt engineering, model lifecycle management</li>
-              <li>CUI-aware logging and audit trails</li>
+            <ul class="mt-6 space-y-3 text-text-dim">
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Multi-provider LLM orchestration &mdash; OpenAI, Claude, Gemini, LLaMA, Mistral, Bedrock</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Deterministic agent pipelines with byte-identical artifacts</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Grounded retrieval, prompt engineering, model lifecycle management</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>CUI-aware logging and audit trails</span></li>
             </ul>
           </div>
 
-          <div class="glass glass-hover p-8" data-reveal data-reveal-delay="250">
-            <p class="eyebrow-dim">02 · Tier II</p>
+          <div class="corners glass glass-hover p-8" data-reveal data-reveal-delay="250">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-xs uppercase tracking-[0.28em] text-text-dim">Tier 02</p>
             <h3 class="mt-4 text-2xl font-semibold text-accent">Secure Architecture</h3>
-            <ul class="mt-6 space-y-2 text-text-dim">
-              <li>Cloud-native systems on AWS GovCloud, Azure, GCP</li>
-              <li>Microservices behind Zero Trust gateways and federated identity (iAS, DS Logon, OAuth)</li>
-              <li>Container hardening — FIPS 140-3 distroless, Iron Bank, Chainguard</li>
-              <li>Hybrid + multi-region cross-cloud designs</li>
+            <ul class="mt-6 space-y-3 text-text-dim">
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Cloud-native systems on AWS GovCloud, Azure, GCP</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Microservices behind Zero Trust gateways and federated identity (iAS, DS Logon, OAuth)</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Container hardening &mdash; FIPS 140-3 distroless, Iron Bank, Chainguard</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Hybrid and multi-region cross-cloud designs</span></li>
             </ul>
           </div>
 
-          <div class="glass glass-hover p-8" data-reveal data-reveal-delay="350">
-            <p class="eyebrow-dim">03 · Tier III</p>
+          <div class="corners glass glass-hover p-8" data-reveal data-reveal-delay="350">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-xs uppercase tracking-[0.28em] text-text-dim">Tier 03</p>
             <h3 class="mt-4 text-2xl font-semibold text-accent">Federal Delivery</h3>
-            <ul class="mt-6 space-y-2 text-text-dim">
-              <li>Authority to Operate (ATO), RMF, FedRAMP High, HIPAA, MEDCOI</li>
-              <li>STIG-compliant deployments and eMASS submissions</li>
-              <li>End-to-end DevSecOps from GitLab pipelines to production cutover</li>
-              <li>Agile leadership across cross-functional teams</li>
+            <ul class="mt-6 space-y-3 text-text-dim">
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Authority to Operate (ATO), RMF, FedRAMP High, HIPAA, MEDCOI</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>STIG-compliant deployments and eMASS submissions</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>End-to-end DevSecOps from GitLab pipelines to production cutover</span></li>
+              <li class="flex gap-3"><span class="text-accent">▸</span><span>Agile leadership across cross-functional teams</span></li>
             </ul>
           </div>
         </div>
@@ -198,9 +208,12 @@
     </section>
 
     <!-- GLYPHON FLAGSHIP -->
-    <section id="glyphon" class="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="glyphon" class="corners corners-lg divider-gradient relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
       <div class="absolute inset-0 -z-10 dot-grid-accent opacity-40"></div>
+      <div class="absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-accent-deep/20 to-transparent"></div>
       <div class="glow-blob glow-drift" style="width:500px;height:500px;top:-10%;right:-10%;"></div>
+      <div class="glow-blob-deep glow-drift-slow" style="width:400px;height:400px;bottom:5%;left:-10%;"></div>
 
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Flagship product</p>
@@ -221,19 +234,23 @@
             </p>
 
             <ul class="mt-10 grid gap-4 sm:grid-cols-2" data-reveal data-reveal-delay="400">
-              <li class="glass p-4">
-                <p class="font-mono text-3xl font-semibold text-accent">75.9%</p>
-                <p class="mt-1 text-sm text-text-dim">CVE auto-resolution rate across 7 ecosystems</p>
+              <li class="corners glass glass-hover p-5">
+                <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+                <p class="font-mono text-3xl font-semibold text-accent">83.5%</p>
+                <p class="mt-1 text-sm text-text-dim">CVE auto-resolution across 7 ecosystems</p>
               </li>
-              <li class="glass p-4">
+              <li class="corners glass glass-hover p-5">
+                <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <p class="font-mono text-3xl font-semibold text-accent">99.5%</p>
-                <p class="mt-1 text-sm text-text-dim">Windows STIG compliance via AMI hardening playbook</p>
+                <p class="mt-1 text-sm text-text-dim">Windows STIG compliance via AMI hardening</p>
               </li>
-              <li class="glass p-4">
+              <li class="corners glass glass-hover p-5">
+                <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <p class="font-mono text-3xl font-semibold text-accent">35+</p>
                 <p class="mt-1 text-sm text-text-dim">Production agents across 7 playbooks</p>
               </li>
-              <li class="glass p-4">
+              <li class="corners glass-accent glass-hover p-5">
+                <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <p class="font-mono text-3xl font-semibold text-accent">IL5</p>
                 <p class="mt-1 text-sm text-text-dim">GovCloud-validated · FedRAMP High ready</p>
               </li>
@@ -246,7 +263,8 @@
           </div>
 
           <div class="lg:col-span-5" data-reveal="from-right" data-reveal-delay="200">
-            <div class="glass glow-accent p-10">
+            <div class="corners glass-accent glow-accent p-10">
+              <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
               <p class="eyebrow-dim">Production playbooks</p>
               <ul class="mt-6 space-y-4 text-text-dim">
                 <li class="flex items-baseline gap-3">
@@ -285,7 +303,9 @@
     </section>
 
     <!-- PRODUCT FAMILY -->
-    <section id="products" class="relative px-6 py-24 lg:px-8 lg:py-32">
+    <section id="products" class="divider-gradient relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 scanlines opacity-50"></div>
+      <div class="glow-blob-deep" style="width:520px;height:520px;top:50%;right:-15%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>The product family</p>
         <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
@@ -294,28 +314,32 @@
 
         <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
-          <a href="https://colophon.build" target="_blank" rel="noopener" class="glass glass-hover group relative flex flex-col p-8" data-reveal data-reveal-delay="100">
+          <a href="https://colophon.build" target="_blank" rel="noopener" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="100">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <img src="/assets/brands/colophon-head.svg" alt="" class="h-14 w-auto" aria-hidden="true">
             <h3 class="mt-6 text-2xl font-semibold">Colophon</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">Specialist agent bench for secure federal delivery. Bounded peer collaboration with chain-of-custody escalation. Sister to Glyphon.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">colophon.build →</p>
           </a>
 
-          <a href="https://vallark.build" target="_blank" rel="noopener" class="glass glass-hover group relative flex flex-col p-8" data-reveal data-reveal-delay="200">
+          <a href="https://vallark.build" target="_blank" rel="noopener" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="200">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <img src="/assets/brands/vallark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
             <h3 class="mt-6 text-2xl font-semibold">Vallark</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">Mobile security contract for DoD apps. OpenAPI 3.1 + four language-native starters. Attestation and CUI handling baked into the API design.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">vallark.build →</p>
           </a>
 
-          <a href="https://affirmark.build" target="_blank" rel="noopener" class="glass glass-hover group relative flex flex-col p-8" data-reveal data-reveal-delay="300">
+          <a href="https://affirmark.build" target="_blank" rel="noopener" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="300">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <img src="/assets/brands/affirmark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
             <h3 class="mt-6 text-2xl font-semibold">Affirmark</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">CMMC Level 1 self-attestation for SMB DoD subcontractors. Hash-chained audit log, email-ingest evidence, grounded compliance chatbot.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">affirmark.build →</p>
           </a>
 
-          <a href="https://sigilark.com" target="_blank" rel="noopener" class="glass glass-hover group relative flex flex-col p-8" data-reveal data-reveal-delay="400">
+          <a href="https://sigilark.com" target="_blank" rel="noopener" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="400">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <img src="/assets/brands/sigilark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
             <h3 class="mt-6 text-2xl font-semibold">SigilArk</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">Parent brand. WOSB. AI-enabled technical delivery and program operations across classified and regulated federal environments.</p>
@@ -327,8 +351,9 @@
     </section>
 
     <!-- RECENT MISSIONS -->
-    <section id="missions" class="relative px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 scanlines opacity-50"></div>
+    <section id="missions" class="divider-gradient relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 grain opacity-50"></div>
+      <div class="glow-blob-deep" style="width:600px;height:600px;bottom:-10%;left:-15%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Recent missions</p>
         <h2 class="mt-6 text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
@@ -402,7 +427,9 @@
     </section>
 
     <!-- CAPABILITIES -->
-    <section id="stack" class="relative px-6 py-24 lg:px-8 lg:py-32">
+    <section id="stack" class="divider-gradient relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 dot-grid-fine opacity-60"></div>
+      <div class="glow-blob-deep glow-drift" style="width:520px;height:520px;top:30%;right:-10%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Capabilities</p>
         <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
@@ -411,7 +438,8 @@
 
         <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
-          <div class="glass p-8" data-reveal data-reveal-delay="100">
+          <div class="corners glass p-8" data-reveal data-reveal-delay="100">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="eyebrow-dim">Languages &amp; Frameworks</p>
             <ul class="mt-6 space-y-2 font-mono text-sm text-text">
               <li>Python</li><li>Java</li><li>TypeScript</li><li>JavaScript</li>
@@ -420,7 +448,8 @@
             </ul>
           </div>
 
-          <div class="glass p-8" data-reveal data-reveal-delay="200">
+          <div class="corners glass p-8" data-reveal data-reveal-delay="200">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="eyebrow-dim">Cloud &amp; Infrastructure</p>
             <ul class="mt-6 space-y-2 font-mono text-sm text-text">
               <li>AWS GovCloud</li><li>Azure · GCP</li>
@@ -430,7 +459,8 @@
             </ul>
           </div>
 
-          <div class="glass p-8" data-reveal data-reveal-delay="300">
+          <div class="corners glass p-8" data-reveal data-reveal-delay="300">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="eyebrow-dim">AI/ML &amp; Data</p>
             <ul class="mt-6 space-y-2 font-mono text-sm text-text">
               <li>LLaMA · Gemini · OpenAI · Mistral</li>
@@ -441,7 +471,8 @@
             </ul>
           </div>
 
-          <div class="glass p-8" data-reveal data-reveal-delay="400">
+          <div class="corners glass p-8" data-reveal data-reveal-delay="400">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="eyebrow-dim">Security &amp; Compliance</p>
             <ul class="mt-6 space-y-2 font-mono text-sm text-text">
               <li>Zero Trust</li><li>RMF · ATO</li>
@@ -456,20 +487,24 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section id="certs" class="relative px-6 py-24 lg:px-8">
+    <section id="certs" class="relative overflow-hidden px-6 py-24 lg:px-8">
+      <div class="absolute inset-0 -z-10 grain opacity-40"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Certifications &amp; clearance</p>
 
         <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <div class="glass p-8" data-reveal data-reveal-delay="100">
+          <div class="corners glass glass-hover p-8" data-reveal data-reveal-delay="100">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="font-mono text-3xl font-semibold tracking-tight">CISSP</p>
             <p class="mt-3 text-sm text-text-dim">Certified Information Systems Security Professional · (ISC)²</p>
           </div>
-          <div class="glass p-8" data-reveal data-reveal-delay="200">
+          <div class="corners glass glass-hover p-8" data-reveal data-reveal-delay="200">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="font-mono text-3xl font-semibold tracking-tight">AWS SAA</p>
             <p class="mt-3 text-sm text-text-dim">AWS Certified Solutions Architect &mdash; Associate</p>
           </div>
-          <div class="glass glow-accent p-8" data-reveal data-reveal-delay="300">
+          <div class="corners glass-accent glow-accent p-8" data-reveal data-reveal-delay="300">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="font-mono text-3xl font-semibold tracking-tight text-accent">DoD Secret</p>
             <p class="mt-3 text-sm text-text-dim">Active U.S. Department of Defense security clearance</p>
           </div>
@@ -478,7 +513,9 @@
     </section>
 
     <!-- RESUME + PRESS -->
-    <section id="cv" class="relative px-6 py-24 lg:px-8 lg:py-32">
+    <section id="cv" class="divider-gradient relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 diagonal-lines opacity-30"></div>
+      <div class="glow-blob-deep" style="width:520px;height:520px;top:0;left:-15%;"></div>
       <div class="mx-auto max-w-7xl">
         <div class="grid gap-16 lg:grid-cols-12">
           <div class="lg:col-span-5">
@@ -501,25 +538,25 @@
           <div class="lg:col-span-7">
             <p class="eyebrow" data-reveal>Selected coverage</p>
             <ul class="mt-6 space-y-4">
-              <li class="glass p-5" data-reveal data-reveal-delay="100">
+              <li class="corners glass glass-hover p-5" data-reveal data-reveal-delay="100"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <a href="https://www.wsj.com/news/articles/SB10001424052702304856504579339130820876304" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
                   <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">The Wall Street Journal</p>
                   <p class="mt-2 text-lg">Smartphones to Open Doors at Hotel</p>
                 </a>
               </li>
-              <li class="glass p-5" data-reveal data-reveal-delay="200">
+              <li class="corners glass glass-hover p-5" data-reveal data-reveal-delay="200"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <a href="http://www.cnn.com/2014/01/28/tech/mobile/smartphone-hotel-keys/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
                   <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">CNN</p>
                   <p class="mt-2 text-lg">Your Smartphone Could Replace Hotel Keys</p>
                 </a>
               </li>
-              <li class="glass p-5" data-reveal data-reveal-delay="300">
+              <li class="corners glass glass-hover p-5" data-reveal data-reveal-delay="300"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <a href="http://custom.forbes.com/2015/12/03/charleston-s-c/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
                   <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">Forbes</p>
                   <p class="mt-2 text-lg">Where Great Minds Are Moving to Live, Work and Play</p>
                 </a>
               </li>
-              <li class="glass p-5" data-reveal data-reveal-delay="400">
+              <li class="corners glass glass-hover p-5" data-reveal data-reveal-delay="400"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <a href="https://venturebeat.com/2012/10/09/knappsack/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
                   <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">VentureBeat</p>
                   <p class="mt-2 text-lg">If You're a Mobile Developer, This is the One Post You Have to Read Today</p>
@@ -564,7 +601,7 @@
 
     <footer class="border-t border-white/10 px-6 py-10 lg:px-8">
       <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 font-mono text-xs uppercase tracking-[0.22em] text-text/40 md:flex-row md:items-center">
-        <p>© 2026 Dayel Ostraco · WOSB founder partner · DoD-cleared</p>
+        <p>© 2026 Dayel Ostraco · Charleston, SC · DoD-cleared</p>
         <p><span class="text-accent">/</span> dayelostra.co</p>
       </div>
     </footer>
