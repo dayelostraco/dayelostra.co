@@ -62,8 +62,10 @@ npm run preview  # preview the production build
 
 | Secret | Value |
 | --- | --- |
-| `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` | IAM user with S3 PutObject/DeleteObject on `dayelostra.co` and CloudFront CreateInvalidation. **Migrate to OIDC** (see below) when ready. |
+| `AWS_DEPLOY_ROLE` | ARN of the IAM role assumed via OIDC: `arn:aws:iam::302654592899:role/dayelostra-co-deploy`. The role's trust policy is scoped to this repo + `refs/heads/main` only. |
 | `CLOUDFRONT_DISTRIBUTION_ID` | `EZ1G9UFZ84YTV` |
+
+Auth uses GitHub Actions OIDC, not long-lived AWS access keys. The workflow exchanges a short-lived OIDC token for STS credentials at run time. Nothing to rotate.
 
 ### AWS infrastructure reference
 
