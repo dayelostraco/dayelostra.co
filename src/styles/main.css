@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+/* Self-hosted fonts — eliminates fonts.googleapis.com + fonts.gstatic.com requests
+   (render-blocking, third-party, privacy concern). Latin range only. */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;        /* variable font: one file, all weights */
+  font-display: swap;
+  src: url('/assets/fonts/geist-variable.woff2') format('woff2-variations'),
+       url('/assets/fonts/geist-variable.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/ibm-plex-mono-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/ibm-plex-mono-500.woff2') format('woff2');
+}
+
 @theme {
   --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -194,38 +219,40 @@
   background: linear-gradient(to right, transparent, rgba(0, 173, 239, 0.35), transparent);
 }
 
-/* --- section watermark (oversized mono numeral / label as bg) --- */
-.section-watermark {
-  position: absolute;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 0.85;
-  color: rgba(0, 173, 239, 0.12);
-  pointer-events: none;
-  user-select: none;
-  white-space: nowrap;
-  font-size: clamp(8rem, 20vw, 22rem);
-}
+/* --- section watermark (oversized mono numeral / label as bg)
+   Implemented via ::before with content from data-watermark attribute,
+   so the visible text doesn't live in the DOM (axe color-contrast
+   correctly skips pseudo-element content for decorative watermarks). */
+.section-watermark,
 .section-watermark-text {
   position: absolute;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 0.85;
-  color: rgba(235, 229, 213, 0.08);
   pointer-events: none;
   user-select: none;
+}
+.section-watermark::before,
+.section-watermark-text::before {
+  content: attr(data-watermark);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  line-height: 0.85;
   white-space: nowrap;
+  display: block;
+}
+.section-watermark::before {
+  letter-spacing: -0.05em;
+  color: rgba(0, 173, 239, 0.12);
+  font-size: clamp(8rem, 20vw, 22rem);
+}
+.section-watermark-text::before {
+  letter-spacing: -0.02em;
+  color: rgba(235, 229, 213, 0.08);
   font-size: clamp(4rem, 10vw, 11rem);
   text-transform: uppercase;
-  display: none;
 }
-@media (min-width: 768px) {
-  .section-watermark-text { display: inline-block; }
-}
-.acc-gold .section-watermark,
-.acc-gold .section-watermark-text {
+.section-watermark-text { display: none; }
+@media (min-width: 768px) { .section-watermark-text { display: block; } }
+.acc-gold .section-watermark::before,
+.acc-gold .section-watermark-text::before {
   color: rgba(193, 160, 102, 0.14);
 }
 

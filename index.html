@@ -40,9 +40,8 @@
   <meta name="msapplication-TileColor" content="#0A0E2A">
   <meta name="theme-color" content="#0A0E2A">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Self-hosted fonts; preload the most-used (Geist Variable) to avoid FOIT -->
+  <link rel="preload" href="/assets/fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
 
   <script type="module" src="/src/scripts/main.js"></script>
 
@@ -61,8 +60,8 @@
   <!-- Top Nav -->
   <nav class="fixed inset-x-0 top-0 z-40 border-b border-white/[0.06] bg-bg/70 backdrop-blur-md" aria-label="Primary">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-      <a href="#top" class="font-mono text-sm uppercase tracking-[0.28em] text-text" aria-label="Home">
-        <span class="text-accent">/</span>&nbsp;dayel ostraco
+      <a href="#top" class="font-mono text-sm uppercase tracking-[0.28em] text-text">
+        <span class="text-accent" aria-hidden="true">/</span>&nbsp;Dayel Ostraco
       </a>
       <ul class="hidden items-center gap-8 font-mono text-xs uppercase tracking-[0.22em] text-text/80 md:flex">
         <li><a href="#lab" class="transition-colors hover:text-accent">Lab</a></li>
@@ -181,7 +180,7 @@
       </svg>
 
       <!-- big edge watermark -->
-      <span class="section-watermark-text" aria-hidden="true" style="bottom:1.5rem;right:2rem;font-size:clamp(3rem,8vw,7rem);">/DAYEL</span>
+      <span class="section-watermark-text" aria-hidden="true" style="bottom:1.5rem;right:2rem;font-size:clamp(3rem,8vw,7rem);" data-watermark="/DAYEL"></span>
 
       <div class="relative mx-auto w-full max-w-7xl">
         <p data-reveal>
@@ -220,7 +219,7 @@
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.18] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/concrete.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/60" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 grain opacity-50" aria-hidden="true"></div>
-      <span class="section-watermark" aria-hidden="true" style="top:-2rem;left:2rem;">/00</span>
+      <span class="section-watermark" aria-hidden="true" style="top:-2rem;left:2rem;" data-watermark="/00"></span>
       <div class="glow-blob-gold glow-drift" aria-hidden="true" style="width:680px;height:680px;top:-10%;right:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:380px;height:380px;bottom:0;left:-5%;"></div>
       <div class="mx-auto max-w-7xl">
@@ -230,7 +229,7 @@
           <!-- Portrait card (left, ~1/3) -->
           <figure class="corners glass relative overflow-hidden lg:col-span-4" data-reveal="from-left" data-reveal-delay="100">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <img src="/assets/img/bio/dayel-mid.webp" alt="Dayel Ostraco" class="block w-full saturate-[0.95]">
+            <img src="/assets/img/bio/dayel-mid.webp" alt="Dayel Ostraco" class="block w-full saturate-[0.95]" width="600" height="600">
             <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg via-bg/80 to-transparent p-5 pt-10">
               <p class="text-lg font-semibold tracking-tight">Dayel Ostraco</p>
               <p class="mt-1 font-mono text-xs uppercase tracking-[0.22em] text-accent">CTO · Accelera Solutions</p>
@@ -256,7 +255,7 @@
     <!-- WHAT I DO -->
     <section id="services" class="divider-gradient relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
       <div class="absolute inset-0 -z-10 diagonal-lines opacity-40" aria-hidden="true"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/SERVICES</span>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/SERVICES"></span>
       <div class="glow-blob-deep" aria-hidden="true" style="width:720px;height:720px;top:20%;left:-20%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:520px;height:520px;bottom:0%;right:-10%;"></div>
       <div class="mx-auto max-w-7xl">
@@ -311,7 +310,7 @@
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.22] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/sectors-watch.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 diagonal-lines opacity-50" aria-hidden="true"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/LAB</span>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/LAB"></span>
       <div class="glow-blob-gold glow-drift" aria-hidden="true" style="width:600px;height:600px;top:-10%;right:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:5%;left:-10%;"></div>
 
@@ -355,9 +354,9 @@
       <div class="absolute inset-0 -z-[15] bg-bg/55" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 dot-grid-gold opacity-30" aria-hidden="true"></div>
       <div class="absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-gold-deep/30 to-transparent"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;">/FLAGSHIP</span>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;" data-watermark="/FLAGSHIP"></span>
       <!-- Giant Glyphon hummingbird watermark -->
-      <img src="/assets/brands/glyphon-mark.svg" alt="" class="pointer-events-none absolute -bottom-20 -right-20 hidden h-[600px] w-[600px] opacity-[0.06] md:block" aria-hidden="true">
+      <img src="/assets/brands/glyphon-mark.svg" alt="" class="pointer-events-none absolute -bottom-20 -right-20 hidden h-[600px] w-[600px] opacity-[0.06] md:block" aria-hidden="true" width="80" height="80">
       <div class="glow-blob-gold glow-drift" aria-hidden="true" style="width:700px;height:700px;top:-15%;right:-15%;"></div>
       <div class="glow-blob-deep glow-drift-slow" aria-hidden="true" style="width:520px;height:520px;bottom:5%;left:-10%;"></div>
 
@@ -367,7 +366,7 @@
         <div class="mt-12 grid items-start gap-12 lg:grid-cols-12">
           <div class="lg:col-span-7">
             <div class="flex items-center gap-5" data-reveal data-reveal-delay="100">
-              <img src="/assets/brands/glyphon-mark.svg" alt="" class="h-16 w-16 shrink-0" aria-hidden="true">
+              <img src="/assets/brands/glyphon-mark.svg" alt="" class="h-16 w-16 shrink-0" aria-hidden="true" width="80" height="80">
               <span class="font-semibold text-4xl tracking-tight md:text-5xl" style="color:#c1a066;">Glyphon<sup class="ml-1 align-top text-sm">™</sup></span>
             </div>
 
@@ -451,7 +450,7 @@
     <!-- PRODUCT FAMILY -->
     <section id="products" class="divider-gradient tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
       <div class="absolute inset-0 -z-10 scanlines opacity-60" aria-hidden="true"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/FAMILY</span>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/FAMILY"></span>
       <!-- Connecting orbit SVG behind product grid -->
       <svg class="pointer-events-none absolute left-1/2 top-1/2 -z-[1] hidden h-[420px] w-[1100px] -translate-x-1/2 -translate-y-1/2 opacity-30 lg:block" viewBox="0 0 1100 420" fill="none" aria-hidden="true">
         <ellipse cx="550" cy="210" rx="540" ry="180" stroke="rgba(0,173,239,0.25)" stroke-width="0.5" stroke-dasharray="3 6"/>
@@ -470,7 +469,7 @@
 
           <a href="https://colophon.build" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="100">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <div class="flex h-20 items-end"><img src="/assets/brands/colophon-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true"></div>
+            <div class="flex h-20 items-end"><img src="/assets/brands/colophon-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true" width="80" height="80"></div>
             <h3 class="mt-6 text-2xl font-semibold">Colophon</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">70+ specialist AI agents &mdash; engineering, architecture, design, docs, testing, data science &mdash; with antagonist peer review and Human CCB approval. <span class="text-accent">cATO</span> discipline per feature shipped.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">colophon.build →</p>
@@ -478,7 +477,7 @@
 
           <a href="https://vallark.build" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="200">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <div class="flex h-20 items-end"><img src="/assets/brands/vallark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true"></div>
+            <div class="flex h-20 items-end"><img src="/assets/brands/vallark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true" width="80" height="80"></div>
             <h3 class="mt-6 text-2xl font-semibold">Vallark</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">DoD-grade mobile API contract &mdash; OpenAPI 3.1 spec plus iOS, Android, Web, and API starters. <span class="text-accent">CAC Plate</span> institutional mark. Attestation and CUI handling encoded in the API design itself, not the implementation.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">vallark.build →</p>
@@ -486,7 +485,7 @@
 
           <a href="https://affirmark.build" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="300">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <div class="flex h-20 items-end"><img src="/assets/brands/affirmark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true"></div>
+            <div class="flex h-20 items-end"><img src="/assets/brands/affirmark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true" width="80" height="80"></div>
             <h3 class="mt-6 text-2xl font-semibold">Affirmark</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">CMMC <span class="text-accent">Level 1 self-attestation</span> app for SMB DoD subcontractors. Replaces the 16-sheet workbook with a hash-chained audit log, email-ingest evidence aggregation, and a grounded chatbot that coaches managers through the 15 requirements.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">affirmark.build →</p>
@@ -494,7 +493,7 @@
 
           <a href="https://sigilark.com" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="400">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <div class="flex h-20 items-end"><img src="/assets/brands/sigilark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true"></div>
+            <div class="flex h-20 items-end"><img src="/assets/brands/sigilark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true" width="200" height="70"></div>
             <h3 class="mt-6 text-2xl font-semibold">SigilArk</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">Parent brand. <span class="text-accent">WOSB</span>. AI-enabled technical delivery, program operations, and executive support across classified and regulated federal environments.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">sigilark.com →</p>
@@ -510,7 +509,7 @@
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.15] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/operations.jpg')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 grain opacity-50" aria-hidden="true"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;">/MISSIONS</span>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;" data-watermark="/MISSIONS"></span>
       <div class="glow-blob-gold" aria-hidden="true" style="width:680px;height:680px;bottom:-10%;left:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:520px;height:520px;top:10%;right:-20%;"></div>
       <div class="mx-auto max-w-7xl">
@@ -588,7 +587,7 @@
     <!-- CAPABILITIES -->
     <section id="stack" class="divider-gradient tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
       <div class="absolute inset-0 -z-10 dot-grid-fine opacity-60" aria-hidden="true"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;">/STACK</span>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;" data-watermark="/STACK"></span>
       <div class="glow-blob-deep glow-drift" aria-hidden="true" style="width:680px;height:680px;top:30%;right:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:0;left:-10%;"></div>
       <div class="mx-auto max-w-7xl">
@@ -653,7 +652,7 @@
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.16] saturate-[0.85]" aria-hidden="true" style="background-image:url('/assets/img/bg/nebula.jpg')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/60" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 grain opacity-40" aria-hidden="true"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/CLEARED</span>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/CLEARED"></span>
       <div class="glow-blob-gold" aria-hidden="true" style="width:600px;height:600px;top:30%;right:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:0;left:-10%;"></div>
       <div class="mx-auto max-w-7xl">
@@ -682,7 +681,7 @@
     <!-- RESUME + PRESS -->
     <section id="resume" class="divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
       <div class="absolute inset-0 -z-10 diagonal-lines opacity-40" aria-hidden="true"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/RESUME</span>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/RESUME"></span>
       <div class="glow-blob-deep" aria-hidden="true" style="width:680px;height:680px;top:0;left:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:520px;height:520px;bottom:0;right:-15%;"></div>
       <div class="mx-auto max-w-7xl">
@@ -743,7 +742,7 @@
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.2] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/break-sea.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 dot-grid opacity-40" aria-hidden="true"></div>
-      <span class="section-watermark-text" aria-hidden="true" style="bottom:1rem;left:50%;transform:translateX(-50%);">/CONNECT</span>
+      <span class="section-watermark-text" aria-hidden="true" style="bottom:1rem;left:50%;transform:translateX(-50%);" data-watermark="/CONNECT"></span>
       <div class="glow-blob-gold glow-drift" aria-hidden="true" style="width:680px;height:680px;bottom:-10%;left:25%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;top:10%;right:-10%;"></div>
 
