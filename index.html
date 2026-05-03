@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
 
-  <title>dayelostra.co</title>
+  <title>Dayel Ostraco · Full Stack AI Engineer · Secure Systems Architect</title>
+  <meta name="description" content="DoD-cleared AI engineer and secure systems architect. Seventeen years building federal-grade platforms with LLMs, GovCloud, Zero Trust, and RMF/ATO discipline.">
 
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/icon/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/icon/apple-touch-icon-60x60.png">
@@ -20,578 +22,552 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/icon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="128x128" href="/assets/icon/favicon-128.png">
   <link rel="icon" type="image/png" sizes="196x196" href="/assets/icon/favicon-196x196.png">
-  <meta name="msapplication-TileColor" content="#FFFFFF">
-  <meta name="msapplication-TileImage" content="/assets/icon/mstile-144x144.png">
-  <meta name="msapplication-square70x70logo" content="/assets/icon/mstile-70x70.png">
-  <meta name="msapplication-square150x150logo" content="/assets/icon/mstile-150x150.png">
-  <meta name="msapplication-wide310x150logo" content="/assets/icon/mstile-310x150.png">
-  <meta name="msapplication-square310x310logo" content="/assets/icon/mstile-310x310.png">
+  <meta name="msapplication-TileColor" content="#0A0E2A">
+  <meta name="theme-color" content="#0A0E2A">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <script type="module" src="/src/scripts/main.js"></script>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-  <a href="#helloWorld" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-white focus:text-black focus:px-4 focus:py-2">Skip to content</a>
+  <a href="#top" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-accent focus:text-bg focus:px-4 focus:py-2">Skip to content</a>
 
   <!-- Top Nav -->
-  <nav class="fixed inset-x-0 top-0 z-40 bg-black/70 backdrop-blur-sm">
-    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-      <a href="#helloWorld" aria-label="Home">
-        <svg class="h-8 w-[107px] fill-white"><use href="/assets/svg/icons.svg#logo-sm"/></svg>
+  <nav class="fixed inset-x-0 top-0 z-40 border-b border-white/[0.06] bg-bg/70 backdrop-blur-md">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <a href="#top" class="font-mono text-sm uppercase tracking-[0.28em] text-text" aria-label="Home">
+        <span class="text-accent">/</span>&nbsp;dayel ostraco
       </a>
-      <ul class="hidden items-center gap-6 text-sm font-semibold uppercase tracking-wide md:flex">
-        <li><a href="#dloc" class="hover:text-brand-pink">Portfolio</a></li>
-        <li><a href="#opensource" class="hover:text-brand-pink">OpenSource</a></li>
-        <li><a href="#languages" class="hover:text-brand-pink">Experience</a></li>
-        <li><a href="#press" class="hover:text-brand-pink">Press</a></li>
-        <li><a href="#cv" class="hover:text-brand-pink">CV</a></li>
-        <li><a href="#connect" class="hover:text-brand-pink">Connect</a></li>
-        <li class="flex items-center gap-3 border-l border-white/20 pl-4">
-          <a href="mailto:iwantto@meetdayel.today?Subject=Hi%20Dayel!" aria-label="Email">
-            <svg class="h-5 w-5 fill-white hover:fill-brand-pink"><use href="/assets/svg/icons.svg#mail"/></svg>
-          </a>
-          <a href="https://stackoverflow.com/users/1978931/dayel-ostraco" target="_blank" rel="noopener" aria-label="Stack Overflow">
-            <svg class="h-5 w-5 fill-white hover:fill-brand-pink"><use href="/assets/svg/icons.svg#stackoverflow"/></svg>
-          </a>
-          <a href="https://github.com/dayelostraco" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg class="h-5 w-5 fill-white hover:fill-brand-pink"><use href="/assets/svg/icons.svg#github"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg class="h-5 w-5 fill-white hover:fill-brand-pink"><use href="/assets/svg/icons.svg#linkedin"/></svg>
-          </a>
-        </li>
+      <ul class="hidden items-center gap-8 font-mono text-xs uppercase tracking-[0.22em] text-text/80 md:flex">
+        <li><a href="#glyphon" class="transition-colors hover:text-accent">Flagship</a></li>
+        <li><a href="#products" class="transition-colors hover:text-accent">Products</a></li>
+        <li><a href="#missions" class="transition-colors hover:text-accent">Missions</a></li>
+        <li><a href="#stack" class="transition-colors hover:text-accent">Stack</a></li>
+        <li><a href="#cv" class="transition-colors hover:text-accent">CV</a></li>
+        <li><a href="#connect" class="transition-colors hover:text-accent">Connect</a></li>
       </ul>
       <button type="button" data-sidebar-trigger class="md:hidden" aria-label="Open menu">
-        <svg class="h-6 w-6 fill-white"><use href="/assets/svg/icons.svg#menu"/></svg>
+        <svg class="h-6 w-6 fill-text"><use href="/assets/svg/icons.svg#menu"/></svg>
       </button>
     </div>
   </nav>
 
   <!-- Mobile Sidebar -->
-  <nav data-sidebar class="fixed inset-0 z-50 hidden flex-col bg-brand-pink p-8 text-white" aria-label="Mobile menu">
-    <button type="button" data-sidebar-close class="self-end" aria-label="Close menu">
-      <svg class="h-8 w-8 fill-white"><use href="/assets/svg/icons.svg#close"/></svg>
-    </button>
-    <a href="#helloWorld" class="my-8" aria-label="Home">
-      <svg class="h-12 w-[120px] fill-white"><use href="/assets/svg/icons.svg#logo-sm"/></svg>
-    </a>
-    <ul class="space-y-5 text-2xl uppercase tracking-wide">
-      <li><a href="#introductions">About</a></li>
-      <li><a href="#dloc">Portfolio</a></li>
-      <li><a href="#opensource">OpenSource</a></li>
-      <li><a href="#languages">Experience</a></li>
-      <li><a href="#press">Press</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#connect">Connect</a></li>
+  <nav data-sidebar class="fixed inset-0 z-50 hidden flex-col bg-bg p-8 dot-grid" aria-label="Mobile menu">
+    <div class="flex justify-between items-center">
+      <span class="font-mono text-sm uppercase tracking-[0.28em] text-accent">menu</span>
+      <button type="button" data-sidebar-close aria-label="Close menu">
+        <svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#close"/></svg>
+      </button>
+    </div>
+    <ul class="mt-12 space-y-6 font-mono text-2xl uppercase tracking-[0.18em]">
+      <li><a href="#glyphon" class="hover:text-accent">Flagship</a></li>
+      <li><a href="#products" class="hover:text-accent">Products</a></li>
+      <li><a href="#missions" class="hover:text-accent">Missions</a></li>
+      <li><a href="#stack" class="hover:text-accent">Stack</a></li>
+      <li><a href="#cv" class="hover:text-accent">CV</a></li>
+      <li><a href="#connect" class="hover:text-accent">Connect</a></li>
     </ul>
     <ul class="mt-auto flex gap-6 pt-8">
-      <li><a href="mailto:iwantto@meetdayel.today?Subject=Hi%20Dayel!" aria-label="Email"><svg class="h-7 w-7 fill-white"><use href="/assets/svg/icons.svg#mail"/></svg></a></li>
-      <li><a href="https://stackoverflow.com/users/1978931/dayel-ostraco" target="_blank" rel="noopener" aria-label="Stack Overflow"><svg class="h-7 w-7 fill-white"><use href="/assets/svg/icons.svg#stackoverflow"/></svg></a></li>
-      <li><a href="https://github.com/dayelostraco" target="_blank" rel="noopener" aria-label="GitHub"><svg class="h-7 w-7 fill-white"><use href="/assets/svg/icons.svg#github"/></svg></a></li>
-      <li><a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="h-7 w-7 fill-white"><use href="/assets/svg/icons.svg#linkedin"/></svg></a></li>
+      <li><a href="mailto:dayel.ostraco@proton.me" aria-label="Email"><svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#mail"/></svg></a></li>
+      <li><a href="https://github.com/dayelostraco" target="_blank" rel="noopener" aria-label="GitHub"><svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#github"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#linkedin"/></svg></a></li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- Hello World -->
-    <section id="helloWorld" class="relative flex min-h-screen items-center px-4">
-      <div class="section-bg" style="background-image:url('/assets/img/img-100-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto w-full max-w-6xl">
-        <svg class="h-32 w-full max-w-md fill-white" data-reveal><use href="/assets/svg/icons.svg#logo-sm"/></svg>
-        <p class="mt-8 font-mono text-2xl md:text-3xl">
-          <span>$ </span><span id="caption"></span><span id="cursor">|</span>
+    <!-- HERO -->
+    <section id="top" class="relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-12 lg:px-8">
+      <div class="absolute inset-0 -z-10 dot-grid opacity-60"></div>
+      <div class="glow-blob glow-drift" style="width:560px;height:560px;top:8%;left:-15%;"></div>
+      <div class="glow-blob-deep glow-drift-slow" style="width:680px;height:680px;bottom:-25%;right:-15%;"></div>
+
+      <!-- agent-mesh decoration (top right) -->
+      <svg class="pointer-events-none absolute right-0 top-0 hidden h-[600px] w-[600px] opacity-30 md:block" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <g stroke="#00adef" stroke-width="0.5" opacity="0.4">
+          <line x1="80" y1="80" x2="200" y2="120"/>
+          <line x1="200" y1="120" x2="320" y2="80"/>
+          <line x1="80" y1="80" x2="160" y2="240"/>
+          <line x1="200" y1="120" x2="160" y2="240"/>
+          <line x1="200" y1="120" x2="280" y2="220"/>
+          <line x1="320" y1="80" x2="280" y2="220"/>
+          <line x1="160" y1="240" x2="280" y2="220"/>
+          <line x1="160" y1="240" x2="120" y2="340"/>
+          <line x1="280" y1="220" x2="320" y2="340"/>
+          <line x1="120" y1="340" x2="320" y2="340"/>
+        </g>
+        <g fill="#00adef">
+          <circle cx="80"  cy="80"  r="3" class="mesh-node"/>
+          <circle cx="200" cy="120" r="4" class="mesh-node" style="animation-delay:0.4s"/>
+          <circle cx="320" cy="80"  r="3" class="mesh-node" style="animation-delay:0.8s"/>
+          <circle cx="160" cy="240" r="4" class="mesh-node" style="animation-delay:1.2s"/>
+          <circle cx="280" cy="220" r="3" class="mesh-node" style="animation-delay:1.6s"/>
+          <circle cx="120" cy="340" r="2.5" class="mesh-node" style="animation-delay:2.0s"/>
+          <circle cx="320" cy="340" r="2.5" class="mesh-node" style="animation-delay:0.2s"/>
+        </g>
+      </svg>
+
+      <div class="relative mx-auto w-full max-w-7xl">
+        <p class="eyebrow-dim" data-reveal>Dayel Ostraco · CISSP · AWS Solutions Architect · DoD Secret</p>
+
+        <h1 class="mt-8 text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl lg:text-[5.5rem]" data-reveal data-reveal-delay="100">
+          Full Stack <span class="text-accent">AI</span> Engineer<br>
+          <span class="text-text-dim">&amp;</span> Secure Systems Architect
+        </h1>
+
+        <p class="mt-10 max-w-3xl text-xl text-text-dim md:text-2xl" data-reveal data-reveal-delay="250">
+          <span id="subhead">LLMs in classified enclaves</span>
+        </p>
+
+        <div class="mt-12 flex flex-wrap gap-4" data-reveal data-reveal-delay="400">
+          <a href="#glyphon" class="btn-primary">View flagship</a>
+          <a href="#cv" class="btn-ghost">Resume</a>
+        </div>
+
+        <p class="mt-16 font-mono text-xs uppercase tracking-[0.28em] text-text/40" data-reveal data-reveal-delay="600">
+          <span class="text-accent">$</span> <span id="caption"></span><span id="cursor">▍</span>
         </p>
       </div>
     </section>
 
-    <!-- Introductions -->
-    <section id="introductions" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/dayel-bg-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <h1 class="text-4xl font-semibold md:text-5xl" data-reveal="from-top">Nice to meet you!</h1>
-        <p class="mt-4 max-w-3xl text-lg md:text-xl" data-reveal="from-top" data-reveal-delay="150">
-          I am a hyperactive code monkey, insomniac, stats geek, history buff, amateur pilot, and textbook ENTP personality who started his first software company at the age of 17.
+    <!-- ABOUT -->
+    <section id="about" class="relative px-6 py-24 lg:px-8 lg:py-32">
+      <div class="mx-auto max-w-4xl">
+        <p class="eyebrow" data-reveal>About</p>
+        <p class="mt-6 text-2xl leading-relaxed md:text-3xl" data-reveal data-reveal-delay="100">
+          Seventeen years engineering secure, full-stack platforms for federal, defense, and public sector missions.
+          I integrate generative AI, LLMs, and data pipelines into systems operating under
+          <span class="text-accent">Zero Trust</span> postures,
+          <span class="text-accent">RMF controls</span>, and
+          <span class="text-accent">FedRAMP / HIPAA</span> compliance — without trading delivery speed for paperwork.
         </p>
-        <div class="mt-12 grid gap-6 md:grid-cols-2">
-          <div class="bg-black/90 p-8 text-xl md:text-2xl" data-reveal="from-center" data-reveal-delay="200">
-            I've provided technical and sales leadership within companies in a variety of sectors such as the DoD, Starwood Hotels, Swisscom, Novartis, Thomson Reuters, and Lord Abbot.
-          </div>
-          <div class="bg-brand-rose/90 p-8 text-right text-xl md:text-2xl" data-reveal="from-center" data-reveal-delay="350">
-            My sales and development approach is to combine <strong>artful engineering</strong> with <strong>fearlessness</strong> and <strong>unabashed quixotism</strong>.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Areas of Expertise -->
-    <section id="expertise" class="relative px-4 py-24 text-neutral-900 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/expertise-bg.jpg')"></div>
-      <div class="absolute inset-0 -z-10 bg-white/85"></div>
-      <div class="mx-auto max-w-6xl text-center">
-        <h1 class="text-4xl font-semibold md:text-5xl" data-reveal>Areas of Expertise</h1>
-        <p class="mt-4 text-lg" data-reveal data-reveal-delay="100">
-          The things that I <i class="material-icons align-middle text-base">favorite</i> to work on.
+        <p class="mt-8 text-lg leading-relaxed text-text-dim md:text-xl" data-reveal data-reveal-delay="250">
+          I lead Agile teams, ship code daily, and prefer playbooks over PowerPoints. Trusted by the DoD, DHA, SSA, CMS, and global financial institutions to design platforms that move billions in transactions, scale to millions of daily users, and survive the audit afterward.
         </p>
-        <ul class="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-          <li data-reveal data-reveal-delay="200">
-            <i class="material-icons text-5xl text-brand-cyan">link</i>
-            <h3 class="mt-3 text-xl">Blockchain</h3>
-            <p class="mt-2 text-sm">Leveraging Distributed Ledgers and Smart Contracts to create trust (or reduce distrust).</p>
-          </li>
-          <li data-reveal data-reveal-delay="300">
-            <i class="material-icons text-5xl text-brand-cyan">device_hub</i>
-            <h3 class="mt-3 text-xl">API Development</h3>
-            <p class="mt-2 text-sm">APIs drive the world and everything we do.</p>
-          </li>
-          <li data-reveal data-reveal-delay="400">
-            <i class="material-icons text-5xl text-brand-cyan">devices_other</i>
-            <h3 class="mt-3 text-xl">Platform Development</h3>
-            <p class="mt-2 text-sm">Developing a Product from beginning to end is a magical, magical thing.</p>
-          </li>
-          <li data-reveal data-reveal-delay="500">
-            <i class="material-icons text-5xl text-brand-red">settings_remote</i>
-            <h3 class="mt-3 text-xl">Internet of Things</h3>
-            <p class="mt-2 text-sm">Leveraging small smart devices and simple tags to solve <strong>BIG</strong> and <strong>COMPLEX</strong> problems.</p>
-          </li>
-          <li data-reveal data-reveal-delay="600">
-            <i class="material-icons text-5xl text-brand-red">storage</i>
-            <h3 class="mt-3 text-xl">Data Analytics</h3>
-            <p class="mt-2 text-sm">Integrating large data sets to separate the Signal from the Noise.</p>
-          </li>
-          <li data-reveal data-reveal-delay="700">
-            <i class="material-icons text-5xl text-brand-red">cloud_queue</i>
-            <h3 class="mt-3 text-xl">DevOps</h3>
-            <p class="mt-2 text-sm">Building for global scale requires a global operations approach on Day One.</p>
-          </li>
-        </ul>
       </div>
     </section>
 
-    <!-- dLoc with Linxens and Factom -->
-    <section id="dloc" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/shipyard-bg.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-12">
-        <div class="md:col-span-7">
-          <h1 class="text-3xl font-semibold leading-tight md:text-5xl" data-reveal="from-left">
-            <a href="https://www.linxens.com" target="_blank" rel="noopener" class="hover:text-brand-pink"><strong>Linxens</strong></a>
-            dLoc secured with
-            <a href="https://www.factom.com" target="_blank" rel="noopener" class="hover:text-brand-pink"><strong>Factom</strong></a>
-            Blockchain
-          </h1>
-          <p class="mt-6 text-xl" data-reveal="from-left" data-reveal-delay="150">
-            Combining the power of IoT with the immutability and security of Blockchain to maintain Supply Chain integrity around the world.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a class="btn-blue" data-reveal="from-center" data-reveal-delay="300" href="https://www.linxens.com/dloc-system" target="_blank" rel="noopener">Learn more</a>
-            <a class="btn-white" data-reveal="from-center" data-reveal-delay="450" href="https://www.trademarkers.com/EUIPO/017089012/trademark-dLoc-granted-to-linxens-holding" target="_blank" rel="noopener">EU Patent</a>
+    <!-- WHAT I DO -->
+    <section id="services" class="relative px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      <div class="mx-auto max-w-7xl">
+        <p class="eyebrow" data-reveal>What I do</p>
+        <h2 class="mt-6 text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
+          Three disciplines, one delivery model.
+        </h2>
+
+        <div class="mt-16 grid gap-6 md:grid-cols-3">
+          <div class="glass glass-hover p-8" data-reveal data-reveal-delay="150">
+            <p class="eyebrow-dim">01 · Tier I</p>
+            <h3 class="mt-4 text-2xl font-semibold text-accent">AI Integration</h3>
+            <ul class="mt-6 space-y-2 text-text-dim">
+              <li>Multi-provider LLM orchestration (OpenAI · Claude · Gemini · LLaMA · Mistral · Bedrock)</li>
+              <li>Deterministic agent pipelines with byte-identical artifacts</li>
+              <li>Grounded retrieval, prompt engineering, model lifecycle management</li>
+              <li>CUI-aware logging and audit trails</li>
+            </ul>
+          </div>
+
+          <div class="glass glass-hover p-8" data-reveal data-reveal-delay="250">
+            <p class="eyebrow-dim">02 · Tier II</p>
+            <h3 class="mt-4 text-2xl font-semibold text-accent">Secure Architecture</h3>
+            <ul class="mt-6 space-y-2 text-text-dim">
+              <li>Cloud-native systems on AWS GovCloud, Azure, GCP</li>
+              <li>Microservices behind Zero Trust gateways and federated identity (iAS, DS Logon, OAuth)</li>
+              <li>Container hardening — FIPS 140-3 distroless, Iron Bank, Chainguard</li>
+              <li>Hybrid + multi-region cross-cloud designs</li>
+            </ul>
+          </div>
+
+          <div class="glass glass-hover p-8" data-reveal data-reveal-delay="350">
+            <p class="eyebrow-dim">03 · Tier III</p>
+            <h3 class="mt-4 text-2xl font-semibold text-accent">Federal Delivery</h3>
+            <ul class="mt-6 space-y-2 text-text-dim">
+              <li>Authority to Operate (ATO), RMF, FedRAMP High, HIPAA, MEDCOI</li>
+              <li>STIG-compliant deployments and eMASS submissions</li>
+              <li>End-to-end DevSecOps from GitLab pipelines to production cutover</li>
+              <li>Agile leadership across cross-functional teams</li>
+            </ul>
           </div>
         </div>
-        <div class="md:col-span-5" data-reveal="from-right" data-reveal-delay="200">
-          <img src="/assets/img/dloc-ios.png" alt="dLoc on iPhone" width="404" class="w-full max-w-sm">
-        </div>
       </div>
     </section>
 
-    <!-- mSTAX -->
-    <section id="mstax" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/datacenter-bg.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-12">
-        <div class="md:col-span-5" data-reveal="from-left">
-          <img src="/assets/img/mstax-ios.png" alt="mSTAX on iPhone" class="w-full max-w-sm">
-        </div>
-        <div class="md:col-span-7">
-          <h1 class="text-3xl font-semibold md:text-5xl" data-reveal="from-right"><strong>mSTAX</strong> Secured Development Platform</h1>
-          <p class="mt-6 text-lg" data-reveal="from-right" data-reveal-delay="150">
-            A Military Grade Mobile, IoT and API Cloud Development Platform for the United States Defense Health Agency and U.S. Department of Defense.
-          </p>
-          <ul class="mt-8 grid gap-6 sm:grid-cols-2">
-            <li data-reveal data-reveal-delay="200">
-              <i class="material-icons text-3xl">cloud</i>
-              <h3 class="mt-2 text-lg font-semibold">Cloud</h3>
-              <p class="text-sm">Secure Hybrid Cloud Deployments in AWS, GovCloud and private Data Centers</p>
-            </li>
-            <li data-reveal data-reveal-delay="300">
-              <i class="material-icons text-3xl">phone_iphone</i>
-              <h3 class="mt-2 text-lg font-semibold">Mobile</h3>
-              <p class="text-sm">Healthcare and Mission Critical data at your fingertips</p>
-            </li>
-            <li data-reveal data-reveal-delay="400">
-              <i class="material-icons text-3xl">settings_input_hdmi</i>
-              <h3 class="mt-2 text-lg font-semibold">Integration</h3>
-              <p class="text-sm">Leverage existing infrastructure to create new service offerings</p>
-            </li>
-            <li data-reveal data-reveal-delay="500">
-              <i class="material-icons text-3xl">fingerprint</i>
-              <h3 class="mt-2 text-lg font-semibold">Security</h3>
-              <p class="text-sm">NSA Hardware and Software Authentication for all devices... made simple</p>
-            </li>
-            <li data-reveal data-reveal-delay="600">
-              <i class="material-icons text-3xl">developer_board</i>
-              <h3 class="mt-2 text-lg font-semibold">SDKs</h3>
-              <p class="text-sm">Toolboxes that allow for rapid development while meeting NSA guidelines</p>
-            </li>
-            <li data-reveal data-reveal-delay="700">
-              <i class="material-icons text-3xl">device_hub</i>
-              <h3 class="mt-2 text-lg font-semibold">API</h3>
-              <p class="text-sm">Simple API Management and Data Service Orchestration</p>
-            </li>
-            <li data-reveal data-reveal-delay="800">
-              <i class="material-icons text-3xl">storage</i>
-              <h3 class="mt-2 text-lg font-semibold">Big Data</h3>
-              <p class="text-sm">Hadoop Data Ingestion for Medical Research and Military Readiness</p>
-            </li>
-            <li data-reveal data-reveal-delay="900">
-              <i class="material-icons text-3xl">link</i>
-              <h3 class="mt-2 text-lg font-semibold">Blockchain</h3>
-              <p class="text-sm">Secure Health Registry data sharing without data centralization</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- GLYPHON FLAGSHIP -->
+    <section id="glyphon" class="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 dot-grid-accent opacity-40"></div>
+      <div class="glow-blob glow-drift" style="width:500px;height:500px;top:-10%;right:-10%;"></div>
 
-    <!-- Starwood Preferred Guest -->
-    <section id="spg" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/featured-spg-bg-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-12">
-        <div class="md:col-span-7">
-          <h1 class="text-3xl font-semibold md:text-5xl" data-reveal="from-left">SPG for iOS, Android &amp; Glass</h1>
-          <p class="mt-6 text-xl" data-reveal="from-left" data-reveal-delay="150">
-            Mobile In-Room Dining, Keyless Entry, iBeacon Location services, and SPG for Google Glass.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a class="btn-pink" data-reveal="from-center" data-reveal-delay="300" href="https://itunes.apple.com/us/app/spg-starwood-hotels-resorts/id312306003?mt=8" target="_blank" rel="noopener">SPG for iOS</a>
-            <a class="btn-white" data-reveal="from-center" data-reveal-delay="450" href="https://play.google.com/store/apps/details?id=com.starwood.spg&amp;hl=en" target="_blank" rel="noopener">SPG for Android</a>
+      <div class="mx-auto max-w-7xl">
+        <p class="eyebrow" data-reveal>Flagship product</p>
+
+        <div class="mt-12 grid items-start gap-12 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-5" data-reveal data-reveal-delay="100">
+              <img src="/assets/brands/glyphon-mark.svg" alt="" class="h-16 w-16 shrink-0" aria-hidden="true">
+              <span class="font-semibold text-4xl tracking-tight md:text-5xl" style="color:#c1a066;">Glyphon<sup class="ml-1 align-top text-sm">™</sup></span>
+            </div>
+
+            <h2 class="mt-8 text-3xl font-semibold leading-tight md:text-5xl" data-reveal data-reveal-delay="200">
+              Multi-provider AI agent orchestration with <span class="text-accent">deterministic</span> compliance output.
+            </h2>
+
+            <p class="mt-6 text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="300">
+              Run the same playbooks across OpenAI, Claude, Gemini, and AWS Bedrock — and get byte-identical compliance artifacts every time. Validated at IL5 on AWS GovCloud (LLaMA 4 Maverick, April 2026, 9/9 green AMI hardening end-to-end).
+            </p>
+
+            <ul class="mt-10 grid gap-4 sm:grid-cols-2" data-reveal data-reveal-delay="400">
+              <li class="glass p-4">
+                <p class="font-mono text-3xl font-semibold text-accent">75.9%</p>
+                <p class="mt-1 text-sm text-text-dim">CVE auto-resolution rate across 7 ecosystems</p>
+              </li>
+              <li class="glass p-4">
+                <p class="font-mono text-3xl font-semibold text-accent">99.5%</p>
+                <p class="mt-1 text-sm text-text-dim">Windows STIG compliance via AMI hardening playbook</p>
+              </li>
+              <li class="glass p-4">
+                <p class="font-mono text-3xl font-semibold text-accent">35+</p>
+                <p class="mt-1 text-sm text-text-dim">Production agents across 7 playbooks</p>
+              </li>
+              <li class="glass p-4">
+                <p class="font-mono text-3xl font-semibold text-accent">IL5</p>
+                <p class="mt-1 text-sm text-text-dim">GovCloud-validated · FedRAMP High ready</p>
+              </li>
+            </ul>
+
+            <div class="mt-10 flex flex-wrap gap-4" data-reveal data-reveal-delay="500">
+              <a href="https://glyphon.ai" target="_blank" rel="noopener" class="btn-primary">glyphon.ai</a>
+              <a href="https://glyphon.ai/government" target="_blank" rel="noopener" class="btn-ghost">Government</a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5" data-reveal="from-right" data-reveal-delay="200">
+            <div class="glass glow-accent p-10">
+              <p class="eyebrow-dim">Production playbooks</p>
+              <ul class="mt-6 space-y-4 text-text-dim">
+                <li class="flex items-baseline gap-3">
+                  <span class="font-mono text-xs text-accent">▸</span>
+                  <span>CVE Resolution &mdash; 10 agents, 7 ecosystems</span>
+                </li>
+                <li class="flex items-baseline gap-3">
+                  <span class="font-mono text-xs text-accent">▸</span>
+                  <span>AMI Hardening &mdash; 9 agents, 7 platforms</span>
+                </li>
+                <li class="flex items-baseline gap-3">
+                  <span class="font-mono text-xs text-accent">▸</span>
+                  <span>Container Hardening &mdash; 7 agents, 4 registries</span>
+                </li>
+                <li class="flex items-baseline gap-3">
+                  <span class="font-mono text-xs text-accent">▸</span>
+                  <span>Semgrep SAST Triage &mdash; 8 agents</span>
+                </li>
+                <li class="flex items-baseline gap-3">
+                  <span class="font-mono text-xs text-accent">▸</span>
+                  <span>Security Posture Assessment &mdash; 7 agents, 14 tools</span>
+                </li>
+                <li class="flex items-baseline gap-3">
+                  <span class="font-mono text-xs text-accent">▸</span>
+                  <span>eMASS POAM Submission &mdash; 4 agents</span>
+                </li>
+                <li class="flex items-baseline gap-3">
+                  <span class="font-mono text-xs text-accent">▸</span>
+                  <span>FedRAMP SSP Generation &mdash; 5 agents <span class="text-text/40">(beta)</span></span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="md:col-span-5" data-reveal="from-right" data-reveal-delay="200">
-          <img src="/assets/img/featured-spg.png" alt="SPG on iPhone" width="404" class="w-full max-w-sm">
+      </div>
+    </section>
+
+    <!-- PRODUCT FAMILY -->
+    <section id="products" class="relative px-6 py-24 lg:px-8 lg:py-32">
+      <div class="mx-auto max-w-7xl">
+        <p class="eyebrow" data-reveal>The product family</p>
+        <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
+          Four products, one thesis: <span class="text-accent">humans stay in charge.</span>
+        </h2>
+
+        <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+          <a href="https://colophon.build" target="_blank" rel="noopener" class="glass glass-hover group relative flex flex-col p-8" data-reveal data-reveal-delay="100">
+            <img src="/assets/brands/colophon-head.svg" alt="" class="h-14 w-auto" aria-hidden="true">
+            <h3 class="mt-6 text-2xl font-semibold">Colophon</h3>
+            <p class="mt-3 flex-1 text-sm text-text-dim">Specialist agent bench for secure federal delivery. Bounded peer collaboration with chain-of-custody escalation. Sister to Glyphon.</p>
+            <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">colophon.build →</p>
+          </a>
+
+          <a href="https://vallark.build" target="_blank" rel="noopener" class="glass glass-hover group relative flex flex-col p-8" data-reveal data-reveal-delay="200">
+            <img src="/assets/brands/vallark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
+            <h3 class="mt-6 text-2xl font-semibold">Vallark</h3>
+            <p class="mt-3 flex-1 text-sm text-text-dim">Mobile security contract for DoD apps. OpenAPI 3.1 + four language-native starters. Attestation and CUI handling baked into the API design.</p>
+            <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">vallark.build →</p>
+          </a>
+
+          <a href="https://affirmark.build" target="_blank" rel="noopener" class="glass glass-hover group relative flex flex-col p-8" data-reveal data-reveal-delay="300">
+            <img src="/assets/brands/affirmark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
+            <h3 class="mt-6 text-2xl font-semibold">Affirmark</h3>
+            <p class="mt-3 flex-1 text-sm text-text-dim">CMMC Level 1 self-attestation for SMB DoD subcontractors. Hash-chained audit log, email-ingest evidence, grounded compliance chatbot.</p>
+            <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">affirmark.build →</p>
+          </a>
+
+          <a href="https://sigilark.com" target="_blank" rel="noopener" class="glass glass-hover group relative flex flex-col p-8" data-reveal data-reveal-delay="400">
+            <img src="/assets/brands/sigilark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
+            <h3 class="mt-6 text-2xl font-semibold">SigilArk</h3>
+            <p class="mt-3 flex-1 text-sm text-text-dim">Parent brand. WOSB. AI-enabled technical delivery and program operations across classified and regulated federal environments.</p>
+            <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">sigilark.com →</p>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <!-- Crowdflik -->
-    <section id="crowdflik" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/featured-crowdflik-bg-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <div class="grid items-center gap-12 md:grid-cols-2">
-          <div>
-            <h1 class="text-3xl font-semibold md:text-5xl" data-reveal>CrowdFlik for iOS</h1>
-            <p class="mt-6" data-reveal data-reveal-delay="150">Capture the world in video from everyone's perspective and piece it together seamlessly.</p>
-            <p class="mt-3" data-reveal data-reveal-delay="200">Share your events, creations and life's greatest moments from every angle, every time.</p>
-            <a class="btn-red mt-8" data-reveal="from-center" data-reveal-delay="450" href="https://itunes.apple.com/us/app/crowdflik-crowd-powered-video/id659091959?mt=8" target="_blank" rel="noopener">CrowdFlik for iOS</a>
+    <!-- RECENT MISSIONS -->
+    <section id="missions" class="relative px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 scanlines opacity-50"></div>
+      <div class="mx-auto max-w-7xl">
+        <p class="eyebrow" data-reveal>Recent missions</p>
+        <h2 class="mt-6 text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
+          Selected production work.
+        </h2>
+
+        <ol class="mt-16 space-y-10">
+          <li class="grid gap-8 border-t border-white/10 pt-10 md:grid-cols-12" data-reveal>
+            <div class="md:col-span-3">
+              <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">2019 — 2025</p>
+              <p class="mt-3 text-2xl font-semibold">Equifax Government Services</p>
+              <p class="text-sm text-text-dim">Director of Government Product Development</p>
+            </div>
+            <div class="md:col-span-9">
+              <p class="text-lg text-text-dim">
+                Directed development of a secure income and identity verification platform serving CMS, SSA, and state agencies. Architected GenAI-powered eligibility decisioning with Ollama, Gemini, and Vertex AI integrated into agency policy logic and real-time data pipelines (Apache NiFi, Kafka, MLflow).
+              </p>
+              <ul class="mt-6 grid gap-3 text-sm text-text-dim sm:grid-cols-2">
+                <li class="flex items-baseline gap-2"><span class="text-accent">▸</span> 10M+ daily transactions</li>
+                <li class="flex items-baseline gap-2"><span class="text-accent">▸</span> $1.7B+ cumulative program revenue</li>
+                <li class="flex items-baseline gap-2"><span class="text-accent">▸</span> FedRAMP, HIPAA, FISMA/NIST compliance</li>
+                <li class="flex items-baseline gap-2"><span class="text-accent">▸</span> Hurricane Ian DSNAP rapid deployment with FL</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="grid gap-8 border-t border-white/10 pt-10 md:grid-cols-12" data-reveal>
+            <div class="md:col-span-3">
+              <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">2017 — 2019</p>
+              <p class="mt-3 text-2xl font-semibold">Catapult Blockchain</p>
+              <p class="text-sm text-text-dim">Founder · Sold to Linxens</p>
+            </div>
+            <div class="md:col-span-9">
+              <p class="text-lg text-text-dim">
+                Founded a secure identity engineering firm delivering cloud-native, API-driven solutions for high-security banking and federal mission environments. Led design and implementation of <strong class="text-text">mSTAX</strong> — a modular full-stack platform for the Department of the Navy and DHA evaluating AI/ML and LLM inference workloads in mission-critical environments. Built <strong class="text-text">Linxens dLoc</strong>, combining blockchain and NFC-linked physical documents to create tamper-resistant digital twins.
+              </p>
+              <ul class="mt-6 grid gap-3 text-sm text-text-dim sm:grid-cols-2">
+                <li class="flex items-baseline gap-2"><span class="text-accent">▸</span> mSTAX showcased at 2018 DHA Open House</li>
+                <li class="flex items-baseline gap-2"><span class="text-accent">▸</span> ATO under HIPAA + MEDCOI</li>
+                <li class="flex items-baseline gap-2"><span class="text-accent">▸</span> Multi-region AWS + Azure cross-cloud</li>
+                <li class="flex items-baseline gap-2"><span class="text-accent">▸</span> Acquired by Linxens, June 2019</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="grid gap-8 border-t border-white/10 pt-10 md:grid-cols-12" data-reveal>
+            <div class="md:col-span-3">
+              <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">2011 — 2017</p>
+              <p class="mt-3 text-2xl font-semibold">Earlier work</p>
+              <p class="text-sm text-text-dim">Federal · enterprise · platform</p>
+            </div>
+            <div class="md:col-span-9">
+              <ul class="space-y-4 text-text-dim">
+                <li>
+                  <span class="text-text">CACI International</span> · Chief Engineer, MHS GENESIS backend (DHA · VA · all five service branches). 50+ secure ingestion pipelines for HL7/FHIR, AWS GovCloud + .mil. <span class="font-mono text-xs">'16–'17</span>
+                </li>
+                <li>
+                  <span class="text-text">Qonceptual</span> · Founder & CTO. Scaled from 1 to 15 engineers, $6.5M/year revenue, sold December 2016. <span class="font-mono text-xs">'14–'16</span>
+                </li>
+                <li>
+                  <span class="text-text">Starwood Hotels &amp; Resorts</span> · Director of Mobile Development. SPG iOS/Android/Apple Watch — featured in Apple's 2014 keynote. First mobile check-in / keyless room system. <span class="font-mono text-xs">'13–'14</span>
+                </li>
+                <li>
+                  <span class="text-text">Booz Allen Hamilton</span> · Director of Software Engineering. Delivered VBMS (VA modernization, 12 cross-functional teams). Mobile evangelist across 3 business lines, 75+ engineers. <span class="font-mono text-xs">'11–'13</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section id="stack" class="relative px-6 py-24 lg:px-8 lg:py-32">
+      <div class="mx-auto max-w-7xl">
+        <p class="eyebrow" data-reveal>Capabilities</p>
+        <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
+          The stack I build with daily.
+        </h2>
+
+        <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+          <div class="glass p-8" data-reveal data-reveal-delay="100">
+            <p class="eyebrow-dim">Languages &amp; Frameworks</p>
+            <ul class="mt-6 space-y-2 font-mono text-sm text-text">
+              <li>Python</li><li>Java</li><li>TypeScript</li><li>JavaScript</li>
+              <li>React</li><li>Node.js · NestJS</li><li>Spring Boot</li>
+              <li>SQL · YAML · JSON</li>
+            </ul>
           </div>
-          <div data-reveal="from-right" data-reveal-delay="200">
-            <img src="/assets/img/featured-crowdflik.png" alt="CrowdFlik iPhone screens" class="w-full">
+
+          <div class="glass p-8" data-reveal data-reveal-delay="200">
+            <p class="eyebrow-dim">Cloud &amp; Infrastructure</p>
+            <ul class="mt-6 space-y-2 font-mono text-sm text-text">
+              <li>AWS GovCloud</li><li>Azure · GCP</li>
+              <li>Docker · Kubernetes</li><li>GitLab</li>
+              <li>PostgreSQL · MongoDB · CosmosDB</li>
+              <li>Iron Bank · Chainguard</li>
+            </ul>
+          </div>
+
+          <div class="glass p-8" data-reveal data-reveal-delay="300">
+            <p class="eyebrow-dim">AI/ML &amp; Data</p>
+            <ul class="mt-6 space-y-2 font-mono text-sm text-text">
+              <li>LLaMA · Gemini · OpenAI · Mistral</li>
+              <li>Ollama · OpenWebUI</li>
+              <li>TensorFlow</li><li>Apache NiFi · Kafka</li>
+              <li>MLflow · Model Lifecycle</li>
+              <li>Prompt Engineering</li>
+            </ul>
+          </div>
+
+          <div class="glass p-8" data-reveal data-reveal-delay="400">
+            <p class="eyebrow-dim">Security &amp; Compliance</p>
+            <ul class="mt-6 space-y-2 font-mono text-sm text-text">
+              <li>Zero Trust</li><li>RMF · ATO</li>
+              <li>FedRAMP High</li><li>HIPAA · MEDCOI</li>
+              <li>FIPS 140-3 · STIG</li>
+              <li>NIST 800-53</li><li>eMASS</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs" class="relative px-6 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <p class="eyebrow" data-reveal>Certifications &amp; clearance</p>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <div class="glass p-8" data-reveal data-reveal-delay="100">
+            <p class="font-mono text-3xl font-semibold tracking-tight">CISSP</p>
+            <p class="mt-3 text-sm text-text-dim">Certified Information Systems Security Professional · (ISC)²</p>
+          </div>
+          <div class="glass p-8" data-reveal data-reveal-delay="200">
+            <p class="font-mono text-3xl font-semibold tracking-tight">AWS SAA</p>
+            <p class="mt-3 text-sm text-text-dim">AWS Certified Solutions Architect &mdash; Associate</p>
+          </div>
+          <div class="glass glow-accent p-8" data-reveal data-reveal-delay="300">
+            <p class="font-mono text-3xl font-semibold tracking-tight text-accent">DoD Secret</p>
+            <p class="mt-3 text-sm text-text-dim">Active U.S. Department of Defense security clearance</p>
           </div>
         </div>
-        <ul class="mt-16 grid gap-6 text-center sm:grid-cols-3">
-          <li data-reveal data-reveal-delay="200">
-            <i class="material-icons text-5xl">videocam</i>
-            <h3 class="mt-3 text-lg font-semibold">Capture Moments</h3>
-            <p class="text-xs">Record moments with others.</p>
-          </li>
-          <li data-reveal data-reveal-delay="300">
-            <i class="material-icons text-5xl">movie</i>
-            <h3 class="mt-3 text-lg font-semibold">Edit From Every Angle</h3>
-            <p class="text-xs">Recreate it from any angle.</p>
-          </li>
-          <li data-reveal data-reveal-delay="400">
-            <i class="material-icons text-5xl">share</i>
-            <h3 class="mt-3 text-lg font-semibold">Shared Editing</h3>
-            <p class="text-xs">Share and enlist others to edit.</p>
-          </li>
-        </ul>
       </div>
     </section>
 
-    <!-- Companies -->
-    <section id="companies" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/img-58.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <h1 class="text-center text-4xl font-semibold md:text-5xl" data-reveal>Some of my Clients &amp; Partners</h1>
-        <ul class="mt-16 grid grid-cols-2 items-center gap-10 sm:grid-cols-3 md:grid-cols-4">
-          <li class="flex justify-center" data-reveal="from-left" data-reveal-delay="200"><img src="/assets/img/swisscom.png" alt="Swisscom" width="124" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-top" data-reveal-delay="250"><img src="/assets/img/novartis.png" alt="Novartis" width="124" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-top" data-reveal-delay="300"><img src="/assets/img/warner-bros.png" alt="Warner Bros." width="55" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-right" data-reveal-delay="350"><img src="/assets/img/linxens.png" alt="Linxens" width="124" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-left" data-reveal-delay="400"><img src="/assets/img/essdocs.png" alt="essDOCS" width="124" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-top" data-reveal-delay="450"><img src="/assets/img/factom.png" alt="Factom" width="124" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-top" data-reveal-delay="500"><img src="/assets/img/levelwing.png" alt="Levelwing" width="136" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-right" data-reveal-delay="550"><img src="/assets/img/csa.png" alt="CSA Engineering" width="94" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-left" data-reveal-delay="600"><img src="/assets/img/va.png" alt="US Department of Veterans Affairs" width="124" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-top" data-reveal-delay="650"><img src="/assets/img/dha.png" alt="US Defense Health Agency" width="114" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-top" data-reveal-delay="700"><img src="/assets/img/spawar.gif" alt="Space and Naval Warfare Systems" width="124" class="opacity-80 transition-opacity hover:opacity-100"></li>
-          <li class="flex justify-center" data-reveal="from-right" data-reveal-delay="750"><img src="/assets/img/spinvi.png" alt="SpinVi" width="96" class="opacity-80 transition-opacity hover:opacity-100"></li>
-        </ul>
-      </div>
-    </section>
+    <!-- RESUME + PRESS -->
+    <section id="cv" class="relative px-6 py-24 lg:px-8 lg:py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-16 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <p class="eyebrow" data-reveal>Resume</p>
+            <h2 class="mt-6 text-3xl font-semibold md:text-4xl" data-reveal data-reveal-delay="100">
+              The unabbreviated version.
+            </h2>
+            <p class="mt-4 text-text-dim" data-reveal data-reveal-delay="200">
+              Full work history, every role and achievement.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4" data-reveal data-reveal-delay="300">
+              <a href="/assets/resume/Dayel_Ostraco_Resume_FullStackAI.pdf" class="btn-primary" download>Download PDF</a>
+              <a href="/assets/resume/Dayel_Ostraco_Resume_FullStackAI.docx" class="btn-ghost" download>Download Word</a>
+            </div>
+            <p class="mt-6 font-mono text-xs text-text/40" data-reveal data-reveal-delay="400">
+              Updated May 2026
+            </p>
+          </div>
 
-    <!-- Extended Portfolio -->
-    <section id="extendedportfolio" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/quixotism-bg.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <div class="text-center">
-          <h1 class="text-4xl font-semibold md:text-5xl" data-reveal>Some Other Apps I've Worked On</h1>
-          <p class="mt-4 mx-auto max-w-3xl" data-reveal data-reveal-delay="150">
-            I love building platforms that can combine hardware, software, data and a surrounding environment to curate an experience that seems deceptively simple despite underlying complexity.
-          </p>
+          <div class="lg:col-span-7">
+            <p class="eyebrow" data-reveal>Selected coverage</p>
+            <ul class="mt-6 space-y-4">
+              <li class="glass p-5" data-reveal data-reveal-delay="100">
+                <a href="https://www.wsj.com/news/articles/SB10001424052702304856504579339130820876304" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
+                  <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">The Wall Street Journal</p>
+                  <p class="mt-2 text-lg">Smartphones to Open Doors at Hotel</p>
+                </a>
+              </li>
+              <li class="glass p-5" data-reveal data-reveal-delay="200">
+                <a href="http://www.cnn.com/2014/01/28/tech/mobile/smartphone-hotel-keys/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
+                  <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">CNN</p>
+                  <p class="mt-2 text-lg">Your Smartphone Could Replace Hotel Keys</p>
+                </a>
+              </li>
+              <li class="glass p-5" data-reveal data-reveal-delay="300">
+                <a href="http://custom.forbes.com/2015/12/03/charleston-s-c/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
+                  <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">Forbes</p>
+                  <p class="mt-2 text-lg">Where Great Minds Are Moving to Live, Work and Play</p>
+                </a>
+              </li>
+              <li class="glass p-5" data-reveal data-reveal-delay="400">
+                <a href="https://venturebeat.com/2012/10/09/knappsack/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
+                  <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">VentureBeat</p>
+                  <p class="mt-2 text-lg">If You're a Mobile Developer, This is the One Post You Have to Read Today</p>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul class="mt-16 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-          <li data-reveal="from-center" data-reveal-delay="200">
-            <a href="http://zubie.com/" target="_blank" rel="noopener" class="block overflow-hidden ring-1 ring-white/20 transition-shadow hover:ring-white/60">
-              <img src="/assets/img/zubie.jpg" alt="Zubie" class="w-full">
-            </a>
-            <h3 class="mt-4 text-xl font-semibold">Zubie</h3>
-            <p class="mt-1 text-sm">iOS, Android &amp; API.</p>
-          </li>
-          <li data-reveal="from-center" data-reveal-delay="350">
-            <a href="https://www.smartvisionlabs.com/" target="_blank" rel="noopener" class="block overflow-hidden ring-1 ring-white/20 transition-shadow hover:ring-white/60">
-              <img src="/assets/img/svone.jpg" alt="Smart Vision Labs" class="w-full">
-            </a>
-            <h3 class="mt-4 text-xl font-semibold">SVOne</h3>
-            <p class="mt-1 text-sm">iOS, Android &amp; API.</p>
-          </li>
-          <li data-reveal="from-center" data-reveal-delay="500">
-            <a href="https://riskband.com/" target="_blank" rel="noopener" class="block overflow-hidden ring-1 ring-white/20 transition-shadow hover:ring-white/60">
-              <img src="/assets/img/riskband.jpg" alt="RiskBand" class="w-full">
-            </a>
-            <h3 class="mt-4 text-xl font-semibold">Riskband</h3>
-            <p class="mt-1 text-sm">iOS, Android, API &amp; Device Firmware.</p>
-          </li>
-        </ul>
       </div>
     </section>
 
-    <!-- Open Source -->
-    <section id="opensource" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/opensource-bg-3-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <div class="text-center">
-          <h1 class="text-4xl font-semibold md:text-5xl" data-reveal>My Open Source Projects</h1>
-          <p class="mt-4" data-reveal data-reveal-delay="150">Making development less of a royal PITA. <strong>#royalpita</strong></p>
+    <!-- CONNECT -->
+    <section id="connect" class="relative px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 dot-grid opacity-40"></div>
+      <div class="glow-blob glow-drift" style="width:400px;height:400px;bottom:0;left:30%;"></div>
+
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="eyebrow" data-reveal>Connect</p>
+        <h2 class="mt-6 text-4xl font-semibold md:text-6xl" data-reveal data-reveal-delay="100">
+          Building something <span class="text-accent">audit-grade?</span>
+        </h2>
+        <p class="mt-6 text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="200">
+          I take on a small number of advisory and architecture engagements per year. Federal, regulated industry, AI/ML platform work.
+        </p>
+
+        <div class="mt-12 flex flex-wrap justify-center gap-4" data-reveal data-reveal-delay="300">
+          <a href="mailto:dayel.ostraco@proton.me?Subject=Hi%20Dayel" class="btn-primary">
+            <svg class="h-5 w-5 fill-current"><use href="/assets/svg/icons.svg#mail"/></svg>
+            dayel.ostraco@proton.me
+          </a>
+          <a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener" class="btn-ghost">
+            <svg class="h-5 w-5 fill-current"><use href="/assets/svg/icons.svg#linkedin"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/dayelostraco" target="_blank" rel="noopener" class="btn-ghost">
+            <svg class="h-5 w-5 fill-current"><use href="/assets/svg/icons.svg#github"/></svg>
+            GitHub
+          </a>
         </div>
-        <ul class="mt-16 grid gap-6 md:grid-cols-3">
-          <li data-reveal="from-blur" data-reveal-delay="300">
-            <a href="https://github.com/dayelostraco/Notiflowcate" target="_blank" rel="noopener" class="block h-full bg-black/60 p-8 ring-1 ring-white/10 transition-shadow hover:ring-white/40">
-              <h2 class="flex items-center gap-2 text-2xl font-semibold text-brand-pink">Flow<i class="material-icons">near_me</i>cate</h2>
-              <p class="mt-3 text-sm">An API driven μicroservice to help you quickly build location based features through Geofences, Beacons and GPS for every mobile platform.</p>
-            </a>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="500">
-            <a href="https://github.com/dayelostraco/Play2.4-Java-Microservice-Seed" target="_blank" rel="noopener" class="block h-full bg-black/60 p-8 ring-1 ring-white/10 transition-shadow hover:ring-white/40">
-              <h2 class="flex items-center gap-2 text-2xl font-semibold text-brand-green">Seed.Play <i class="material-icons">spa</i></h2>
-              <p class="mt-3 text-sm">Immediately start building your Play 2.4.x μicroservice API with everything you need from Documentation to DevOps.</p>
-            </a>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="700">
-            <a href="https://github.com/dayelostraco/Terraformit" target="_blank" rel="noopener" class="block h-full bg-black/60 p-8 ring-1 ring-white/10 transition-shadow hover:ring-white/40">
-              <h2 class="flex items-center gap-2 text-2xl font-semibold text-brand-blue">Terraform <i class="material-icons">cloud</i> me</h2>
-              <p class="mt-3 text-sm">Learn to love your infrastructure with Terraform components to make your cloud simple, automated, scalable &amp; secure.</p>
-            </a>
-          </li>
-        </ul>
       </div>
     </section>
 
-    <!-- Languages -->
-    <section id="languages" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/img-101-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <div class="text-center">
-          <h1 class="text-4xl font-semibold md:text-5xl" data-reveal>Programming Language Experience</h1>
-          <p class="mt-4" data-reveal data-reveal-delay="150">Just some of the languages I like to develop with.</p>
-        </div>
-        <ul class="mt-16 grid gap-10 text-center sm:grid-cols-2 md:grid-cols-3">
-          <li data-reveal="from-blur" data-reveal-delay="200">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#java"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Java</h3>
-            <p class="text-sm">10+ years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="300">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#scala"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Scala</h3>
-            <p class="text-sm">3 years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="400">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#android"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Android</h3>
-            <p class="text-sm">7 years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="500">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#apple"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">iOS</h3>
-            <p class="text-sm">Swift &mdash; 3 years, Objective-C &mdash; 5 years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="600">
-            <svg class="mx-auto h-16 w-14 fill-white"><use href="/assets/svg/icons.svg#nodejs"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Node.js</h3>
-            <p class="text-sm">4 years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="700">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#html5"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">HTML+CSS+JS</h3>
-            <p class="text-sm">10+ years</p>
-          </li>
-        </ul>
+    <footer class="border-t border-white/10 px-6 py-10 lg:px-8">
+      <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 font-mono text-xs uppercase tracking-[0.22em] text-text/40 md:flex-row md:items-center">
+        <p>© 2026 Dayel Ostraco · WOSB founder partner · DoD-cleared</p>
+        <p><span class="text-accent">/</span> dayelostra.co</p>
       </div>
-    </section>
-
-    <!-- Frameworks -->
-    <section id="frameworks" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/springboot-bg-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <div class="text-center">
-          <h1 class="text-4xl font-semibold md:text-5xl" data-reveal>Framework Experience</h1>
-          <p class="mt-4" data-reveal data-reveal-delay="150">Just some of the frameworks I like to develop with.</p>
-        </div>
-        <ul class="mt-16 grid gap-10 text-center sm:grid-cols-2 md:grid-cols-3">
-          <li data-reveal="from-blur" data-reveal-delay="200">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#springboot"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Spring</h3>
-            <p class="text-sm">10+ years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="300">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#playframework"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Play Framework</h3>
-            <p class="text-sm">6 years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="400">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#aws"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">AWS</h3>
-            <p class="text-sm">8 years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="500">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#docker"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Docker</h3>
-            <p class="text-sm">4 years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="600">
-            <svg class="mx-auto h-16 w-20 fill-white"><use href="/assets/svg/icons.svg#hadoop"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Hadoop</h3>
-            <p class="text-sm">2 years</p>
-          </li>
-          <li data-reveal="from-blur" data-reveal-delay="700">
-            <svg class="mx-auto h-16 w-20"><use href="/assets/svg/icons.svg#angular"/></svg>
-            <h3 class="mt-4 text-xl font-semibold">Angular.js</h3>
-            <p class="text-sm">3 years</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Press -->
-    <section id="press" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/press-bg-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <div class="text-center">
-          <h1 class="text-4xl font-semibold md:text-5xl" data-reveal>In the Press</h1>
-          <p class="mt-4" data-reveal data-reveal-delay="150">A few of my clippings and interviews</p>
-        </div>
-        <ul class="mt-16 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-          <li data-reveal data-reveal-delay="200">
-            <a href="https://www.wsj.com/news/articles/SB10001424052702304856504579339130820876304" target="_blank" rel="noopener" class="block overflow-hidden ring-1 ring-white/20 transition-shadow hover:ring-white/60">
-              <img src="/assets/img/wsj.jpg" alt="The Wall Street Journal" class="w-full">
-            </a>
-            <h3 class="mt-4 text-lg font-semibold">The Wall Street Journal</h3>
-            <p class="mt-1 text-sm">Smartphones to Open Doors at Hotel</p>
-          </li>
-          <li data-reveal data-reveal-delay="300">
-            <a href="http://www.cnn.com/2014/01/28/tech/mobile/smartphone-hotel-keys/" target="_blank" rel="noopener" class="block overflow-hidden ring-1 ring-white/20 transition-shadow hover:ring-white/60">
-              <img src="/assets/img/cnn.jpg" alt="CNN" class="w-full">
-            </a>
-            <h3 class="mt-4 text-lg font-semibold">CNN</h3>
-            <p class="mt-1 text-sm">Your Smartphone Could Replace Hotel Keys.</p>
-          </li>
-          <li data-reveal data-reveal-delay="400">
-            <a href="http://custom.forbes.com/2015/12/03/charleston-s-c/" target="_blank" rel="noopener" class="block overflow-hidden ring-1 ring-white/20 transition-shadow hover:ring-white/60">
-              <img src="/assets/img/forbes.jpg" alt="Forbes" class="w-full">
-            </a>
-            <h3 class="mt-4 text-lg font-semibold">Forbes</h3>
-            <p class="mt-1 text-sm">Where Great Minds Are Moving to Live, Work and Play</p>
-          </li>
-          <li data-reveal data-reveal-delay="500">
-            <a href="https://venturebeat.com/2012/10/09/knappsack/" target="_blank" rel="noopener" class="block overflow-hidden ring-1 ring-white/20 transition-shadow hover:ring-white/60">
-              <img src="/assets/img/venturebeat.jpg" alt="Venture Beat" class="w-full">
-            </a>
-            <h3 class="mt-4 text-lg font-semibold">Venture Beat</h3>
-            <p class="mt-1 text-sm">If You're a Mobile Developer, This is the One Post you Have to Read Today</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CV -->
-    <section id="cv" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/img-86-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <h1 class="text-center text-4xl font-semibold md:text-5xl" data-reveal>For the unabbreviated Dayel, here's my CV</h1>
-        <ul class="mt-16 grid gap-8 sm:grid-cols-2">
-          <li class="bg-white/95 p-8 text-neutral-900 shadow-lg" data-reveal="from-left" data-reveal-delay="200">
-            <img src="/assets/img/word.png" alt="Microsoft Word" class="mb-4">
-            <h3 class="text-2xl font-semibold">Microsoft Word</h3>
-            <p class="mt-2 text-sm">My Curriculum Vitae in Word format.</p>
-            <a class="btn-blue mt-6 w-full text-center" href="/assets/resume/Dayel%20Ostraco's%20Resume.docx">Download in Word</a>
-          </li>
-          <li class="bg-white/95 p-8 text-neutral-900 shadow-lg" data-reveal="from-right" data-reveal-delay="350">
-            <img src="/assets/img/pdf.jpg" alt="PDF" class="mb-4">
-            <h3 class="text-2xl font-semibold">PDF</h3>
-            <p class="mt-2 text-sm">My Curriculum Vitae in PDF format.</p>
-            <a class="btn-red mt-6 w-full text-center" href="/assets/resume/Dayel%20Ostraco's%20Resume.pdf">Download in PDF</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Connect -->
-    <section id="connect" class="relative px-4 py-24 md:py-32">
-      <div class="section-bg" style="background-image:url('/assets/img/img-103-min.jpg')"></div>
-      <div class="section-overlay"></div>
-      <div class="mx-auto max-w-6xl">
-        <h1 class="text-4xl font-semibold md:text-5xl" data-reveal>Reach out. Connect.</h1>
-        <p class="mt-4" data-reveal data-reveal-delay="150">Let's get to know each other.</p>
-        <ul class="mt-12 flex flex-wrap items-center gap-8">
-          <li data-reveal="from-center" data-reveal-delay="300">
-            <a href="https://github.com/dayelostraco" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg class="h-12 w-16 fill-white transition-colors hover:fill-brand-pink"><use href="/assets/svg/icons.svg#github"/></svg>
-            </a>
-          </li>
-          <li data-reveal="from-center" data-reveal-delay="400">
-            <a href="https://stackoverflow.com/users/1978931/dayel-ostraco" target="_blank" rel="noopener" aria-label="Stack Overflow">
-              <svg class="h-12 w-16 fill-white transition-colors hover:fill-brand-pink"><use href="/assets/svg/icons.svg#stackoverflow"/></svg>
-            </a>
-          </li>
-          <li data-reveal="from-center" data-reveal-delay="500">
-            <a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg class="h-12 w-16 fill-white transition-colors hover:fill-brand-pink"><use href="/assets/svg/icons.svg#linkedin"/></svg>
-            </a>
-          </li>
-          <li data-reveal="from-center" data-reveal-delay="600">
-            <a href="mailto:iwantto@meetdayel.today?Subject=Hi%20Dayel!" aria-label="Email">
-              <svg class="h-12 w-16 fill-white transition-colors hover:fill-brand-pink"><use href="/assets/svg/icons.svg#mail"/></svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+    </footer>
 
   </main>
 

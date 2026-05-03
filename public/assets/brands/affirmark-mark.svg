@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Affirmark — Wax Seal Impression — Institutional Mark (S2c centered pen nib) -->
+<!-- Octagonal seal disc with a closed hexagon + A monogram pressed into the -->
+<!-- center as if struck with a signet. The hexagon carries the SigilArk family -->
+<!-- geometric thread; the A monogram delivers Affirmark identity. Both have -->
+<!-- painterly metal modeling — Gold Light highlight on upper-left edges, Gold -->
+<!-- Deep shadow on lower-right. Light source upper-left, matching the raven. -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Affirmark Wax Seal">
+
+  <!-- Wax drip on lower-left -->
+  <polygon points="60,150 52,180 60,210 70,200 70,170" fill="#861525"/>
+  <polygon points="56,178 60,200 66,196 64,180" fill="#C13B52" opacity="0.4"/>
+
+  <!-- ===== WAX BODY ===== -->
+  <polygon points="120,42 175,64 197,120 175,176 120,198 65,176 43,120 65,64" fill="#861525"/>
+
+  <!-- Upper-left highlight band (Crimson Bright, light from upper-left) -->
+  <polygon points="120,42 175,64 168,72 145,68 120,58 95,68 72,72 65,64" fill="#C13B52" opacity="0.35"/>
+
+  <!-- Subtle wax-dome curvature highlight (upper-left interior) -->
+  <polygon points="78,72 110,62 130,72 115,90 88,90" fill="#C13B52" opacity="0.18"/>
+
+  <!-- Lower-right shadow band -->
+  <polygon points="175,176 197,120 188,120 175,168 145,180 120,188 120,198" fill="#5A0E18" opacity="0.4"/>
+
+  <!-- ===== INDENTATION ===== -->
+  <polygon points="120,78 152,92 166,120 152,148 120,162 88,148 74,120 88,92" fill="#3A0810" opacity="0.85"/>
+  <polygon points="120,90 145,102 156,120 145,138 120,148 95,138 84,120 95,102" fill="#2A0608" opacity="0.5"/>
+
+  <!-- ===== HEXAGON + A MONOGRAM EMBLEM ===== -->
+  <!-- Closed hexagon stroke (Sigil Gold base) -->
+  <polygon points="120,98 140,109 140,131 120,142 100,131 100,109" fill="none" stroke="#C1A066" stroke-width="3" stroke-linejoin="miter"/>
+
+  <!-- Hexagon top-left edges highlight (Gold Light, light catching) -->
+  <polyline points="100,131 100,109 120,98" fill="none" stroke="#D4B882" stroke-width="2" stroke-linejoin="miter" opacity="0.75"/>
+
+  <!-- Hexagon bottom-right edges shadow (Gold Deep, in shadow) -->
+  <polyline points="140,109 140,131 120,142" fill="none" stroke="#AA8B4E" stroke-width="2" stroke-linejoin="miter" opacity="0.6"/>
+
+  <!-- Pen nib (resized + 25° CW — natural right-handed grip) -->
+  <g transform="rotate(25 120 120)">
+    <polygon points="114,105 126,105 129,115 126,124 120,135 114,124 111,115" fill="#C1A066"/>
+    <circle cx="120" cy="110" r="2.2" fill="#3A0810"/>
+    <line x1="120" y1="113" x2="120" y2="133" stroke="#3A0810" stroke-width="1.4" stroke-linecap="round"/>
+    <polygon points="114,105 120,105 117,111 111,115" fill="#D4B882" opacity="0.6"/>
+    <polygon points="126,105 129,115 126,124 123,118 121,111" fill="#AA8B4E" opacity="0.55"/>
+  </g>
+
+  <!-- ===== SURFACE TEXTURE ===== -->
+  <!-- One Gold Light fleck (upper-right wax surface sheen) -->
+  <polygon points="148,68 156,72 152,76" fill="#D4B882" opacity="0.45"/>
+
+  <!-- Two micro-specks (age/dust) -->
+  <polygon points="80,160 82,162 81,164 79,162" fill="#3A0810" opacity="0.5"/>
+  <polygon points="160,150 162,151 161,153" fill="#3A0810" opacity="0.45"/>
+
+</svg>

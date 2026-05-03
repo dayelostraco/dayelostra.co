@@ -1,91 +1,172 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Source Sans Pro", system-ui, -apple-system, sans-serif;
-  --font-mono: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-brand-pink: #e91e63;
-  --color-brand-blue: #2196f3;
-  --color-brand-cyan: #00bcd4;
-  --color-brand-green: #4caf50;
-  --color-brand-red: #f54f51;
-  --color-brand-rose: #d03d4d;
+  /* SigilArk family + Accelera Blue accent */
+  --color-bg: #0a0e2a;
+  --color-surface: #0f1f3a;
+  --color-surface-2: #1a2d4f;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-accent: #00adef;
+  --color-accent-deep: #004069;
+  --color-accent-soft: rgba(0, 173, 239, 0.18);
+  --color-text: #ebe5d5;
+  --color-text-dim: #939598;
+  --color-gold: #c1a066;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem;
+    scroll-padding-top: 5rem;
   }
 
   body {
     font-family: var(--font-sans);
-    font-weight: 300;
+    font-weight: 400;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     -webkit-font-smoothing: antialiased;
-    background-color: #0a0a0a;
-    color: #fff;
+    text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
   }
 }
 
+/* --- buttons --- */
 @utility btn {
-  @apply inline-block px-6 py-3 font-semibold uppercase tracking-wide transition-colors;
+  @apply inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium transition-all duration-200;
 }
-@utility btn-blue {
-  @apply btn bg-brand-blue text-white hover:bg-blue-700;
+@utility btn-primary {
+  @apply btn bg-accent text-bg hover:bg-accent/90 shadow-[0_0_0_1px_rgba(0,173,239,0.3),0_8px_32px_-8px_rgba(0,173,239,0.5)];
 }
-@utility btn-red {
-  @apply btn bg-brand-red text-white hover:bg-red-700;
-}
-@utility btn-pink {
-  @apply btn bg-brand-pink text-white hover:bg-pink-700;
-}
-@utility btn-white {
-  @apply btn bg-white text-neutral-900 hover:bg-neutral-100;
-}
-@utility btn-empty {
-  @apply btn bg-transparent text-white ring-1 ring-white/40 hover:bg-white/10;
+@utility btn-ghost {
+  @apply btn ring-1 ring-white/20 text-text hover:bg-white/5 hover:ring-white/40;
 }
 
-@utility section-bg {
-  @apply absolute inset-0 -z-10 bg-cover bg-center;
+/* --- typography helpers --- */
+@utility eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.28em] text-accent;
 }
-@utility section-overlay {
-  @apply absolute inset-0 -z-10 bg-black/60;
+@utility eyebrow-dim {
+  @apply font-mono text-xs uppercase tracking-[0.28em] text-text-dim;
 }
 
+/* --- glass cards --- */
+@utility glass {
+  @apply bg-white/[0.03] ring-1 ring-white/10 backdrop-blur-sm;
+}
+@utility glass-hover {
+  @apply transition-all duration-200 hover:bg-white/[0.05] hover:ring-white/20;
+}
+
+/* --- glow --- */
+@utility glow-accent {
+  box-shadow: 0 0 0 1px rgba(0, 173, 239, 0.25), 0 8px 40px -8px rgba(0, 173, 239, 0.45);
+}
+
+/* --- background textures --- */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+.dot-grid-accent {
+  background-image: radial-gradient(rgba(0, 173, 239, 0.18) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+.scanlines {
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.025) 0,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* --- ambient hero glows --- */
+.glow-blob {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.55;
+  background: radial-gradient(circle, rgba(0, 173, 239, 0.45), transparent 70%);
+}
+.glow-blob-deep {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.4;
+  background: radial-gradient(circle, rgba(0, 64, 105, 0.6), transparent 70%);
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(40px, -30px, 0); }
+}
+.glow-drift { animation: drift 18s ease-in-out infinite; }
+.glow-drift-slow { animation: drift 24s ease-in-out infinite reverse; }
+
+/* --- reveal on scroll --- */
 [data-reveal] {
   opacity: 0;
   transform: translate3d(0, 1.5rem, 0);
-  transition: opacity 700ms ease-out, transform 700ms ease-out, filter 700ms ease-out;
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
-[data-reveal="from-left"] {
-  transform: translate3d(-3rem, 0, 0);
-}
-[data-reveal="from-right"] {
-  transform: translate3d(3rem, 0, 0);
-}
-[data-reveal="from-top"] {
-  transform: translate3d(0, -1.5rem, 0);
-}
-[data-reveal="from-center"] {
-  transform: scale(0.9);
-}
-[data-reveal="from-blur"] {
-  transform: none;
-  filter: blur(10px);
-}
+[data-reveal="from-left"]   { transform: translate3d(-3rem, 0, 0); }
+[data-reveal="from-right"]  { transform: translate3d(3rem, 0, 0); }
+[data-reveal="from-blur"]   { transform: none; filter: blur(10px); }
+[data-reveal="from-scale"]  { transform: scale(0.96); }
 [data-reveal].is-visible {
   opacity: 1;
   transform: none;
   filter: none;
 }
 
+/* --- typewriter cursor --- */
+#caption {
+  font-variant-ligatures: none;
+}
 #cursor {
   display: inline-block;
+  color: var(--color-accent);
   transition: opacity 100ms;
+}
+
+/* --- subhead cycler --- */
+#subhead {
+  display: inline-block;
+  transition: opacity 350ms ease, transform 350ms ease;
+}
+#subhead.is-out {
+  opacity: 0;
+  transform: translateY(-0.25rem);
+}
+
+/* --- agent-mesh nodes pulse --- */
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+.mesh-node { animation: node-pulse 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-drift, .glow-drift-slow, .mesh-node { animation: none; }
+  [data-reveal] { transition: none; opacity: 1; transform: none; filter: none; }
 }

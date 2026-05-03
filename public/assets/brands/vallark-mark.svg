@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vallark — Primary Icon (CAC Plate) -->
+<!-- SigilArk Brand Family · April 2026 · v3.1 Vallark · CUI Purple palette -->
+<!-- Usage: High-resolution applications, hero graphics, brand presentations -->
+<!-- Palette: Sigil Gold #C1A066 · Gold Light #D4B882 · Gold Deep #9B7F4D · CUI Dark #1A0E3D · CUI Purple #5B3F9E -->
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="240" height="240" fill="#1A0E3D"/>
+
+  <!-- Card background -->
+  <polygon points="16,32 224,32 224,208 16,208" fill="#2D1B4A" stroke="#5B3F9E" stroke-width="1" opacity="0.6"/>
+  <polygon points="24,40 216,40 216,200 24,200" fill="none" stroke="#5B3F9E" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Chip contact pad (primary gold plate) -->
+  <polygon points="44,56 196,56 196,184 44,184" fill="#C1A066"/>
+  <polygon points="48,60 192,60 192,180 48,180" fill="#D4B882" opacity="0.28"/>
+
+  <!-- Horizontal contact grid (symmetric around y=120) -->
+  <rect x="44" y="98" width="152" height="4" fill="#1A0E3D"/>
+  <rect x="44" y="138" width="152" height="4" fill="#1A0E3D"/>
+
+  <!-- Vertical contact grid (centered at x=120) -->
+  <rect x="118" y="56" width="4" height="42" fill="#1A0E3D"/>
+  <rect x="118" y="102" width="4" height="36" fill="#1A0E3D"/>
+  <rect x="118" y="142" width="4" height="42" fill="#1A0E3D"/>
+
+  <!-- Edge contact indicators -->
+  <rect x="42" y="90" width="4" height="4" fill="#9B7F4D"/>
+  <rect x="194" y="90" width="4" height="4" fill="#9B7F4D"/>
+  <rect x="42" y="146" width="4" height="4" fill="#9B7F4D"/>
+  <rect x="194" y="146" width="4" height="4" fill="#9B7F4D"/>
+</svg>
