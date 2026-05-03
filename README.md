@@ -36,16 +36,18 @@ npm run preview  # preview the production build
 
 ### Domains
 
-All four domains serve the same content:
+| Domain | Status | How |
+| --- | --- | --- |
+| `dayelostra.co` | live | CloudFront `EZ1G9UFZ84YTV` → S3 origin `dayelostra.co` |
+| `www.dayelostra.co` | live | same CloudFront distribution (alias) |
+| `dayelostraco.com` | not pointed | redirect bucket exists but no Route 53 zone or external DNS |
+| `www.dayelostraco.com` | not pointed | same |
 
-| Domain | How |
-| --- | --- |
-| `dayelostra.co` | CloudFront `EZ1G9UFZ84YTV` → S3 origin `dayelostra.co` |
-| `www.dayelostra.co` | same CloudFront distribution (alias) |
-| `dayelostraco.com` | S3 redirect bucket → `dayelostra.co` |
-| `www.dayelostraco.com` | S3 redirect bucket → `dayelostra.co` |
+The `.com` redirect buckets exist in S3 but DNS isn't currently pointing the `.com` domains at them. To re-enable: register/renew `dayelostraco.com`, create a Route 53 hosted zone, and add ALIAS records to the redirect buckets' website endpoints.
 
-Only the origin bucket needs content; the redirect buckets are configured at the bucket level and stay as-is.
+### Bucket access
+
+The `dayelostra.co` bucket has a public-read bucket policy (`s3:GetObject` for `*`); CloudFront fetches via the S3 website endpoint as a custom HTTP origin. No per-object ACLs are needed.
 
 ### Required GitHub repo secrets
 
