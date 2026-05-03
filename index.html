@@ -43,6 +43,63 @@
   <!-- Self-hosted fonts; preload the most-used (Geist Variable) to avoid FOIT -->
   <link rel="preload" href="/assets/fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
 
+  <!-- Structured data for rich-result + knowledge-graph surfacing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dayel Ostraco",
+    "givenName": "Dayel",
+    "familyName": "Ostraco",
+    "jobTitle": "Full Stack AI Engineer & Secure Systems Architect",
+    "url": "https://dayelostra.co/",
+    "image": "https://dayelostra.co/assets/img/bio/dayel-mid.webp",
+    "email": "mailto:dayel.ostraco@proton.me",
+    "description": "DoD-cleared AI engineer and secure systems architect. Seventeen years building federal-grade platforms with LLMs, GovCloud, Zero Trust, and RMF/ATO discipline.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Accelera Solutions",
+      "url": "https://www.accelerasolutions.com/"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/dayelostraco",
+      "https://github.com/dayelostraco"
+    ],
+    "knowsAbout": [
+      "Generative AI",
+      "Large Language Models",
+      "Multi-provider LLM Orchestration",
+      "Zero Trust Architecture",
+      "RMF (Risk Management Framework)",
+      "Authority to Operate (ATO)",
+      "FedRAMP High",
+      "AWS GovCloud",
+      "Federal Software Engineering",
+      "DoD Secure Systems"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "certification",
+        "name": "CISSP",
+        "recognizedBy": { "@type": "Organization", "name": "(ISC)²" }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "certification",
+        "name": "AWS Certified Solutions Architect — Associate",
+        "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "security clearance",
+        "name": "DoD Secret",
+        "recognizedBy": { "@type": "Organization", "name": "U.S. Department of Defense" }
+      }
+    ]
+  }
+  </script>
+
   <script type="module" src="/src/scripts/main.js"></script>
 
   <!-- a11y: ensure data-reveal content is visible if JS fails or is disabled (Section 508 §1194.22(l)) -->

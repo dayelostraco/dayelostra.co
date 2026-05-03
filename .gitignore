@@ -81,3 +81,11 @@ dist/
 .env
 .env.local
 .env.*.local
+
+# Terraform state + lock + plans
+iac/terraform/.terraform/
+iac/terraform/.terraform.lock.hcl
+iac/terraform/*.tfstate
+iac/terraform/*.tfstate.*
+iac/terraform/*.tfplan
+iac/terraform/crash.log
