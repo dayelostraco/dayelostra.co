@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#0a0e2a"/>
-  <path d="M44 14L20 50" stroke="#00adef" stroke-width="8" stroke-linecap="round"/>
+  <!-- Navy bg with slight rounding (looks intentional, not "the OS clipped my icon") -->
+  <rect width="64" height="64" rx="10" fill="#0a0e2a"/>
+  <!-- Cyan slash — flat ends, slightly thicker, pixel-friendly diagonal -->
+  <path d="M46 14L18 50" stroke="#00adef" stroke-width="8" stroke-linecap="square"/>
 </svg>
