@@ -16,9 +16,6 @@
   --color-text-dim: #939598;
   --color-gold: #c1a066;
   --color-gold-deep: #5c4520;
-  --color-indigo: #4334a8;
-  --color-teal: #1d6f80;
-  --color-violet: #6c2bd9;
 }
 
 @layer base {
@@ -293,29 +290,15 @@
   opacity: 0.5;
   background: radial-gradient(circle, rgba(193, 160, 102, 0.5), transparent 70%);
 }
-.glow-blob-violet {
+/* --- hero topographic: federal-tactical base layer --- */
+.hero-topo {
   position: absolute;
+  inset: 0;
   pointer-events: none;
-  border-radius: 9999px;
-  filter: blur(110px);
-  opacity: 0.35;
-  background: radial-gradient(circle, rgba(108, 43, 217, 0.5), transparent 70%);
-}
-.glow-blob-teal {
-  position: absolute;
-  pointer-events: none;
-  border-radius: 9999px;
-  filter: blur(110px);
-  opacity: 0.4;
-  background: radial-gradient(circle, rgba(29, 111, 128, 0.55), transparent 70%);
-}
-.glow-blob-indigo {
-  position: absolute;
-  pointer-events: none;
-  border-radius: 9999px;
-  filter: blur(110px);
-  opacity: 0.4;
-  background: radial-gradient(circle, rgba(67, 52, 168, 0.5), transparent 70%);
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(0, 64, 105, 0.55), transparent 60%),
+    radial-gradient(ellipse at 30% 80%, rgba(0, 64, 105, 0.35), transparent 60%),
+    linear-gradient(180deg, rgba(15, 31, 58, 0.5), rgba(10, 14, 42, 0.85));
 }
 
 @keyframes drift {

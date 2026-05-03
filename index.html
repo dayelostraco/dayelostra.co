@@ -84,26 +84,39 @@
     <!-- HERO -->
     <section id="top" class="corners corners-lg relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-12 lg:px-8">
       <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-      <!-- Base layer: video (operations center) -->
-      <video class="pointer-events-none absolute inset-0 -z-[30] h-full w-full object-cover opacity-50 saturate-[0.6] brightness-[0.7]"
-             autoplay loop muted playsinline preload="metadata"
-             poster="/assets/img/bg/operations.jpg" aria-hidden="true">
-        <source src="/assets/video/norad-aoc.webm" type="video/webm">
-        <source src="/assets/video/norad-aoc.mp4"  type="video/mp4">
-      </video>
-      <!-- Duotone darkening over the video -->
-      <div class="absolute inset-0 -z-[25] bg-gradient-to-b from-bg/55 via-bg/35 to-bg/85 mix-blend-multiply"></div>
-      <div class="absolute inset-0 -z-20 bg-bg/40" aria-hidden="true"></div>
+      <!-- Base layer: federal-tactical topographic (deep blue base + GEOINT contour lines) -->
+      <div class="hero-topo -z-[30]" aria-hidden="true"></div>
+      <!-- Topographic contour SVG (subtle, GEOINT/USGS-coded) -->
+      <svg class="pointer-events-none absolute inset-0 -z-[28] h-full w-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="#00adef" stroke-width="0.7" opacity="0.18">
+          <!-- horizontal flow lines (terrain profile) -->
+          <path d="M-50,160 Q200,120 420,180 T780,160 T1250,200" />
+          <path d="M-50,220 Q220,180 440,240 T800,220 T1250,260" />
+          <path d="M-50,280 Q200,240 460,300 T820,280 T1250,320" />
+          <path d="M-50,540 Q240,500 480,560 T840,540 T1250,580" />
+          <path d="M-50,600 Q260,560 500,620 T860,600 T1250,640" />
+          <path d="M-50,660 Q240,620 480,680 T840,660 T1250,700" />
+          <!-- closed contours (mountain) — top right -->
+          <ellipse cx="900" cy="280" rx="120" ry="48" />
+          <ellipse cx="900" cy="280" rx="170" ry="74" />
+          <ellipse cx="900" cy="280" rx="220" ry="100" />
+          <ellipse cx="900" cy="280" rx="270" ry="126" />
+          <!-- closed contours (depression) — bottom left -->
+          <ellipse cx="240" cy="440" rx="100" ry="40" />
+          <ellipse cx="240" cy="440" rx="150" ry="65" />
+          <ellipse cx="240" cy="440" rx="200" ry="90" />
+        </g>
+        <g fill="none" stroke="#c1a066" stroke-width="0.5" opacity="0.12">
+          <!-- secondary contours (gold accent — sparse) -->
+          <path d="M-50,400 Q300,360 600,420 T1250,400" />
+          <path d="M-50,460 Q280,420 580,480 T1250,460" />
+        </g>
+      </svg>
       <!-- Vignette so corners don't bleed too bright -->
-      <div class="absolute inset-0 -z-[15]" style="background:radial-gradient(ellipse at center, transparent 30%, rgba(10,14,42,0.6) 100%);"></div>
-      <!-- Texture + gradient layers (subtle now that video carries weight) -->
-      <div class="absolute inset-0 -z-10 dot-grid opacity-30" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-[15]" aria-hidden="true" style="background:radial-gradient(ellipse at center, transparent 25%, rgba(10,14,42,0.7) 100%);"></div>
+      <!-- Texture layers -->
+      <div class="absolute inset-0 -z-10 dot-grid opacity-40" aria-hidden="true"></div>
       <div class="absolute inset-0 -z-10 grain opacity-25" aria-hidden="true"></div>
-      <!-- Aurora — multi-hue ambient blobs (kept, but lower opacity over video) -->
-      <div class="glow-blob glow-drift opacity-35" aria-hidden="true" style="width:600px;height:600px;top:8%;left:-15%;"></div>
-      <div class="glow-blob-indigo glow-drift-slow opacity-25" aria-hidden="true" style="width:680px;height:680px;top:-10%;right:-10%;"></div>
-      <div class="glow-blob-violet glow-drift opacity-25" aria-hidden="true" style="width:520px;height:520px;top:35%;right:25%;animation-delay:-6s;"></div>
-      <div class="glow-blob-gold glow-drift opacity-30" aria-hidden="true" style="width:380px;height:380px;bottom:10%;right:-5%;animation-delay:-9s;"></div>
 
       <!-- agent-mesh decoration (full hero width, behind content on desktop) -->
       <svg class="pointer-events-none absolute inset-0 -z-[5] hidden h-full w-full opacity-50 md:block" viewBox="0 0 1200 800" preserveAspectRatio="xMaxYMid slice" fill="none" aria-hidden="true">
@@ -147,7 +160,9 @@
       <span class="section-watermark-text" aria-hidden="true" style="bottom:1.5rem;right:2rem;font-size:clamp(3rem,8vw,7rem);">/DAYEL</span>
 
       <div class="relative mx-auto w-full max-w-7xl">
-        <p class="eyebrow-dim" data-reveal>Dayel Ostraco · CISSP · AWS Solutions Architect · DoD Secret</p>
+        <p data-reveal>
+          <span class="inline-block bg-accent px-3 py-1 font-mono text-xs font-semibold uppercase tracking-[0.28em] text-bg ring-1 ring-accent/80">// Dayel Ostraco // CISSP // AWS Solutions Architect // DoD Secret //</span>
+        </p>
 
         <h1 class="mt-8 text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl lg:text-[5.5rem]" data-reveal data-reveal-delay="100">
           Full Stack <span class="text-accent">AI</span> Engineer<br>
@@ -160,7 +175,7 @@
           <span class="ml-2 text-text/60">— ATO-ready AI for federal missions</span>
         </p>
 
-        <p class="mt-8 max-w-3xl text-xl text-text-dim md:text-2xl" data-reveal data-reveal-delay="280">
+        <p class="mt-8 max-w-3xl text-xl text-text/85 md:text-2xl" data-reveal data-reveal-delay="280">
           <span id="subhead">LLMs in classified enclaves</span>
         </p>
 
