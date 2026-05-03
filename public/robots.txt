@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Single-page portfolio. No sitemap needed.

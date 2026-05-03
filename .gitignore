@@ -77,3 +77,7 @@ dist/
 
 # Playwright MCP scratch
 .playwright-mcp/
+# Env files (never commit secrets)
+.env
+.env.local
+.env.*.local

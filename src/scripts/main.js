@@ -23,8 +23,7 @@ function boot() {
   initCycler({
     target: '#subhead',
     items: [
-      'LLMs in classified enclaves.',
-      'Multi-provider AI agent orchestration.',
+      'Multi-provider LLM orchestration in classified enclaves.',
       'Authority to Operate without the friction.',
       'Zero Trust by design, not by patch.',
       'Seventeen years shipping into AWS GovCloud.',

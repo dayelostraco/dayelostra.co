@@ -362,4 +362,13 @@
   video[autoplay] { display: none; }
   /* and disable smooth-scroll which can also cause motion sickness */
   html { scroll-behavior: auto; }
+  /* neutralize all hover translates + transitions on glass cards + buttons */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  #subhead { transition: none !important; }
+  #cursor { transition: none; opacity: 1; }
 }
