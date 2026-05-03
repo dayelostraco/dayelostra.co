@@ -16,7 +16,7 @@ S3 bucket s3://dayelostra.co (us-east-1, public-read bucket policy)
   · website hosting on, IndexDocument=index.html, ErrorDocument=error.html
 ```
 
-GitHub Actions deploys on push to `master` via OIDC role `dayelostra-co-deploy`.
+GitHub Actions deploys on push to `main` via OIDC role `dayelostra-co-deploy`.
 
 ## 🚨 Site is down — first 5 minutes
 
@@ -53,10 +53,10 @@ git log --oneline -10
 git revert <bad-sha>
 
 # push — workflow re-deploys the prior content + invalidates CloudFront
-git push origin master
+git push origin main
 
 # watch
-gh run watch $(gh run list --branch master --limit 1 --json databaseId -q '.[].databaseId') --exit-status
+gh run watch $(gh run list --branch main --limit 1 --json databaseId -q '.[].databaseId') --exit-status
 ```
 
 If the bad build poisoned S3 with corrupt objects, the next deploy `aws s3 sync --delete` will overwrite them. No manual S3 cleanup needed.
@@ -65,14 +65,14 @@ If the bad build poisoned S3 with corrupt objects, the next deploy `aws s3 sync 
 
 ```sh
 # 1. last 5 runs
-gh run list --branch master --limit 5
+gh run list --branch main --limit 5
 
 # 2. failed step output
 gh run view <run-id> --log-failed
 ```
 
 **Common causes:**
-- **OIDC role-assume fails** (`Could not assume role`) → trust policy on `dayelostra-co-deploy` got narrowed/broken. Verify with `aws iam get-role --role-name dayelostra-co-deploy --query 'Role.AssumeRolePolicyDocument'`. Trust must allow `repo:dayelostraco/dayelostra.co:ref:refs/heads/master`.
+- **OIDC role-assume fails** (`Could not assume role`) → trust policy on `dayelostra-co-deploy` got narrowed/broken. Verify with `aws iam get-role --role-name dayelostra-co-deploy --query 'Role.AssumeRolePolicyDocument'`. Trust must allow `repo:dayelostraco/dayelostra.co:ref:refs/heads/main`.
 - **S3 access denied** → IAM policy on `dayelostra-co-deploy` got modified. Verify with `aws iam list-role-policies --role-name dayelostra-co-deploy`. Should include `S3AndCloudFrontDeploy` granting `s3:Put/Delete/Get/List` on `dayelostra.co` + `cloudfront:CreateInvalidation` on `EZ1G9UFZ84YTV`.
 - **`npm ci` fails** → `package-lock.json` drift. Run locally; if local `npm ci` works, the lockfile is in sync; force-update CI cache via Actions UI.
 - **Build step fails** → run `npm run build` locally to reproduce. Most likely a Tailwind class typo or missing asset reference.
@@ -168,7 +168,7 @@ After update, run a CloudFront invalidation if you want the change live immediat
 | Signal | Source | Note |
 | --- | --- | --- |
 | Pageviews / unique visitors | Cloudflare Web Analytics dashboard (token `cb97cb0f5ec24361b6a0b180db7aad61`) | Beacon is self-hosted at `/assets/js/beacon.min.js`. |
-| Deploy success/failure | GitHub Actions UI; `gh run list --branch master` | No alerting wired up — visit periodically or add a status check. |
+| Deploy success/failure | GitHub Actions UI; `gh run list --branch main` | No alerting wired up — visit periodically or add a status check. |
 | Bucket access | CloudFront access logs (not currently enabled) | To enable: `aws cloudfront update-distribution` adds a Logging block with an S3 bucket target. |
 | Origin 4xx/5xx | CloudWatch metrics on the distribution | Enable via CloudFront monitoring tab; no alarms set today. |
 | Cert expiry | ACM auto-renews if DNS validation records persist | Verify Route 53 retains the `_<random>.dayelostra.co.` validation CNAME records. |

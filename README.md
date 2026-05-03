@@ -1,6 +1,6 @@
 # dayelostra.co
 
-Personal portfolio for Dayel Ostraco — Full Stack AI Engineer & Secure Systems Architect. Static HTML built with Vite + Tailwind v4, deployed to AWS S3 + CloudFront via GitHub Actions on push to `master`.
+Personal portfolio for Dayel Ostraco — Full Stack AI Engineer & Secure Systems Architect. Static HTML built with Vite + Tailwind v4, deployed to AWS S3 + CloudFront via GitHub Actions on push to `main`.
 
 ## Local development
 
@@ -47,7 +47,7 @@ npm run preview  # preview the production build
 
 ## Deploy
 
-`.github/workflows/deploy.yml` runs on push to `master` (and `workflow_dispatch`). Steps: checkout → npm ci → npm run build → AWS auth → sync `dist/` to S3 → invalidate CloudFront `/*`.
+`.github/workflows/deploy.yml` runs on push to `main` (and `workflow_dispatch`). Steps: checkout → npm ci → npm run build → AWS auth → sync `dist/` to S3 → invalidate CloudFront `/*`.
 
 ### Domains
 
@@ -86,9 +86,9 @@ CloudFront invalidation runs `/*` on each deploy, flushing edge caches immediate
 
 ## Runbook
 
-**Deploy failed?** Check `gh run list --branch master --limit 5` and `gh run view <id> --log-failed`. Common causes: AWS credential expiry, S3 / CloudFront permission drift.
+**Deploy failed?** Check `gh run list --branch main --limit 5` and `gh run view <id> --log-failed`. Common causes: AWS credential expiry, S3 / CloudFront permission drift.
 
-**Roll back?** `git revert <bad-sha> && git push origin master`. The workflow re-runs and CloudFront invalidates `/*` so the prior build is live within ~30 seconds.
+**Roll back?** `git revert <bad-sha> && git push origin main`. The workflow re-runs and CloudFront invalidates `/*` so the prior build is live within ~30 seconds.
 
 **Manual CloudFront invalidation?** `aws cloudfront create-invalidation --distribution-id EZ1G9UFZ84YTV --paths "/*"`.
 
