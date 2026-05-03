@@ -15,6 +15,10 @@
   --color-text: #ebe5d5;
   --color-text-dim: #939598;
   --color-gold: #c1a066;
+  --color-gold-deep: #5c4520;
+  --color-indigo: #4334a8;
+  --color-teal: #1d6f80;
+  --color-violet: #6c2bd9;
 }
 
 @layer base {
@@ -41,6 +45,29 @@
     background-color: var(--color-accent);
     color: var(--color-bg);
   }
+
+  /* a11y: accessible focus indicator for keyboard navigation (WCAG 2.4.7 / 1.4.11) */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  /* a11y: minimum 44×44px touch target for nav links on touch devices (WCAG 2.5.5) */
+  @media (hover: none) and (pointer: coarse) {
+    nav[data-sidebar] a,
+    nav[data-sidebar] button {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 /* --- buttons --- */
@@ -64,18 +91,24 @@
 
 /* --- glass cards --- */
 @utility glass {
-  @apply relative overflow-hidden bg-white/[0.03] ring-1 ring-white/10 backdrop-blur-sm;
+  @apply relative overflow-hidden bg-surface/65 ring-1 ring-white/15 backdrop-blur-md shadow-[0_4px_24px_-12px_rgba(0,0,0,0.6)];
 }
 @utility glass-hover {
-  @apply transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.05] hover:ring-accent/40;
+  @apply transition-all duration-300 hover:-translate-y-1 hover:bg-surface/85 hover:ring-accent/40 hover:shadow-[0_12px_40px_-12px_rgba(0,173,239,0.3)];
 }
 @utility glass-accent {
   @apply relative overflow-hidden bg-gradient-to-br from-accent-deep/30 via-surface to-bg ring-1 ring-accent/20 backdrop-blur-sm;
+}
+@utility glass-gold {
+  @apply relative overflow-hidden bg-gradient-to-br from-gold-deep/35 via-surface to-bg ring-1 ring-gold/25 backdrop-blur-sm;
 }
 
 /* --- glow --- */
 @utility glow-accent {
   box-shadow: 0 0 0 1px rgba(0, 173, 239, 0.25), 0 8px 40px -8px rgba(0, 173, 239, 0.45);
+}
+@utility glow-gold {
+  box-shadow: 0 0 0 1px rgba(193, 160, 102, 0.3), 0 8px 40px -8px rgba(193, 160, 102, 0.5);
 }
 
 /* --- background textures --- */
@@ -85,6 +118,10 @@
 }
 .dot-grid-accent {
   background-image: radial-gradient(rgba(0, 173, 239, 0.18) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+.dot-grid-gold {
+  background-image: radial-gradient(rgba(193, 160, 102, 0.18) 1.2px, transparent 1.2px);
   background-size: 28px 28px;
 }
 .dot-grid-fine {
@@ -117,6 +154,10 @@
 .corners {
   --corner-color: rgba(0, 173, 239, 0.4);
 }
+.acc-gold .corners,
+.corners.acc-gold {
+  --corner-color: rgba(193, 160, 102, 0.45);
+}
 .corners > .cf-tl,
 .corners > .cf-tr,
 .corners > .cf-bl,
@@ -127,10 +168,10 @@
   border: 1px solid var(--corner-color);
   pointer-events: none;
 }
-.corners > .cf-tl { top: 1.25rem; left: 1.25rem; border-right: none; border-bottom: none; }
-.corners > .cf-tr { top: 1.25rem; right: 1.25rem; border-left: none; border-bottom: none; }
-.corners > .cf-bl { bottom: 1.25rem; left: 1.25rem; border-right: none; border-top: none; }
-.corners > .cf-br { bottom: 1.25rem; right: 1.25rem; border-left: none; border-top: none; }
+.corners > .cf-tl { top: 0.75rem; left: 0.75rem; border-right: none; border-bottom: none; }
+.corners > .cf-tr { top: 0.75rem; right: 0.75rem; border-left: none; border-bottom: none; }
+.corners > .cf-bl { bottom: 0.75rem; left: 0.75rem; border-right: none; border-top: none; }
+.corners > .cf-br { bottom: 0.75rem; right: 0.75rem; border-left: none; border-top: none; }
 .corners-lg > .cf-tl,
 .corners-lg > .cf-tr,
 .corners-lg > .cf-bl,
@@ -163,7 +204,7 @@
   font-weight: 500;
   letter-spacing: -0.05em;
   line-height: 0.85;
-  color: rgba(0, 173, 239, 0.045);
+  color: rgba(0, 173, 239, 0.12);
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
@@ -175,13 +216,30 @@
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 0.85;
-  color: rgba(255, 255, 255, 0.025);
+  color: rgba(235, 229, 213, 0.08);
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
-  font-size: clamp(5rem, 12vw, 14rem);
+  font-size: clamp(4rem, 10vw, 11rem);
   text-transform: uppercase;
+  display: none;
 }
+@media (min-width: 768px) {
+  .section-watermark-text { display: inline-block; }
+}
+.acc-gold .section-watermark,
+.acc-gold .section-watermark-text {
+  color: rgba(193, 160, 102, 0.14);
+}
+
+/* --- per-section accent override: shadows --color-accent inside scope --- */
+.acc-gold {
+  --color-accent: var(--color-gold);
+  --color-accent-deep: var(--color-gold-deep);
+  --color-accent-soft: rgba(193, 160, 102, 0.18);
+}
+/* Tailwind utilities that use the design token will pick up the override:
+   text-accent, bg-accent, ring-accent, fill-accent, border-accent, etc. */
 
 /* --- background tint band variation between sections --- */
 .tint-deep   { background-color: #080b22; }
@@ -226,6 +284,38 @@
   filter: blur(100px);
   opacity: 0.4;
   background: radial-gradient(circle, rgba(0, 64, 105, 0.6), transparent 70%);
+}
+.glow-blob-gold {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.5;
+  background: radial-gradient(circle, rgba(193, 160, 102, 0.5), transparent 70%);
+}
+.glow-blob-violet {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(110px);
+  opacity: 0.35;
+  background: radial-gradient(circle, rgba(108, 43, 217, 0.5), transparent 70%);
+}
+.glow-blob-teal {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(110px);
+  opacity: 0.4;
+  background: radial-gradient(circle, rgba(29, 111, 128, 0.55), transparent 70%);
+}
+.glow-blob-indigo {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(110px);
+  opacity: 0.4;
+  background: radial-gradient(circle, rgba(67, 52, 168, 0.5), transparent 70%);
 }
 
 @keyframes drift {
@@ -285,4 +375,8 @@
 @media (prefers-reduced-motion: reduce) {
   .glow-drift, .glow-drift-slow, .mesh-node { animation: none; }
   [data-reveal] { transition: none; opacity: 1; transform: none; filter: none; }
+  /* hide background video for users with motion sensitivity (WCAG 2.3.3) */
+  video[autoplay] { display: none; }
+  /* and disable smooth-scroll which can also cause motion sickness */
+  html { scroll-behavior: auto; }
 }

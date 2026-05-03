@@ -46,7 +46,7 @@
         <li><a href="#glyphon" class="transition-colors hover:text-accent">Flagship</a></li>
         <li><a href="#products" class="transition-colors hover:text-accent">Products</a></li>
         <li><a href="#missions" class="transition-colors hover:text-accent">Missions</a></li>
-        <li><a href="#cv" class="transition-colors hover:text-accent">CV</a></li>
+        <li><a href="#resume" class="transition-colors hover:text-accent">Resume</a></li>
         <li><a href="#connect" class="transition-colors hover:text-accent">Connect</a></li>
       </ul>
       <button type="button" data-sidebar-trigger class="md:hidden" aria-label="Open menu">
@@ -69,13 +69,13 @@
       <li><a href="#products" class="hover:text-accent">Products</a></li>
       <li><a href="#missions" class="hover:text-accent">Missions</a></li>
       <li><a href="#stack" class="hover:text-accent">Stack</a></li>
-      <li><a href="#cv" class="hover:text-accent">CV</a></li>
+      <li><a href="#resume" class="hover:text-accent">Resume</a></li>
       <li><a href="#connect" class="hover:text-accent">Connect</a></li>
     </ul>
     <ul class="mt-auto flex gap-6 pt-8">
       <li><a href="mailto:dayel.ostraco@proton.me" aria-label="Email"><svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#mail"/></svg></a></li>
-      <li><a href="https://github.com/dayelostraco" target="_blank" rel="noopener" aria-label="GitHub"><svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#github"/></svg></a></li>
-      <li><a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#linkedin"/></svg></a></li>
+      <li><a href="https://github.com/dayelostraco" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#github"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="h-7 w-7 fill-text"><use href="/assets/svg/icons.svg#linkedin"/></svg></a></li>
     </ul>
   </nav>
 
@@ -84,11 +84,26 @@
     <!-- HERO -->
     <section id="top" class="corners corners-lg relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-12 lg:px-8">
       <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-      <div class="absolute inset-0 -z-10 dot-grid opacity-60"></div>
-      <div class="absolute inset-0 -z-10 grain opacity-50"></div>
-      <div class="absolute inset-x-0 top-0 -z-10 h-2/3 bg-gradient-to-b from-accent-deep/30 via-transparent to-transparent"></div>
-      <div class="glow-blob glow-drift" style="width:560px;height:560px;top:8%;left:-15%;"></div>
-      <div class="glow-blob-deep glow-drift-slow" style="width:680px;height:680px;bottom:-25%;right:-15%;"></div>
+      <!-- Base layer: video (operations center) -->
+      <video class="pointer-events-none absolute inset-0 -z-[30] h-full w-full object-cover opacity-50 saturate-[0.6] brightness-[0.7]"
+             autoplay loop muted playsinline preload="metadata"
+             poster="/assets/img/bg/operations.jpg" aria-hidden="true">
+        <source src="/assets/video/norad-aoc.webm" type="video/webm">
+        <source src="/assets/video/norad-aoc.mp4"  type="video/mp4">
+      </video>
+      <!-- Duotone darkening over the video -->
+      <div class="absolute inset-0 -z-[25] bg-gradient-to-b from-bg/55 via-bg/35 to-bg/85 mix-blend-multiply"></div>
+      <div class="absolute inset-0 -z-20 bg-bg/40" aria-hidden="true"></div>
+      <!-- Vignette so corners don't bleed too bright -->
+      <div class="absolute inset-0 -z-[15]" style="background:radial-gradient(ellipse at center, transparent 30%, rgba(10,14,42,0.6) 100%);"></div>
+      <!-- Texture + gradient layers (subtle now that video carries weight) -->
+      <div class="absolute inset-0 -z-10 dot-grid opacity-30" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 grain opacity-25" aria-hidden="true"></div>
+      <!-- Aurora — multi-hue ambient blobs (kept, but lower opacity over video) -->
+      <div class="glow-blob glow-drift opacity-35" aria-hidden="true" style="width:600px;height:600px;top:8%;left:-15%;"></div>
+      <div class="glow-blob-indigo glow-drift-slow opacity-25" aria-hidden="true" style="width:680px;height:680px;top:-10%;right:-10%;"></div>
+      <div class="glow-blob-violet glow-drift opacity-25" aria-hidden="true" style="width:520px;height:520px;top:35%;right:25%;animation-delay:-6s;"></div>
+      <div class="glow-blob-gold glow-drift opacity-30" aria-hidden="true" style="width:380px;height:380px;bottom:10%;right:-5%;animation-delay:-9s;"></div>
 
       <!-- agent-mesh decoration (full hero width, behind content on desktop) -->
       <svg class="pointer-events-none absolute inset-0 -z-[5] hidden h-full w-full opacity-50 md:block" viewBox="0 0 1200 800" preserveAspectRatio="xMaxYMid slice" fill="none" aria-hidden="true">
@@ -129,7 +144,7 @@
       </svg>
 
       <!-- big edge watermark -->
-      <span class="section-watermark-text" style="bottom:-3rem;right:-3vw;">DAYELOSTRA.CO</span>
+      <span class="section-watermark-text" aria-hidden="true" style="bottom:1.5rem;right:2rem;font-size:clamp(3rem,8vw,7rem);">/DAYEL</span>
 
       <div class="relative mx-auto w-full max-w-7xl">
         <p class="eyebrow-dim" data-reveal>Dayel Ostraco · CISSP · AWS Solutions Architect · DoD Secret</p>
@@ -139,49 +154,72 @@
           <span class="text-text-dim">&amp;</span> Secure Systems Architect
         </h1>
 
-        <p class="mt-10 max-w-3xl text-xl text-text-dim md:text-2xl" data-reveal data-reveal-delay="250">
+        <p class="mt-8 font-mono text-sm uppercase tracking-[0.22em] text-text/70 md:text-base" data-reveal data-reveal-delay="200">
+          <span class="text-accent">/</span> CTO at
+          <a href="https://www.accelerasolutions.com" target="_blank" rel="noopener noreferrer" class="border-b border-accent/40 pb-0.5 transition-colors hover:text-accent hover:border-accent">Accelera&nbsp;Solutions</a>
+          <span class="ml-2 text-text/60">— ATO-ready AI for federal missions</span>
+        </p>
+
+        <p class="mt-8 max-w-3xl text-xl text-text-dim md:text-2xl" data-reveal data-reveal-delay="280">
           <span id="subhead">LLMs in classified enclaves</span>
         </p>
 
         <div class="mt-12 flex flex-wrap gap-4" data-reveal data-reveal-delay="400">
           <a href="#glyphon" class="btn-primary">View flagship</a>
-          <a href="#cv" class="btn-ghost">Resume</a>
+          <a href="#resume" class="btn-ghost">Resume</a>
         </div>
 
-        <p class="mt-16 font-mono text-xs uppercase tracking-[0.28em] text-text/40" data-reveal data-reveal-delay="600">
+        <p class="mt-16 font-mono text-xs uppercase tracking-[0.28em] text-text/60" data-reveal data-reveal-delay="600">
           <span class="text-accent">$</span> <span id="caption"></span><span id="cursor">▍</span>
         </p>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 grain opacity-60"></div>
-      <span class="section-watermark" style="top:-2rem;left:-1vw;">/00</span>
-      <div class="glow-blob-deep glow-drift" style="width:680px;height:680px;top:-10%;right:-15%;"></div>
-      <div class="glow-blob-deep" style="width:380px;height:380px;bottom:0;left:-5%;"></div>
-      <div class="mx-auto max-w-4xl">
+    <section id="about" class="acc-gold tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <!-- Concrete texture as base, low opacity, warm-leaning -->
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.18] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/concrete.webp')"></div>
+      <div class="absolute inset-0 -z-[15] bg-bg/60" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 grain opacity-50" aria-hidden="true"></div>
+      <span class="section-watermark" aria-hidden="true" style="top:-2rem;left:2rem;">/00</span>
+      <div class="glow-blob-gold glow-drift" aria-hidden="true" style="width:680px;height:680px;top:-10%;right:-15%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:380px;height:380px;bottom:0;left:-5%;"></div>
+      <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>About</p>
-        <p class="mt-6 text-2xl leading-relaxed md:text-3xl" data-reveal data-reveal-delay="100">
-          Seventeen years engineering secure, full-stack platforms for federal, defense, and public-sector missions. I integrate
-          <span class="text-accent">generative AI</span>,
-          <span class="text-accent">LLMs</span>, and real-time data pipelines into systems that hold under
-          <span class="text-accent">Zero Trust</span>,
-          <span class="text-accent">RMF</span>, and
-          <span class="text-accent">FedRAMP / HIPAA</span> &mdash; without trading delivery speed for paperwork.
-        </p>
-        <p class="mt-8 text-lg leading-relaxed text-text-dim md:text-xl" data-reveal data-reveal-delay="250">
-          I lead Agile teams, ship code daily, and prefer playbooks over PowerPoints. Trusted by the DoD, DHA, SSA, CMS, and global financial institutions to architect platforms that move billions in transactions, scale to millions of daily users, and survive the audit afterward.
-        </p>
+
+        <div class="mt-12 grid items-start gap-12 lg:grid-cols-12">
+          <!-- Portrait card (left, ~1/3) -->
+          <figure class="corners glass relative overflow-hidden lg:col-span-4" data-reveal="from-left" data-reveal-delay="100">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <img src="/assets/img/bio/dayel-mid.webp" alt="Dayel Ostraco" class="block w-full saturate-[0.95]">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg via-bg/80 to-transparent p-5 pt-10">
+              <p class="text-lg font-semibold tracking-tight">Dayel Ostraco</p>
+              <p class="mt-1 font-mono text-xs uppercase tracking-[0.22em] text-accent">CTO · Accelera Solutions</p>
+            </figcaption>
+          </figure>
+
+          <!-- About copy (right, ~2/3) -->
+          <div class="lg:col-span-8">
+            <p class="text-2xl leading-relaxed md:text-3xl" data-reveal data-reveal-delay="200">
+              Currently <span class="text-accent">CTO at <a href="https://www.accelerasolutions.com" target="_blank" rel="noopener noreferrer" class="border-b border-accent/40 hover:border-accent">Accelera Solutions</a></span>, an AI-first company delivering ATO-ready AI agents for federal missions. Seventeen years engineering secure, full-stack platforms for federal, defense, and public-sector clients &mdash; integrating generative AI, LLMs, and real-time data pipelines into systems that hold under
+              <span class="text-accent">Zero Trust</span>,
+              <span class="text-accent">RMF</span>, and
+              <span class="text-accent">FedRAMP / HIPAA</span>.
+            </p>
+            <p class="mt-8 text-lg leading-relaxed text-text-dim md:text-xl" data-reveal data-reveal-delay="350">
+              I lead Agile teams, ship code daily, and prefer playbooks over PowerPoints. Trusted by the DoD, DHA, SSA, CMS, and global financial institutions to architect platforms that move billions in transactions, scale to millions of daily users, and survive the audit afterward.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- WHAT I DO -->
     <section id="services" class="divider-gradient relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 diagonal-lines opacity-40"></div>
-      <span class="section-watermark-text" style="top:1rem;right:-1vw;">/SERVICES</span>
-      <div class="glow-blob-deep" style="width:720px;height:720px;top:20%;left:-20%;"></div>
-      <div class="glow-blob-deep" style="width:520px;height:520px;bottom:0%;right:-10%;"></div>
+      <div class="absolute inset-0 -z-10 diagonal-lines opacity-40" aria-hidden="true"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/SERVICES</span>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:720px;height:720px;top:20%;left:-20%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:520px;height:520px;bottom:0%;right:-10%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>What I do</p>
         <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
@@ -229,11 +267,14 @@
     </section>
 
     <!-- AIR-GAPPED AI LAB -->
-    <section id="lab" class="divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 diagonal-lines opacity-50"></div>
-      <span class="section-watermark-text" style="top:1rem;right:-1vw;">/LAB</span>
-      <div class="glow-blob glow-drift" style="width:600px;height:600px;top:-10%;right:-15%;"></div>
-      <div class="glow-blob-deep" style="width:480px;height:480px;bottom:5%;left:-10%;"></div>
+    <section id="lab" class="acc-gold divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <!-- Operations watch image — sectors-watch -->
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.22] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/sectors-watch.webp')"></div>
+      <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 diagonal-lines opacity-50" aria-hidden="true"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/LAB</span>
+      <div class="glow-blob-gold glow-drift" aria-hidden="true" style="width:600px;height:600px;top:-10%;right:-15%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:5%;left:-10%;"></div>
 
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>The lab</p>
@@ -241,7 +282,7 @@
           A fully air-gapped AI lab. <span class="text-accent">Operational at IL4.</span> Architected for IL5 and IL6.
         </h2>
         <p class="mt-6 max-w-3xl text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="200">
-          I built and operate a self-contained lab where authorized AI agents run inside an IL4-equivalent boundary &mdash; no external network, no telemetry leakage, full per-action audit. The same architecture extends to IL5 and IL6 for classified mission deployments.
+          I built and operate a self-contained lab where authorized AI agents &mdash; Glyphon playbooks, Colophon engineering teams, custom workloads &mdash; run inside an IL4-equivalent boundary. <span class="text-accent">Air-gapped network</span>, no external telemetry, per-action audit, hardware-rooted attestation. The same architecture extends to <span class="text-accent">IL5 and IL6</span> for classified mission deployments.
         </p>
 
         <div class="mt-12 grid gap-6 md:grid-cols-3" data-reveal data-reveal-delay="300">
@@ -268,15 +309,18 @@
     </section>
 
     <!-- GLYPHON FLAGSHIP -->
-    <section id="glyphon" class="corners corners-lg divider-gradient tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="glyphon" class="acc-gold corners corners-lg divider-gradient tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
       <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-      <div class="absolute inset-0 -z-10 dot-grid-accent opacity-40"></div>
-      <div class="absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-accent-deep/30 to-transparent"></div>
-      <span class="section-watermark-text" style="top:1rem;left:-1vw;">/FLAGSHIP</span>
+      <!-- PCB macro — gold circuit traces on dark, color-perfect for Glyphon brand -->
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.18] saturate-[0.7]" aria-hidden="true" style="background-image:url('/assets/img/bg/pcb-macro.jpg')"></div>
+      <div class="absolute inset-0 -z-[15] bg-bg/55" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 dot-grid-gold opacity-30" aria-hidden="true"></div>
+      <div class="absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-gold-deep/30 to-transparent"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;">/FLAGSHIP</span>
       <!-- Giant Glyphon hummingbird watermark -->
-      <img src="/assets/brands/glyphon-mark.svg" alt="" class="pointer-events-none absolute -bottom-20 -right-20 hidden h-[600px] w-[600px] opacity-[0.04] md:block" aria-hidden="true">
-      <div class="glow-blob glow-drift" style="width:700px;height:700px;top:-15%;right:-15%;"></div>
-      <div class="glow-blob-deep glow-drift-slow" style="width:520px;height:520px;bottom:5%;left:-10%;"></div>
+      <img src="/assets/brands/glyphon-mark.svg" alt="" class="pointer-events-none absolute -bottom-20 -right-20 hidden h-[600px] w-[600px] opacity-[0.06] md:block" aria-hidden="true">
+      <div class="glow-blob-gold glow-drift" aria-hidden="true" style="width:700px;height:700px;top:-15%;right:-15%;"></div>
+      <div class="glow-blob-deep glow-drift-slow" aria-hidden="true" style="width:520px;height:520px;bottom:5%;left:-10%;"></div>
 
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Flagship product</p>
@@ -293,21 +337,21 @@
             </h2>
 
             <p class="mt-6 text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="300">
-              Run the same playbooks across OpenAI, Claude, Gemini, and AWS Bedrock — and get byte-identical compliance artifacts every time. Validated at IL5 on AWS GovCloud (LLaMA 4 Maverick, April 2026, 9/9 green AMI hardening end-to-end).
+              Multi-agent compliance pipelines producing <span class="text-accent">byte-identical artifacts</span> across OpenAI, Claude, Gemini, and AWS Bedrock. Seven production playbooks covering CVE resolution, AMI and container hardening, eMASS POAM submission, and FedRAMP SSP generation. Validated at <span class="text-accent">IL5 on AWS GovCloud</span> with LLaMA 4 Maverick &mdash; April 2026, 9/9 green AMI hardening end-to-end.
             </p>
 
             <ul class="mt-10 grid gap-4 sm:grid-cols-2" data-reveal data-reveal-delay="400">
-              <li class="corners glass glass-hover p-5">
+              <li class="corners glass glass-hover p-6">
                 <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <p class="font-mono text-3xl font-semibold text-accent">83.5%</p>
                 <p class="mt-1 text-sm text-text-dim">CVE auto-resolution across 7 ecosystems</p>
               </li>
-              <li class="corners glass glass-hover p-5">
+              <li class="corners glass glass-hover p-6">
                 <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <p class="font-mono text-3xl font-semibold text-accent">99.5%</p>
                 <p class="mt-1 text-sm text-text-dim">Windows STIG compliance via AMI hardening</p>
               </li>
-              <li class="corners glass glass-hover p-5">
+              <li class="corners glass glass-hover p-6">
                 <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 <p class="font-mono text-3xl font-semibold text-accent">35+</p>
                 <p class="mt-1 text-sm text-text-dim">Production agents across 7 playbooks</p>
@@ -320,8 +364,8 @@
             </ul>
 
             <div class="mt-10 flex flex-wrap gap-4" data-reveal data-reveal-delay="500">
-              <a href="https://glyphon.ai" target="_blank" rel="noopener" class="btn-primary">glyphon.ai</a>
-              <a href="https://glyphon.ai/government" target="_blank" rel="noopener" class="btn-ghost">Government</a>
+              <a href="https://glyphon.ai" target="_blank" rel="noopener noreferrer" class="btn-primary">glyphon.ai</a>
+              <a href="https://glyphon.ai/government" target="_blank" rel="noopener noreferrer" class="btn-ghost">Government</a>
             </div>
           </div>
 
@@ -356,7 +400,7 @@
                 </li>
                 <li class="flex items-baseline gap-3">
                   <span class="font-mono text-xs text-accent">▸</span>
-                  <span>FedRAMP SSP Generation &mdash; 5 agents <span class="text-text/40">(beta)</span></span>
+                  <span>FedRAMP SSP Generation &mdash; 5 agents <span class="text-text/60">(beta)</span></span>
                 </li>
               </ul>
             </div>
@@ -367,16 +411,16 @@
 
     <!-- PRODUCT FAMILY -->
     <section id="products" class="divider-gradient tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 scanlines opacity-60"></div>
-      <span class="section-watermark-text" style="top:1rem;right:-1vw;">/FAMILY</span>
+      <div class="absolute inset-0 -z-10 scanlines opacity-60" aria-hidden="true"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/FAMILY</span>
       <!-- Connecting orbit SVG behind product grid -->
       <svg class="pointer-events-none absolute left-1/2 top-1/2 -z-[1] hidden h-[420px] w-[1100px] -translate-x-1/2 -translate-y-1/2 opacity-30 lg:block" viewBox="0 0 1100 420" fill="none" aria-hidden="true">
         <ellipse cx="550" cy="210" rx="540" ry="180" stroke="rgba(0,173,239,0.25)" stroke-width="0.5" stroke-dasharray="3 6"/>
         <ellipse cx="550" cy="210" rx="380" ry="120" stroke="rgba(0,173,239,0.15)" stroke-width="0.5" stroke-dasharray="2 8"/>
         <line x1="140" y1="210" x2="960" y2="210" stroke="rgba(0,173,239,0.15)" stroke-width="0.5"/>
       </svg>
-      <div class="glow-blob-deep" style="width:680px;height:680px;top:30%;right:-20%;"></div>
-      <div class="glow-blob-deep" style="width:520px;height:520px;bottom:5%;left:-10%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:680px;height:680px;top:30%;right:-20%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:520px;height:520px;bottom:5%;left:-10%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>The product family</p>
         <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
@@ -385,35 +429,35 @@
 
         <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
-          <a href="https://colophon.build" target="_blank" rel="noopener" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="100">
+          <a href="https://colophon.build" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="100">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <img src="/assets/brands/colophon-head.svg" alt="" class="h-14 w-auto" aria-hidden="true">
+            <div class="flex h-20 items-end"><img src="/assets/brands/colophon-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true"></div>
             <h3 class="mt-6 text-2xl font-semibold">Colophon</h3>
-            <p class="mt-3 flex-1 text-sm text-text-dim">Specialist agent bench for secure federal delivery. Bounded peer collaboration with chain-of-custody escalation. Sister to Glyphon.</p>
+            <p class="mt-3 flex-1 text-sm text-text-dim">70+ specialist AI agents &mdash; engineering, architecture, design, docs, testing, data science &mdash; with antagonist peer review and Human CCB approval. <span class="text-accent">cATO</span> discipline per feature shipped.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">colophon.build →</p>
           </a>
 
-          <a href="https://vallark.build" target="_blank" rel="noopener" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="200">
+          <a href="https://vallark.build" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="200">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <img src="/assets/brands/vallark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
+            <div class="flex h-20 items-end"><img src="/assets/brands/vallark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true"></div>
             <h3 class="mt-6 text-2xl font-semibold">Vallark</h3>
-            <p class="mt-3 flex-1 text-sm text-text-dim">Mobile security contract for DoD apps. OpenAPI 3.1 + four language-native starters. Attestation and CUI handling baked into the API design.</p>
+            <p class="mt-3 flex-1 text-sm text-text-dim">DoD mobile security contract &mdash; OpenAPI 3.1 spec plus iOS, Android, Web, and API starters. <span class="text-accent">CAC-Plate</span> institutional mark. Attestation and CUI handling encoded in the API design itself, not the implementation.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">vallark.build →</p>
           </a>
 
-          <a href="https://affirmark.build" target="_blank" rel="noopener" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="300">
+          <a href="https://affirmark.build" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="300">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <img src="/assets/brands/affirmark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
+            <div class="flex h-20 items-end"><img src="/assets/brands/affirmark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true"></div>
             <h3 class="mt-6 text-2xl font-semibold">Affirmark</h3>
-            <p class="mt-3 flex-1 text-sm text-text-dim">CMMC Level 1 self-attestation for SMB DoD subcontractors. Hash-chained audit log, email-ingest evidence, grounded compliance chatbot.</p>
+            <p class="mt-3 flex-1 text-sm text-text-dim">CMMC <span class="text-accent">Level 1 self-attestation</span> app for SMB DoD subcontractors. Replaces the 16-sheet workbook with a hash-chained audit log, email-ingest evidence aggregation, and a grounded chatbot that coaches managers through the 15 requirements.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">affirmark.build →</p>
           </a>
 
-          <a href="https://sigilark.com" target="_blank" rel="noopener" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="400">
+          <a href="https://sigilark.com" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group flex flex-col p-8" data-reveal data-reveal-delay="400">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <img src="/assets/brands/sigilark-mark.svg" alt="" class="h-14 w-auto" aria-hidden="true">
+            <div class="flex h-20 items-end"><img src="/assets/brands/sigilark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true"></div>
             <h3 class="mt-6 text-2xl font-semibold">SigilArk</h3>
-            <p class="mt-3 flex-1 text-sm text-text-dim">Parent brand. WOSB. AI-enabled technical delivery and program operations across classified and regulated federal environments.</p>
+            <p class="mt-3 flex-1 text-sm text-text-dim">Parent brand. <span class="text-accent">WOSB</span>. AI-enabled technical delivery, program operations, and executive support across classified and regulated federal environments.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">sigilark.com →</p>
           </a>
 
@@ -422,11 +466,14 @@
     </section>
 
     <!-- RECENT MISSIONS -->
-    <section id="missions" class="divider-gradient tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 grain opacity-50"></div>
-      <span class="section-watermark-text" style="top:1rem;left:-1vw;">/MISSIONS</span>
-      <div class="glow-blob-deep" style="width:680px;height:680px;bottom:-10%;left:-15%;"></div>
-      <div class="glow-blob-deep" style="width:520px;height:520px;top:10%;right:-20%;"></div>
+    <section id="missions" class="acc-gold divider-gradient tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <!-- Operations image — federal mission feel -->
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.15] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/operations.jpg')"></div>
+      <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 grain opacity-50" aria-hidden="true"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;">/MISSIONS</span>
+      <div class="glow-blob-gold" aria-hidden="true" style="width:680px;height:680px;bottom:-10%;left:-15%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:520px;height:520px;top:10%;right:-20%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Recent missions</p>
         <h2 class="mt-6 text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
@@ -501,10 +548,10 @@
 
     <!-- CAPABILITIES -->
     <section id="stack" class="divider-gradient tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 dot-grid-fine opacity-60"></div>
-      <span class="section-watermark-text" style="top:1rem;left:-1vw;">/STACK</span>
-      <div class="glow-blob-deep glow-drift" style="width:680px;height:680px;top:30%;right:-15%;"></div>
-      <div class="glow-blob-deep" style="width:480px;height:480px;bottom:0;left:-10%;"></div>
+      <div class="absolute inset-0 -z-10 dot-grid-fine opacity-60" aria-hidden="true"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;">/STACK</span>
+      <div class="glow-blob-deep glow-drift" aria-hidden="true" style="width:680px;height:680px;top:30%;right:-15%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:0;left:-10%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Capabilities</p>
         <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
@@ -562,10 +609,14 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section id="certs" class="tint-deep relative overflow-hidden px-6 py-24 lg:px-8">
-      <div class="absolute inset-0 -z-10 grain opacity-50"></div>
-      <span class="section-watermark-text" style="top:1rem;right:-1vw;">/CLEARED</span>
-      <div class="glow-blob-deep" style="width:600px;height:600px;top:30%;right:-15%;"></div>
+    <section id="certs" class="acc-gold tint-deep relative overflow-hidden px-6 py-24 lg:px-8">
+      <!-- Hubble nebula — warm + cool, deep-space mission-control feel -->
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.16] saturate-[0.85]" aria-hidden="true" style="background-image:url('/assets/img/bg/nebula.jpg')"></div>
+      <div class="absolute inset-0 -z-[15] bg-bg/60" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 grain opacity-40" aria-hidden="true"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/CLEARED</span>
+      <div class="glow-blob-gold" aria-hidden="true" style="width:600px;height:600px;top:30%;right:-15%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:0;left:-10%;"></div>
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Certifications &amp; clearance</p>
 
@@ -590,11 +641,11 @@
     </section>
 
     <!-- RESUME + PRESS -->
-    <section id="cv" class="divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 diagonal-lines opacity-40"></div>
-      <span class="section-watermark-text" style="top:1rem;right:-1vw;">/CV</span>
-      <div class="glow-blob-deep" style="width:680px;height:680px;top:0;left:-15%;"></div>
-      <div class="glow-blob-deep" style="width:520px;height:520px;bottom:0;right:-15%;"></div>
+    <section id="resume" class="divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <div class="absolute inset-0 -z-10 diagonal-lines opacity-40" aria-hidden="true"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;">/RESUME</span>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:680px;height:680px;top:0;left:-15%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:520px;height:520px;bottom:0;right:-15%;"></div>
       <div class="mx-auto max-w-7xl">
         <div class="grid gap-16 lg:grid-cols-12">
           <div class="lg:col-span-5">
@@ -609,7 +660,7 @@
               <a href="/assets/resume/Dayel_Ostraco_Resume_FullStackAI.pdf" class="btn-primary" download>Download PDF</a>
               <a href="/assets/resume/Dayel_Ostraco_Resume_FullStackAI.docx" class="btn-ghost" download>Download Word</a>
             </div>
-            <p class="mt-6 font-mono text-xs text-text/40" data-reveal data-reveal-delay="400">
+            <p class="mt-6 font-mono text-xs text-text/60" data-reveal data-reveal-delay="400">
               Updated May 2026
             </p>
           </div>
@@ -617,26 +668,26 @@
           <div class="lg:col-span-7">
             <p class="eyebrow" data-reveal>Selected coverage</p>
             <ul class="mt-6 space-y-4">
-              <li class="corners glass glass-hover p-5" data-reveal data-reveal-delay="100"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-                <a href="https://www.wsj.com/news/articles/SB10001424052702304856504579339130820876304" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
+              <li class="corners glass glass-hover p-6" data-reveal data-reveal-delay="100"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+                <a href="https://www.wsj.com/news/articles/SB10001424052702304856504579339130820876304" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-accent">
                   <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">The Wall Street Journal</p>
                   <p class="mt-2 text-lg">Smartphones to Open Doors at Hotel</p>
                 </a>
               </li>
-              <li class="corners glass glass-hover p-5" data-reveal data-reveal-delay="200"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-                <a href="http://www.cnn.com/2014/01/28/tech/mobile/smartphone-hotel-keys/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
+              <li class="corners glass glass-hover p-6" data-reveal data-reveal-delay="200"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+                <a href="http://www.cnn.com/2014/01/28/tech/mobile/smartphone-hotel-keys/" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-accent">
                   <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">CNN</p>
                   <p class="mt-2 text-lg">Your Smartphone Could Replace Hotel Keys</p>
                 </a>
               </li>
-              <li class="corners glass glass-hover p-5" data-reveal data-reveal-delay="300"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-                <a href="http://custom.forbes.com/2015/12/03/charleston-s-c/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
+              <li class="corners glass glass-hover p-6" data-reveal data-reveal-delay="300"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+                <a href="http://custom.forbes.com/2015/12/03/charleston-s-c/" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-accent">
                   <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">Forbes</p>
                   <p class="mt-2 text-lg">Where Great Minds Are Moving to Live, Work and Play</p>
                 </a>
               </li>
-              <li class="corners glass glass-hover p-5" data-reveal data-reveal-delay="400"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-                <a href="https://venturebeat.com/2012/10/09/knappsack/" target="_blank" rel="noopener" class="block transition-colors hover:text-accent">
+              <li class="corners glass glass-hover p-6" data-reveal data-reveal-delay="400"><span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+                <a href="https://venturebeat.com/2012/10/09/knappsack/" target="_blank" rel="noopener noreferrer" class="block transition-colors hover:text-accent">
                   <p class="font-mono text-xs uppercase tracking-[0.22em] text-accent">VentureBeat</p>
                   <p class="mt-2 text-lg">If You're a Mobile Developer, This is the One Post You Have to Read Today</p>
                 </a>
@@ -648,11 +699,14 @@
     </section>
 
     <!-- CONNECT -->
-    <section id="connect" class="tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
-      <div class="absolute inset-0 -z-10 dot-grid opacity-40"></div>
-      <span class="section-watermark-text" style="bottom:-2rem;left:50%;transform:translateX(-50%);">/CONNECT</span>
-      <div class="glow-blob glow-drift" style="width:680px;height:680px;bottom:-10%;left:25%;"></div>
-      <div class="glow-blob-deep" style="width:480px;height:480px;top:10%;right:-10%;"></div>
+    <section id="connect" class="acc-gold tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+      <!-- Atmospheric break — sea -->
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.2] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/break-sea.webp')"></div>
+      <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 dot-grid opacity-40" aria-hidden="true"></div>
+      <span class="section-watermark-text" aria-hidden="true" style="bottom:1rem;left:50%;transform:translateX(-50%);">/CONNECT</span>
+      <div class="glow-blob-gold glow-drift" aria-hidden="true" style="width:680px;height:680px;bottom:-10%;left:25%;"></div>
+      <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;top:10%;right:-10%;"></div>
 
       <div class="mx-auto max-w-4xl text-center">
         <p class="eyebrow" data-reveal>Connect</p>
@@ -668,11 +722,11 @@
             <svg class="h-5 w-5 fill-current"><use href="/assets/svg/icons.svg#mail"/></svg>
             dayel.ostraco@proton.me
           </a>
-          <a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener" class="btn-ghost">
+          <a href="https://www.linkedin.com/in/dayelostraco" target="_blank" rel="noopener noreferrer" class="btn-ghost">
             <svg class="h-5 w-5 fill-current"><use href="/assets/svg/icons.svg#linkedin"/></svg>
             LinkedIn
           </a>
-          <a href="https://github.com/dayelostraco" target="_blank" rel="noopener" class="btn-ghost">
+          <a href="https://github.com/dayelostraco" target="_blank" rel="noopener noreferrer" class="btn-ghost">
             <svg class="h-5 w-5 fill-current"><use href="/assets/svg/icons.svg#github"/></svg>
             GitHub
           </a>
@@ -681,7 +735,7 @@
     </section>
 
     <footer class="border-t border-white/10 px-6 py-10 lg:px-8">
-      <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 font-mono text-xs uppercase tracking-[0.22em] text-text/40 md:flex-row md:items-center">
+      <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 font-mono text-xs uppercase tracking-[0.22em] text-text/60 md:flex-row md:items-center">
         <p>© 2026 Dayel Ostraco · Charleston, SC · DoD-cleared</p>
         <p><span class="text-accent">/</span> dayelostra.co</p>
       </div>
