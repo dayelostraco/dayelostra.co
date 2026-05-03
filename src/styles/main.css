@@ -156,6 +156,60 @@
   background: linear-gradient(to right, transparent, rgba(0, 173, 239, 0.35), transparent);
 }
 
+/* --- section watermark (oversized mono numeral / label as bg) --- */
+.section-watermark {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  color: rgba(0, 173, 239, 0.045);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  font-size: clamp(8rem, 20vw, 22rem);
+}
+.section-watermark-text {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+  color: rgba(255, 255, 255, 0.025);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  font-size: clamp(5rem, 12vw, 14rem);
+  text-transform: uppercase;
+}
+
+/* --- background tint band variation between sections --- */
+.tint-deep   { background-color: #080b22; }
+.tint-warm   { background-color: #0c1133; }
+.tint-darker { background-color: #060819; }
+
+/* --- hero mesh node colors --- */
+.mesh-node-secondary { fill: rgba(0, 173, 239, 0.7); }
+
+/* --- vertical timeline rule for missions --- */
+.timeline-rule {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 173, 239, 0.4) 10%, rgba(0, 173, 239, 0.4) 90%, transparent);
+  pointer-events: none;
+}
+.timeline-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(0, 173, 239, 0.15), 0 0 0 8px rgba(0, 173, 239, 0.06);
+  transform: translate(-50%, 0);
+}
+
 /* --- ambient hero glows --- */
 .glow-blob {
   position: absolute;
