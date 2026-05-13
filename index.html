@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://dayelostra.co/assets/img/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Dayel Ostraco — Full Stack AI Engineer and Secure Systems Architect. CISSP, DoD Secret cleared.">
+  <meta property="og:image:alt" content="Dayel Ostraco — Full Stack AI Engineer and Secure Systems Architect. CISSP, DoD Secret cleared, TS-eligible.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dayel Ostraco · Full Stack AI Engineer · Secure Systems Architect">
   <meta name="twitter:description" content="Now delivering AI agentic processes to DHA and the U.S. Navy. Federal AI from prototype to ATO in months.">
@@ -69,6 +69,11 @@
       "https://www.linkedin.com/in/dayelostraco",
       "https://github.com/dayelostraco"
     ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "State University of New York at Purchase",
+      "url": "https://www.purchase.edu/"
+    },
     "knowsAbout": [
       "Generative AI",
       "Large Language Models",
@@ -84,6 +89,18 @@
     "hasCredential": [
       {
         "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "B.S. Mathematics",
+        "recognizedBy": { "@type": "CollegeOrUniversity", "name": "State University of New York at Purchase" }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "B.S. Computer Science",
+        "recognizedBy": { "@type": "CollegeOrUniversity", "name": "State University of New York at Purchase" }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
         "credentialCategory": "certification",
         "name": "CISSP",
         "recognizedBy": { "@type": "Organization", "name": "(ISC)²" }
@@ -91,7 +108,7 @@
       {
         "@type": "EducationalOccupationalCredential",
         "credentialCategory": "security clearance",
-        "name": "DoD Secret",
+        "name": "DoD Secret (TS-eligible)",
         "recognizedBy": { "@type": "Organization", "name": "U.S. Department of Defense" }
       }
     ]
@@ -250,7 +267,7 @@
         <p class="mt-8 font-mono text-sm uppercase tracking-[0.22em] text-text/70 md:text-base" data-reveal data-reveal-delay="200">
           <span class="text-accent">/</span> CTO at
           <a href="https://www.accelerasolutions.com" target="_blank" rel="noopener noreferrer" class="border-b border-accent/40 pb-0.5 transition-colors hover:text-accent hover:border-accent">Accelera&nbsp;Solutions</a>
-          <span class="ml-2 text-text/60">— ATO-ready AI for federal missions</span>
+          <span class="ml-2 text-text/60">— ATO-ready AI for federal missions · CMMC L2 in progress</span>
         </p>
 
         <p class="mt-8 max-w-3xl text-xl text-text/85 md:text-2xl" data-reveal data-reveal-delay="280" aria-live="polite">
@@ -371,12 +388,20 @@
           <div class="corners glass p-6" data-reveal data-reveal-delay="350">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="eyebrow-dim">Languages active</p>
-            <p class="mt-3 font-mono text-sm text-text">TypeScript &middot; Python &middot; Astro &middot; Kotlin &middot; Swift &middot; Shell</p>
+            <p class="mt-3 font-mono text-sm text-text">Java &middot; TypeScript &middot; Python &middot; Go &middot; Kotlin &middot; Swift &middot; Astro &middot; Shell</p>
           </div>
-          <div class="corners glass-accent p-6" data-reveal data-reveal-delay="400">
+          <div class="corners glass-accent glow-accent p-6" data-reveal data-reveal-delay="400">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <p class="eyebrow-dim">Engine</p>
-            <p class="mt-3 text-sm text-text">Powered by <a href="#products" class="text-accent border-b border-accent/40 hover:border-accent">Colophon</a>.</p>
+            <div class="flex items-center gap-4">
+              <img src="/assets/brands/colophon-mark.svg" alt="" class="h-14 w-14 shrink-0" aria-hidden="true" width="80" height="80">
+              <div class="min-w-0">
+                <p class="eyebrow-dim">Engine</p>
+                <p class="mt-1 text-xl font-semibold tracking-tight">
+                  <a href="#products" class="text-accent border-b border-accent/40 hover:border-accent">Colophon</a>
+                </p>
+                <p class="mt-1 text-xs text-text-dim">Our proprietary internal AI delivery platform.</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -441,7 +466,32 @@
           I built and operate a self-contained lab where authorized AI agents &mdash; Glyphon playbooks, Colophon engineering teams, custom workloads &mdash; run against an <span class="text-accent">IL4-equivalent control set</span>. The same architecture extends to <span class="text-accent">IL5 and IL6</span> for classified mission deployments.
         </p>
 
-        <div class="mt-12 grid gap-6 md:grid-cols-3" data-reveal data-reveal-delay="300">
+        <p class="mt-10 max-w-3xl text-base text-text-dim md:text-lg" data-reveal data-reveal-delay="230">
+          Owned hardware hosts the largest-parameter open models inside the boundary &mdash; closed-network multi-model inference, no external dependencies.
+        </p>
+
+        <div class="mt-6 grid gap-6 md:grid-cols-3" data-reveal data-reveal-delay="260">
+          <div class="corners glass p-8">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-5xl font-semibold tracking-tight text-accent">2&times;</p>
+            <p class="mt-4 font-mono text-xs uppercase tracking-[0.22em] text-text-dim">NVIDIA DGX Spark</p>
+            <p class="mt-2 text-sm text-text-dim">GB10 superchip workstations.</p>
+          </div>
+          <div class="corners glass p-8">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-5xl font-semibold tracking-tight text-accent">4&times;</p>
+            <p class="mt-4 font-mono text-xs uppercase tracking-[0.22em] text-text-dim">NVIDIA H100</p>
+            <p class="mt-2 text-sm text-text-dim">Datacenter GPUs &middot; 80GB HBM3.</p>
+          </div>
+          <div class="corners glass p-8">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-5xl font-semibold tracking-tight text-accent">512GB</p>
+            <p class="mt-4 font-mono text-xs uppercase tracking-[0.22em] text-text-dim">Mac Studio</p>
+            <p class="mt-2 text-sm text-text-dim">Unified memory for largest-parameter inference.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-6 md:grid-cols-3" data-reveal data-reveal-delay="300">
           <div class="corners glass-accent glow-accent p-8">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="font-mono text-5xl font-semibold tracking-tight text-accent">IL4</p>
@@ -481,86 +531,86 @@
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>Flagship product</p>
 
-        <div class="mt-12 grid items-start gap-12 lg:grid-cols-12">
-          <div class="lg:col-span-7">
-            <div class="flex items-center gap-5" data-reveal data-reveal-delay="100">
-              <img src="/assets/brands/glyphon-mark.svg" alt="" class="h-16 w-16 shrink-0" aria-hidden="true" width="80" height="80">
-              <span class="font-semibold text-4xl tracking-tight md:text-5xl" style="color:#c1a066;">Glyphon<sup class="ml-1 align-top text-sm">™</sup></span>
-            </div>
-
-            <h2 class="mt-8 text-3xl font-semibold leading-tight md:text-5xl" data-reveal data-reveal-delay="200">
-              Multi-provider AI agent orchestration with <span class="text-accent">deterministic</span> compliance output.
-            </h2>
-
-            <p class="mt-6 text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="300">
-              Multi-agent compliance pipelines producing <span class="text-accent">byte-identical artifacts</span> across OpenAI, Claude, Gemini, and AWS Bedrock. Seven production playbooks covering CVE resolution, AMI and container hardening, eMASS POAM submission, and FedRAMP SSP generation. Validated at <span class="text-accent">IL5 on AWS GovCloud</span> with LLaMA 4 Maverick &mdash; April 2026, 9/9 green AMI hardening end-to-end.
-            </p>
-
-            <ul class="mt-10 grid gap-4 sm:grid-cols-2" data-reveal data-reveal-delay="400">
-              <li class="corners glass glass-hover p-6">
-                <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-                <p class="font-mono text-3xl font-semibold text-accent">83.5%</p>
-                <p class="mt-1 text-sm text-text-dim">CVE auto-resolution across 7 ecosystems</p>
-              </li>
-              <li class="corners glass glass-hover p-6">
-                <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-                <p class="font-mono text-3xl font-semibold text-accent">99.5%</p>
-                <p class="mt-1 text-sm text-text-dim">Windows STIG compliance via AMI hardening</p>
-              </li>
-              <li class="corners glass glass-hover p-6">
-                <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-                <p class="font-mono text-3xl font-semibold text-accent">50</p>
-                <p class="mt-1 text-sm text-text-dim">Production agents across 7 playbooks</p>
-              </li>
-              <li class="corners glass-accent glass-hover p-5">
-                <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-                <p class="font-mono text-3xl font-semibold text-accent">IL5</p>
-                <p class="mt-1 text-sm text-text-dim">GovCloud-validated · FedRAMP High ready</p>
-              </li>
-            </ul>
-
-            <div class="mt-10 flex flex-wrap gap-4" data-reveal data-reveal-delay="500">
-              <a href="https://glyphon.ai" target="_blank" rel="noopener noreferrer" class="btn-primary">glyphon.ai</a>
-              <a href="https://glyphon.ai/government" target="_blank" rel="noopener noreferrer" class="btn-ghost">Government</a>
-            </div>
+        <!-- TOP STACK: brand + headline + paragraph (full-width, max-w-4xl for readability) -->
+        <div class="mt-12 max-w-4xl">
+          <div class="flex items-center gap-5" data-reveal data-reveal-delay="100">
+            <img src="/assets/brands/glyphon-mark.svg" alt="" class="h-16 w-16 shrink-0" aria-hidden="true" width="80" height="80">
+            <span class="font-semibold text-4xl tracking-tight md:text-5xl" style="color:#c1a066;">Glyphon<sup class="ml-1 align-top text-sm">™</sup></span>
           </div>
 
-          <div class="lg:col-span-5" data-reveal="from-right" data-reveal-delay="200">
-            <div class="corners glass-accent glow-accent p-10">
-              <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-              <p class="eyebrow-dim">Production playbooks</p>
-              <ul class="mt-6 space-y-4 text-text-dim">
-                <li class="flex items-baseline gap-3">
-                  <span class="font-mono text-xs text-accent">▸</span>
-                  <span>CVE Resolution &mdash; 10 agents, 7 ecosystems</span>
-                </li>
-                <li class="flex items-baseline gap-3">
-                  <span class="font-mono text-xs text-accent">▸</span>
-                  <span>AMI Hardening &mdash; 9 agents, 7 platforms</span>
-                </li>
-                <li class="flex items-baseline gap-3">
-                  <span class="font-mono text-xs text-accent">▸</span>
-                  <span>Container Hardening &mdash; 7 agents, 4 registries</span>
-                </li>
-                <li class="flex items-baseline gap-3">
-                  <span class="font-mono text-xs text-accent">▸</span>
-                  <span>Semgrep SAST Triage &mdash; 8 agents</span>
-                </li>
-                <li class="flex items-baseline gap-3">
-                  <span class="font-mono text-xs text-accent">▸</span>
-                  <span>Security Posture Assessment &mdash; 7 agents, 14 tools</span>
-                </li>
-                <li class="flex items-baseline gap-3">
-                  <span class="font-mono text-xs text-accent">▸</span>
-                  <span>eMASS POAM Submission &mdash; 4 agents</span>
-                </li>
-                <li class="flex items-baseline gap-3">
-                  <span class="font-mono text-xs text-accent">▸</span>
-                  <span>FedRAMP SSP Generation &mdash; 5 agents <span class="text-text/60">(beta)</span></span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <h2 class="mt-8 text-3xl font-semibold leading-tight md:text-5xl" data-reveal data-reveal-delay="200">
+            Multi-provider AI agent orchestration with <span class="text-accent">deterministic</span> compliance output.
+          </h2>
+
+          <p class="mt-6 text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="300">
+            Multi-agent compliance pipelines producing <span class="text-accent">byte-identical artifacts</span> across OpenAI, Claude, Gemini, and AWS Bedrock. Seven production playbooks covering CVE resolution, AMI and container hardening, eMASS POAM submission, and FedRAMP SSP generation. Validated at <span class="text-accent">IL5 on AWS GovCloud</span> with LLaMA 4 Maverick &mdash; April 2026, 9/9 green AMI hardening end-to-end.
+          </p>
+        </div>
+
+        <!-- METRIC TILES: 4 tiles across, full width -->
+        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-reveal data-reveal-delay="400">
+          <li class="corners glass glass-hover p-6">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-3xl font-semibold text-accent">83.5%</p>
+            <p class="mt-1 text-sm text-text-dim">CVE auto-resolution across 7 ecosystems</p>
+          </li>
+          <li class="corners glass glass-hover p-6">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-3xl font-semibold text-accent">99.5%</p>
+            <p class="mt-1 text-sm text-text-dim">Windows STIG compliance via AMI hardening</p>
+          </li>
+          <li class="corners glass glass-hover p-6">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-3xl font-semibold text-accent">50</p>
+            <p class="mt-1 text-sm text-text-dim">Production agents across 7 playbooks</p>
+          </li>
+          <li class="corners glass-accent glass-hover p-6">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-3xl font-semibold text-accent">IL5</p>
+            <p class="mt-1 text-sm text-text-dim">GovCloud-validated · FedRAMP High ready</p>
+          </li>
+        </ul>
+
+        <!-- PRODUCTION PLAYBOOKS: full-width card, 2-column grid inside -->
+        <div class="mt-8 corners glass-accent glow-accent p-8 lg:p-10 relative" data-reveal data-reveal-delay="450">
+          <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+          <p class="eyebrow-dim">Production playbooks</p>
+          <ul class="mt-6 grid gap-x-10 gap-y-3 text-text-dim md:grid-cols-2">
+            <li class="flex items-baseline gap-3">
+              <span class="font-mono text-xs text-accent">▸</span>
+              <span>CVE Resolution &mdash; 10 agents, 7 ecosystems</span>
+            </li>
+            <li class="flex items-baseline gap-3">
+              <span class="font-mono text-xs text-accent">▸</span>
+              <span>AMI Hardening &mdash; 9 agents, 7 platforms</span>
+            </li>
+            <li class="flex items-baseline gap-3">
+              <span class="font-mono text-xs text-accent">▸</span>
+              <span>Container Hardening &mdash; 7 agents, 4 registries</span>
+            </li>
+            <li class="flex items-baseline gap-3">
+              <span class="font-mono text-xs text-accent">▸</span>
+              <span>Semgrep SAST Triage &mdash; 8 agents</span>
+            </li>
+            <li class="flex items-baseline gap-3">
+              <span class="font-mono text-xs text-accent">▸</span>
+              <span>Security Posture Assessment &mdash; 7 agents, 14 tools</span>
+            </li>
+            <li class="flex items-baseline gap-3">
+              <span class="font-mono text-xs text-accent">▸</span>
+              <span>eMASS POAM Submission &mdash; 4 agents</span>
+            </li>
+            <li class="flex items-baseline gap-3">
+              <span class="font-mono text-xs text-accent">▸</span>
+              <span>FedRAMP SSP Generation &mdash; 5 agents <span class="text-text/60">(beta)</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CTAs: full-width below the evidence row -->
+        <div class="mt-10 flex flex-wrap gap-4" data-reveal data-reveal-delay="500">
+          <a href="https://glyphon.ai" target="_blank" rel="noopener noreferrer" class="btn-primary">glyphon.ai</a>
+          <a href="https://glyphon.ai/government" target="_blank" rel="noopener noreferrer" class="btn-ghost">Government</a>
         </div>
       </div>
     </section>
@@ -590,7 +640,7 @@
             <span class="absolute top-3 right-3 z-10 border border-[#c1a066]/50 bg-bg/70 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-[#c1a066] backdrop-blur-sm">Proprietary</span>
             <div class="flex h-20 items-end"><img src="/assets/brands/colophon-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true" width="80" height="80"></div>
             <h3 class="mt-6 text-2xl font-semibold">Colophon</h3>
-            <p class="mt-3 flex-1 text-sm text-text-dim">Our internal delivery platform &mdash; 70+ specialist AI agents across engineering, architecture, design, docs, testing, and data science. Antagonist peer review and Human CCB approval. <span class="text-accent">cATO</span> discipline per feature shipped &mdash; the engine behind our federal work.</p>
+            <p class="mt-3 flex-1 text-sm text-text-dim">Our internal AI delivery platform &mdash; 70+ specialist agents shipping with antagonist peer review and <span class="text-accent">Human CCB</span> approval.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">colophon.build →</p>
           </a>
 
@@ -599,7 +649,7 @@
             <span class="absolute top-3 right-3 z-10 border border-accent/50 bg-bg/70 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-accent backdrop-blur-sm">Shipping</span>
             <div class="flex h-20 items-end"><img src="/assets/brands/vallark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true" width="80" height="80"></div>
             <h3 class="mt-6 text-2xl font-semibold">Vallark</h3>
-            <p class="mt-3 flex-1 text-sm text-text-dim">DoD-grade mobile API contract &mdash; OpenAPI 3.1 spec plus iOS, Android, Web, and API starters. <span class="text-accent">CAC Plate</span> institutional mark. Attestation and CUI handling encoded in the API design itself, not the implementation.</p>
+            <p class="mt-3 flex-1 text-sm text-text-dim">DoD-grade mobile API contract &mdash; OpenAPI 3.1 + iOS / Android / Web / API starters, with <span class="text-accent">attestation and CUI handling</span> baked into the spec.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">vallark.build →</p>
           </a>
 
@@ -608,13 +658,13 @@
             <span class="absolute top-3 right-3 z-10 border border-accent/50 bg-bg/70 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-accent backdrop-blur-sm">Shipping</span>
             <div class="flex h-20 items-end"><img src="/assets/brands/affirmark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true" width="80" height="80"></div>
             <h3 class="mt-6 text-2xl font-semibold">Affirmark</h3>
-            <p class="mt-3 flex-1 text-sm text-text-dim">CMMC <span class="text-accent">Level 1 self-attestation</span> app for SMB DoD subcontractors. Replaces the 16-sheet workbook with a hash-chained audit log, email-ingest evidence aggregation, and a grounded chatbot that coaches managers through the 15 requirements.</p>
+            <p class="mt-3 flex-1 text-sm text-text-dim">CMMC <span class="text-accent">Level 1 self-attestation</span> app for SMB DoD subcontractors &mdash; replaces the 16-sheet workbook with a chatbot-coached, hash-chained audit log.</p>
             <p class="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-accent">affirmark.build →</p>
           </a>
 
           <a href="https://sigilark.com" target="_blank" rel="noopener noreferrer" class="corners glass glass-hover group relative flex flex-col p-8 [&_.cf-tr]:hidden" data-reveal data-reveal-delay="400">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <span class="absolute top-3 right-3 z-10 border border-[#c1a066]/50 bg-bg/70 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-[#c1a066] backdrop-blur-sm">WOSB · Parent</span>
+            <span class="absolute top-3 right-3 z-10 border border-[#c1a066]/50 bg-bg/70 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-[#c1a066] backdrop-blur-sm">WOSB · CMMC L1</span>
             <div class="flex h-20 items-end"><img src="/assets/brands/sigilark-mark.svg" alt="" class="max-h-20 w-auto" aria-hidden="true" width="200" height="70"></div>
             <h3 class="mt-6 text-2xl font-semibold">SigilArk</h3>
             <p class="mt-3 flex-1 text-sm text-text-dim">Parent brand. <span class="text-accent">WOSB</span>. AI-enabled technical delivery, program operations, and executive support across classified and regulated federal environments.</p>
@@ -845,8 +895,8 @@
 
           <div class="corners glass p-8" data-reveal data-reveal-delay="100">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <p class="eyebrow-dim">Languages &amp; Frameworks</p>
-            <p class="mt-4 text-sm leading-relaxed text-text-dim">Architected production backends from <span class="text-text">MHS GENESIS</span> HL7/FHIR pipelines to <span class="text-text">VBMS</span> modernization to the <span class="text-text">Glyphon</span> agent runtime.</p>
+            <p class="font-mono text-xs uppercase tracking-[0.28em] text-[#c1a066]">Languages &amp; Frameworks</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-dim">Architected production backends from <span class="text-accent">MHS GENESIS</span> HL7/FHIR pipelines to <span class="text-accent">VBMS</span> modernization to the <span class="text-accent">Glyphon</span> agent runtime.</p>
             <ul class="mt-6 space-y-2 font-mono text-sm text-text">
               <li>Python</li><li>Java</li><li>TypeScript</li><li>JavaScript</li>
               <li>React</li><li>Node.js · NestJS</li><li>Spring Boot</li>
@@ -856,8 +906,8 @@
 
           <div class="corners glass p-8" data-reveal data-reveal-delay="200">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <p class="eyebrow-dim">Cloud &amp; Infrastructure</p>
-            <p class="mt-4 text-sm leading-relaxed text-text-dim">GovCloud-native delivery for a decade. <span class="text-text">mSTAX</span> multi-region AWS + Azure cross-cloud at DHA. <span class="text-text">Glyphon</span> validated at IL5 on AWS GovCloud, April 2026.</p>
+            <p class="font-mono text-xs uppercase tracking-[0.28em] text-[#c1a066]">Cloud &amp; Infrastructure</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-dim">GovCloud-native delivery for a decade. <span class="text-accent">mSTAX</span> multi-region AWS + Azure cross-cloud at DHA. <span class="text-accent">Glyphon</span> validated at IL5 on AWS GovCloud, April 2026.</p>
             <ul class="mt-6 space-y-2 font-mono text-sm text-text">
               <li>AWS GovCloud</li><li>Azure · GCP</li>
               <li>Docker · Kubernetes</li><li>GitLab</li>
@@ -868,8 +918,8 @@
 
           <div class="corners glass p-8" data-reveal data-reveal-delay="300">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <p class="eyebrow-dim">AI/ML &amp; Data</p>
-            <p class="mt-4 text-sm leading-relaxed text-text-dim">GenAI eligibility decisioning at <span class="text-text">Equifax</span> with Ollama / Gemini / Vertex AI on agency policy logic. Multi-provider LLM orchestration in classified enclaves today.</p>
+            <p class="font-mono text-xs uppercase tracking-[0.28em] text-[#c1a066]">AI/ML &amp; Data</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-dim">GenAI eligibility decisioning at <span class="text-accent">Equifax</span> with Ollama / Gemini / Vertex AI on agency policy logic. Multi-provider LLM orchestration in classified enclaves today.</p>
             <ul class="mt-6 space-y-2 font-mono text-sm text-text">
               <li>LLaMA · Gemini · OpenAI · Mistral</li>
               <li>Ollama · OpenWebUI</li>
@@ -881,8 +931,8 @@
 
           <div class="corners glass p-8" data-reveal data-reveal-delay="400">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <p class="eyebrow-dim">Security &amp; Compliance</p>
-            <p class="mt-4 text-sm leading-relaxed text-text-dim">ATOs under <span class="text-text">HIPAA + MEDCOI</span> at DHA. <span class="text-text">FedRAMP / HIPAA / FISMA</span> at Equifax. STIG-compliant deployments, eMASS submissions, and IL5 architecture today.</p>
+            <p class="font-mono text-xs uppercase tracking-[0.28em] text-[#c1a066]">Security &amp; Compliance</p>
+            <p class="mt-4 text-sm leading-relaxed text-text-dim">ATOs under <span class="text-accent">HIPAA + MEDCOI</span> at DHA. <span class="text-accent">FedRAMP / HIPAA / FISMA</span> at Equifax. STIG-compliant deployments, eMASS submissions, and IL5 architecture today.</p>
             <ul class="mt-6 space-y-2 font-mono text-sm text-text">
               <li>Zero Trust</li><li>RMF · ATO</li>
               <li>FedRAMP High</li><li>HIPAA · MEDCOI</li>
@@ -905,18 +955,23 @@
       <div class="glow-blob-gold" aria-hidden="true" style="width:600px;height:600px;top:30%;right:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:0;left:-10%;"></div>
       <div class="mx-auto max-w-7xl">
-        <p class="eyebrow" data-reveal>Certification &amp; clearance</p>
+        <p class="eyebrow" data-reveal>Education, certification &amp; clearance</p>
 
-        <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
           <div class="corners glass glass-hover p-8" data-reveal data-reveal-delay="100">
+            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+            <p class="font-mono text-2xl font-semibold tracking-tight">B.S. Math <span class="text-text-dim">+</span> B.S. CS</p>
+            <p class="mt-3 text-sm text-text-dim">State University of New York at Purchase</p>
+          </div>
+          <div class="corners glass glass-hover p-8" data-reveal data-reveal-delay="200">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="font-mono text-3xl font-semibold tracking-tight">CISSP</p>
             <p class="mt-3 text-sm text-text-dim">Certified Information Systems Security Professional · (ISC)²</p>
           </div>
-          <div class="corners glass-accent glow-accent p-8" data-reveal data-reveal-delay="200">
+          <div class="corners glass-accent glow-accent p-8" data-reveal data-reveal-delay="300">
             <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
             <p class="font-mono text-3xl font-semibold tracking-tight text-accent">DoD Secret</p>
-            <p class="mt-3 text-sm text-text-dim">Active U.S. Department of Defense security clearance</p>
+            <p class="mt-3 text-sm text-text-dim">Active U.S. Department of Defense Secret clearance &middot; <span class="text-accent">TS-eligible</span></p>
           </div>
         </div>
       </div>
@@ -1005,10 +1060,13 @@
       <div class="mx-auto max-w-4xl text-center">
         <p class="eyebrow" data-reveal>Connect</p>
         <h2 class="mt-6 text-4xl font-semibold md:text-6xl" data-reveal data-reveal-delay="100">
-          Building something <span class="text-accent">audit-grade?</span>
+          Building something <span class="whitespace-nowrap text-accent">audit-grade?</span>
         </h2>
         <p class="mt-6 text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="200">
           Open to selective conversations on <span class="text-accent">full-time leadership</span>, <span class="text-accent">federal partnership and JV opportunities</span>, and a small number of <span class="text-accent">advisory engagements</span> per year.
+        </p>
+        <p class="mt-4 font-mono text-xs uppercase tracking-[0.22em] text-text/60" data-reveal data-reveal-delay="240">
+          Federal contracting available via <a href="https://www.accelerasolutions.com" target="_blank" rel="noopener noreferrer" class="text-accent border-b border-accent/40 hover:border-accent">Accelera Solutions</a> contract vehicles.
         </p>
 
         <div class="mt-12 flex flex-wrap justify-center gap-4" data-reveal data-reveal-delay="300">
