@@ -140,6 +140,7 @@
         <li><a href="#glyphon" class="transition-colors hover:text-accent">Flagship</a></li>
         <li><a href="#products" class="transition-colors hover:text-accent">Products</a></li>
         <li><a href="#missions" class="transition-colors hover:text-accent">Missions</a></li>
+        <li><a href="#endorsements" class="transition-colors hover:text-accent">Voices</a></li>
         <li><a href="#stack" class="transition-colors hover:text-accent">Stack</a></li>
         <li><a href="#resume" class="transition-colors hover:text-accent">Resume</a></li>
         <li><a href="#connect" class="transition-colors hover:text-accent">Connect</a></li>
@@ -163,6 +164,7 @@
       <li><a href="#glyphon" class="hover:text-accent">Flagship</a></li>
       <li><a href="#products" class="hover:text-accent">Products</a></li>
       <li><a href="#missions" class="hover:text-accent">Missions</a></li>
+      <li><a href="#endorsements" class="hover:text-accent">Voices</a></li>
       <li><a href="#stack" class="hover:text-accent">Stack</a></li>
       <li><a href="#resume" class="hover:text-accent">Resume</a></li>
       <li><a href="#connect" class="hover:text-accent">Connect</a></li>
@@ -362,8 +364,8 @@
           Still <span class="text-accent">shipping.</span>
         </h2>
 
-        <p class="mt-6 max-w-3xl text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="200">
-          One architect plus Colophon produces team-scale output across the SigilArk org.
+        <p class="mt-6 max-w-3xl text-lg text-text md:text-xl" data-reveal data-reveal-delay="200">
+          <span class="text-accent">Architect-in-the-loop:</span> agents do the typing, I do the deciding.
         </p>
 
         <div class="mt-12 grid gap-6 md:grid-cols-3">
@@ -809,75 +811,37 @@
       </div>
     </section>
 
-    <!--
-    ============================================================================
-    ENDORSEMENTS — TEMPLATE (commented out until real quotes are sourced)
-    ============================================================================
-    HOW TO USE:
-      1. Replace each [PLACEHOLDER] with a real quote, name, title, and org.
-      2. Aim for 3 quotes from distinct contexts: federal program (DHA/VA/CMS),
-         commercial (Starwood/Equifax), and acquirer/exit (Linxens or Qonceptual buyer).
-      3. Keep each quote 1-3 sentences. What did you deliver? What was it like to work with you?
-      4. Remove the outer HTML comment delimiters surrounding this block to render the section.
-      5. Add an "Endorsements" link to the nav (#endorsements) once live.
-
-    <section id="endorsements" class="divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <!-- ENDORSEMENTS — live with first quote (DHA CYOC Lead). Add more by duplicating
+         the <figure> block and switching the outer container to md:grid-cols-2 or
+         md:grid-cols-3 as more quotes come in. -->
+    <section id="endorsements" class="acc-gold divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
       <div class="absolute inset-0 -z-10 dot-grid-fine opacity-40" aria-hidden="true"></div>
       <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/VOICES"></span>
-      <div class="glow-blob-deep" aria-hidden="true" style="width:680px;height:680px;top:30%;left:-15%;"></div>
+      <div class="glow-blob-gold" aria-hidden="true" style="width:680px;height:680px;top:20%;left:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:0;right:-10%;"></div>
 
       <div class="mx-auto max-w-7xl">
         <p class="eyebrow" data-reveal>On the work</p>
         <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
-          Word from people I've shipped with.
+          From the <span class="text-accent">customer</span> side.
         </h2>
 
-        <div class="mt-16 grid gap-6 md:grid-cols-3">
-
-          <figure class="corners glass p-8" data-reveal data-reveal-delay="100">
-            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <p class="font-mono text-3xl text-accent/60" aria-hidden="true">&ldquo;</p>
-            <blockquote class="mt-2 text-lg leading-relaxed text-text">
-              [QUOTE 1 — federal program context. 1-3 sentences. What did Dayel deliver, and what was it like to work with him?]
-            </blockquote>
-            <figcaption class="mt-8 border-t border-white/10 pt-4">
-              <p class="font-semibold text-text">[Name]</p>
-              <p class="mt-1 font-mono text-xs uppercase tracking-[0.22em] text-text-dim">[Title] &middot; [Organization]</p>
-            </figcaption>
-          </figure>
-
-          <figure class="corners glass p-8" data-reveal data-reveal-delay="200">
-            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <p class="font-mono text-3xl text-accent/60" aria-hidden="true">&ldquo;</p>
-            <blockquote class="mt-2 text-lg leading-relaxed text-text">
-              [QUOTE 2 — commercial / scale context. 1-3 sentences. Outcomes, leadership, or product launch impact.]
-            </blockquote>
-            <figcaption class="mt-8 border-t border-white/10 pt-4">
-              <p class="font-semibold text-text">[Name]</p>
-              <p class="mt-1 font-mono text-xs uppercase tracking-[0.22em] text-text-dim">[Title] &middot; [Organization]</p>
-            </figcaption>
-          </figure>
-
-          <figure class="corners glass-accent p-8" data-reveal data-reveal-delay="300">
-            <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
-            <p class="font-mono text-3xl text-accent/60" aria-hidden="true">&ldquo;</p>
-            <blockquote class="mt-2 text-lg leading-relaxed text-text">
-              [QUOTE 3 — acquirer / exit / partner context. 1-3 sentences. Business outcome, judgment, or trust-under-pressure.]
-            </blockquote>
-            <figcaption class="mt-8 border-t border-accent/30 pt-4">
-              <p class="font-semibold text-text">[Name]</p>
-              <p class="mt-1 font-mono text-xs uppercase tracking-[0.22em] text-text-dim">[Title] &middot; [Organization]</p>
-            </figcaption>
-          </figure>
-
-        </div>
+        <figure class="relative mt-12 mx-auto max-w-4xl corners glass-accent glow-accent p-10 lg:p-14" data-reveal data-reveal-delay="200">
+          <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+          <p class="font-mono text-6xl leading-none text-accent/40" aria-hidden="true">&ldquo;</p>
+          <blockquote class="mt-2 text-xl leading-relaxed text-text md:text-2xl">
+            I&rsquo;ve never seen so many <span class="text-accent">zero findings</span> across our applications and environments. All deployed programs should adopt the techniques Accelera&rsquo;s <span class="text-accent">Cyber Agent Teams</span> employ &mdash; or leverage the Agents directly.
+          </blockquote>
+          <figcaption class="mt-10 border-t border-accent/30 pt-5">
+            <p class="font-mono text-xs uppercase tracking-[0.28em] text-accent">CYOC Lead</p>
+            <p class="mt-1 font-mono text-xs uppercase tracking-[0.22em] text-text-dim">Defense Health Agency</p>
+          </figcaption>
+          <p class="mt-5 text-xs text-text/60 md:text-sm">
+            &mdash; Referring to <a href="#glyphon" class="text-accent border-b border-accent/40 hover:border-accent">Glyphon</a> agents running CVE, AMI, and container hardening playbooks.
+          </p>
+        </figure>
       </div>
     </section>
-    ============================================================================
-    END ENDORSEMENTS TEMPLATE
-    ============================================================================
-    -->
 
     <!-- CAPABILITIES -->
     <section id="stack" class="divider-gradient tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
