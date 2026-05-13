@@ -26,7 +26,7 @@ function boot() {
       'Federal AI from prototype to ATO in months, not years.',
       'Systems that move billions and survive the audit.',
       'Multi-provider LLM orchestration validated at IL5.',
-      '17 years inside the federal trust boundary.',
+      '20 years inside the federal trust boundary.',
       'Zero Trust by design — compliance stops being a tax.',
     ],
     interval: 4500,
