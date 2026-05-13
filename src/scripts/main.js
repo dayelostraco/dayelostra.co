@@ -23,11 +23,11 @@ function boot() {
   initCycler({
     target: '#subhead',
     items: [
-      'Multi-provider LLM orchestration in classified enclaves.',
-      'Authority to Operate without the friction.',
-      'Zero Trust by design, not by patch.',
-      'Seventeen years shipping into AWS GovCloud.',
-      'Audit-grade systems for federal missions.',
+      'Federal AI from prototype to ATO in months, not years.',
+      'Systems that move billions and survive the audit.',
+      'Multi-provider LLM orchestration validated at IL5.',
+      '17 years inside the federal trust boundary.',
+      'Zero Trust by design — compliance stops being a tax.',
     ],
     interval: 4500,
   });
