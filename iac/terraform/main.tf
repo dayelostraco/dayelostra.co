@@ -49,13 +49,21 @@ data "aws_caller_identity" "current" {}
 
 # ============================================================================
 # IAM OIDC provider for GitHub Actions
-# Already exists in the account — referenced as a data source rather than
-# managed (so re-running this against an account that already has GitHub OIDC
-# set up doesn't try to recreate it).
+# Managed as a resource so out-of-band deletion is recovered by `terraform
+# apply`. Previously referenced as a data source, which created a silent
+# dependency on someone else having created the provider — when it was deleted
+# on 2026-05-13, deploys broke with "No OpenIDConnect provider found" until
+# the provider was manually recreated.
+#
+# To import after fresh provisioning, run:
+#   terraform import aws_iam_openid_connect_provider.github \
+#     arn:aws:iam::<ACCOUNT_ID>:oidc-provider/token.actions.githubusercontent.com
 # ============================================================================
 
-data "aws_iam_openid_connect_provider" "github" {
-  url = "https://token.actions.githubusercontent.com"
+resource "aws_iam_openid_connect_provider" "github" {
+  url             = "https://token.actions.githubusercontent.com"
+  client_id_list  = ["sts.amazonaws.com"]
+  thumbprint_list = ["6938fd4d98bab03faadb97b34396831e3780aea1"]
 }
 
 # ============================================================================
@@ -71,7 +79,7 @@ resource "aws_iam_role" "deploy" {
     Statement = [{
       Effect = "Allow"
       Principal = {
-        Federated = data.aws_iam_openid_connect_provider.github.arn
+        Federated = aws_iam_openid_connect_provider.github.arn
       }
       Action = "sts:AssumeRoleWithWebIdentity"
       Condition = {
