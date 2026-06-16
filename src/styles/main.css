@@ -104,6 +104,9 @@
 }
 .section-dark .btn-ghost { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28); }
 .section-dark .btn-ghost:hover { background-color: rgba(255,255,255,0.06); }
+/* primary button bg is the lighter slate in dark anchors → needs dark text */
+.section-dark .btn-primary { color: #0a0a0a; }
+.section-dark .btn-primary:hover { background-color: #c2cdd9; }
 
 /* --- typography helpers --- */
 @utility eyebrow {
@@ -285,6 +288,7 @@
    every token-based utility inside flips to the dark treatment. The accent is a
    LIGHTER slate here because base #5b6b7d is only 3.62:1 on near-black. */
 .section-dark {
+  --color-bg: #0a0a0a;              /* so text-bg/bg-bg read dark in this zone (pill cut-out) */
   --color-text: #f4f4f5;
   --color-text-dim: #a1a1aa;
   --color-surface: #171717;
