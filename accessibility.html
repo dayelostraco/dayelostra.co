@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <title>Accessibility · Dayel Ostraco</title>
+  <meta name="description" content="Accessibility statement for dayelostra.co: built to WCAG 2.1 AA and checked by an automated axe-core gate on every change.">
+  <meta name="robots" content="index,follow">
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/icon/apple-touch-icon-152x152.png?v=3">
+
+  <!-- Self-hosted fonts (Geist + IBM Plex Mono via main.css) -->
+  <link rel="preload" href="/assets/fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Pulls in main.css (and the null-guarded site scripts) -->
+  <script type="module" src="/src/scripts/main.js"></script>
+</head>
+<body class="min-h-screen">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+  <main id="main-content" tabindex="-1" class="mx-auto max-w-3xl px-6 py-20 lg:py-28">
+    <a href="/" class="font-mono text-xs uppercase tracking-[0.24em] text-text-dim transition-colors hover:text-accent">
+      <span class="font-semibold">/</span> Back to dayelostra.co
+    </a>
+
+    <p class="eyebrow mt-14">Statement</p>
+    <h1 class="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Accessibility</h1>
+
+    <p class="mt-8 text-lg leading-relaxed text-text-dim md:text-xl">
+      This site is meant to work for everyone, and accessibility is checked automatically on every change, not audited once and forgotten.
+    </p>
+
+    <h2 class="mt-14 text-xl font-semibold">Standard</h2>
+    <p class="mt-3 leading-relaxed text-text-dim">
+      The target conformance level is <span class="font-semibold text-accent">WCAG 2.1 AA</span>, the same technical bar the U.S. federal government harmonizes Section 508 to. Color, structure, and interaction are designed against that standard.
+    </p>
+
+    <h2 class="mt-12 text-xl font-semibold">Continuously enforced</h2>
+    <p class="mt-3 leading-relaxed text-text-dim">
+      Every change to this site runs an automated <span class="font-semibold text-accent">axe-core</span> accessibility gate in continuous integration. A build with any WCAG A or AA violation does not ship. This statement therefore reflects a standard held on every commit, not a one-time pass.
+    </p>
+
+    <h2 class="mt-12 text-xl font-semibold">What is covered</h2>
+    <ul class="mt-4 space-y-3 leading-relaxed text-text-dim">
+      <li><span class="font-semibold text-text">Contrast.</span> Text and interface contrast verified across both the light and dark sections of the site.</li>
+      <li><span class="font-semibold text-text">Keyboard.</span> Full keyboard navigation with a visible focus indicator on every interactive element.</li>
+      <li><span class="font-semibold text-text">Reduced motion.</span> Animations and transitions respect the <span class="font-mono text-sm">prefers-reduced-motion</span> setting.</li>
+      <li><span class="font-semibold text-text">Reflow.</span> Content reflows without horizontal scrolling down to a 320px viewport.</li>
+      <li><span class="font-semibold text-text">Structure.</span> Semantic headings, landmarks, image alternatives, and a skip-to-content link.</li>
+    </ul>
+
+    <h2 class="mt-12 text-xl font-semibold">Honest limitations</h2>
+    <p class="mt-3 leading-relaxed text-text-dim">
+      Automated testing catches a large share of accessibility issues but not all of them; some WCAG criteria require human judgment. This is an ongoing commitment maintained alongside the site, not a formal third-party audit or VPAT. If something here does not work for you, treat it as a bug worth reporting.
+    </p>
+
+    <h2 class="mt-12 text-xl font-semibold">Report an issue</h2>
+    <p class="mt-3 leading-relaxed text-text-dim">
+      Found a barrier? Email
+      <a href="mailto:dayel.ostraco@proton.me" class="font-semibold text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent">dayel.ostraco@proton.me</a>
+      and I will fix it.
+    </p>
+
+    <p class="mt-16 font-mono text-xs uppercase tracking-[0.24em] text-text-dim">Last reviewed: June 16, 2026</p>
+  </main>
+</body>
+</html>
