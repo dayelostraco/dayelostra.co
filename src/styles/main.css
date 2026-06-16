@@ -110,10 +110,10 @@
 
 /* --- typography helpers --- */
 @utility eyebrow {
-  @apply font-mono text-xs uppercase tracking-[0.28em] text-accent;
+  @apply font-mono text-sm uppercase tracking-[0.24em] text-accent;
 }
 @utility eyebrow-dim {
-  @apply font-mono text-xs uppercase tracking-[0.28em] text-text-dim;
+  @apply font-mono text-sm uppercase tracking-[0.24em] text-text-dim;
 }
 
 /* --- glass cards --- */
@@ -256,12 +256,12 @@
 }
 .section-watermark::before {
   letter-spacing: -0.05em;
-  color: transparent;  /* watermarks hidden on light; shown faint only in .section-dark */
+  color: rgba(0, 0, 0, 0.045);  /* faint ambient watermark on light sections */
   font-size: clamp(8rem, 20vw, 22rem);
 }
 .section-watermark-text::before {
   letter-spacing: -0.02em;
-  color: transparent;  /* watermarks hidden on light; shown faint only in .section-dark */
+  color: rgba(0, 0, 0, 0.045);  /* faint ambient watermark on light sections */
   font-size: clamp(4rem, 10vw, 11rem);
   text-transform: uppercase;
 }
