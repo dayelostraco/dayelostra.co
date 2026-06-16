@@ -41,6 +41,7 @@ export default defineConfig({
       input: {
         index: resolve(import.meta.dirname, 'index.html'),
         error: resolve(import.meta.dirname, 'error.html'),
+        accessibility: resolve(import.meta.dirname, 'accessibility.html'),
       },
     },
   },
