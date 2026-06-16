@@ -135,7 +135,7 @@
       <a href="#top" class="font-mono text-sm uppercase tracking-[0.28em] text-text">
         <span class="text-accent" aria-hidden="true">/</span>&nbsp;Dayel Ostraco
       </a>
-      <ul class="hidden items-center gap-8 font-mono text-xs uppercase tracking-[0.22em] text-text/80 md:flex">
+      <ul class="hidden items-center gap-6 font-mono text-xs uppercase tracking-[0.22em] text-text/80 lg:flex xl:gap-8">
         <li><a href="#lab" class="transition-colors hover:text-accent">Lab</a></li>
         <li><a href="#glyphon" class="transition-colors hover:text-accent">Flagship</a></li>
         <li><a href="#products" class="transition-colors hover:text-accent">Products</a></li>
@@ -145,7 +145,7 @@
         <li><a href="#resume" class="transition-colors hover:text-accent">Resume</a></li>
         <li><a href="#connect" class="transition-colors hover:text-accent">Connect</a></li>
       </ul>
-      <button type="button" data-sidebar-trigger class="md:hidden" aria-label="Open menu">
+      <button type="button" data-sidebar-trigger class="lg:hidden" aria-label="Open menu">
         <svg aria-hidden="true" class="h-6 w-6 fill-text"><use href="/assets/svg/icons.svg#menu"/></svg>
       </button>
     </div>
@@ -414,7 +414,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="acc-gold tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="about" class="acc-gold tint-deep relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <!-- Concrete texture as base, low opacity, warm-leaning -->
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.18] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/concrete.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/60" aria-hidden="true"></div>
@@ -450,7 +450,7 @@
     </section>
 
     <!-- AIR-GAPPED AI LAB -->
-    <section id="lab" class="acc-gold divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="lab" class="acc-gold divider-gradient tint-warm relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <!-- Operations watch image — sectors-watch -->
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.22] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/sectors-watch.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
@@ -517,7 +517,7 @@
     </section>
 
     <!-- GLYPHON FLAGSHIP -->
-    <section id="glyphon" class="acc-gold corners corners-lg divider-gradient tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="glyphon" class="acc-gold corners corners-lg divider-gradient tint-deep relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
       <!-- PCB macro — gold circuit traces on dark, color-perfect for Glyphon brand -->
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.18] saturate-[0.7]" aria-hidden="true" style="background-image:url('/assets/img/bg/pcb-macro.webp')"></div>
@@ -618,7 +618,7 @@
     </section>
 
     <!-- PRODUCT FAMILY -->
-    <section id="products" class="divider-gradient tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="products" class="divider-gradient tint-darker relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <div class="absolute inset-0 -z-10 scanlines opacity-60" aria-hidden="true"></div>
       <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/FAMILY"></span>
       <!-- Connecting orbit SVG behind product grid -->
@@ -678,7 +678,7 @@
     </section>
 
     <!-- RECENT MISSIONS -->
-    <section id="missions" class="acc-gold divider-gradient tint-deep relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="missions" class="acc-gold divider-gradient tint-deep relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <!-- Operations image — federal mission feel -->
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.15] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/operations.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
@@ -814,16 +814,16 @@
     <!-- ENDORSEMENTS — live with first quote (DHA CYOC Lead). Add more by duplicating
          the <figure> block and switching the outer container to md:grid-cols-2 or
          md:grid-cols-3 as more quotes come in. -->
-    <section id="endorsements" class="acc-gold divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="endorsements" class="acc-gold divider-gradient section-light relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <div class="absolute inset-0 -z-10 dot-grid-fine opacity-40" aria-hidden="true"></div>
       <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/VOICES"></span>
       <div class="glow-blob-gold" aria-hidden="true" style="width:680px;height:680px;top:20%;left:-15%;"></div>
       <div class="glow-blob-deep" aria-hidden="true" style="width:480px;height:480px;bottom:0;right:-10%;"></div>
 
       <div class="mx-auto max-w-7xl">
-        <p class="eyebrow" data-reveal>On the work</p>
+        <p class="eyebrow !text-[#6e4e16]" data-reveal>On the work</p>
         <h2 class="mt-6 max-w-3xl text-3xl font-semibold md:text-5xl" data-reveal data-reveal-delay="100">
-          From the <span class="text-accent">customer</span> side.
+          From the <span class="!text-[#6e4e16]">customer</span> side.
         </h2>
 
         <figure class="relative mt-12 mx-auto max-w-4xl corners glass-accent glow-accent p-10 lg:p-14" data-reveal data-reveal-delay="200">
@@ -844,7 +844,7 @@
     </section>
 
     <!-- CAPABILITIES -->
-    <section id="stack" class="divider-gradient tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="stack" class="divider-gradient tint-darker relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <div class="absolute inset-0 -z-10 dot-grid-fine opacity-60" aria-hidden="true"></div>
       <span class="section-watermark-text" aria-hidden="true" style="top:1rem;left:2rem;" data-watermark="/STACK"></span>
       <div class="glow-blob-deep glow-drift" aria-hidden="true" style="width:680px;height:680px;top:30%;right:-15%;"></div>
@@ -942,7 +942,7 @@
     </section>
 
     <!-- RESUME + PRESS -->
-    <section id="resume" class="divider-gradient tint-warm relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="resume" class="divider-gradient tint-warm relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <div class="absolute inset-0 -z-10 diagonal-lines opacity-40" aria-hidden="true"></div>
       <span class="section-watermark-text" aria-hidden="true" style="top:1rem;right:2rem;" data-watermark="/RESUME"></span>
       <div class="glow-blob-deep" aria-hidden="true" style="width:680px;height:680px;top:0;left:-15%;"></div>
@@ -1012,7 +1012,7 @@
     </section>
 
     <!-- CONNECT -->
-    <section id="connect" class="acc-gold tint-darker relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32">
+    <section id="connect" class="acc-gold tint-darker relative overflow-hidden px-6 py-16 lg:px-8 lg:py-24">
       <!-- Atmospheric break — sea -->
       <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.2] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/bg/break-sea.webp')"></div>
       <div class="absolute inset-0 -z-[15] bg-bg/65" aria-hidden="true"></div>
