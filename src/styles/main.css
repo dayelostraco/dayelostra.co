@@ -287,8 +287,8 @@
    suppressed (they muddy a light ground) and the watermark flips to a
    faint dark mark. */
 .section-light {
-  background-color: #ece6d6;
-  color: #1b1f2a;
+  background-color: #f5f6f8;  /* clean near-white (faint cool), not cream */
+  color: #161922;
 }
 .section-light .glow-blob,
 .section-light .glow-blob-deep,
