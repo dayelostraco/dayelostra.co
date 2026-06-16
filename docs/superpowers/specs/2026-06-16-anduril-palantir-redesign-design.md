@@ -1,104 +1,133 @@
-# dayelostra.co Redesign — Anduril/Palantir Monochrome + Amber
+# dayelostra.co Redesign — Palantir Light + Slate, with Dark Anchors
 
 **Date:** 2026-06-16
 **Type:** Visual restyle (no content rewrite, no new sections, no new features).
-**Goal:** Move the personal site off the SigilArk/Accelera blue+gold navy identity to a stark, monochrome, high-contrast aesthetic in the spirit of anduril.com (dark, cinematic, industrial) and palantir.com (light, Swiss, restrained), unified by a single amber signal accent.
+**Goal:** Move the personal site off the SigilArk/Accelera blue+gold navy identity to a stark, restrained, high-contrast aesthetic in the spirit of palantir.com (light, Swiss, editorial) with anduril.com gravity (near-black anchors), unified by a single slate signal accent.
 
-## Decisions (locked in brainstorming)
+> Supersedes the first draft of this spec (dark Anduril base + amber). Live mockups showed the near-black base read "way too dark" and amber "didn't work." Direction pivoted to **light-dominant + slate**, validated by mockup v3.
 
-- **Hybrid light/dark:** Anduril near-black as the primary canvas, with one or two stark Palantir-white sections as deliberate breaks.
-- **Monochrome + one accent:** black / white / grays only, plus a single amber accent `#d8792a` used interactive-first (links, buttons, focus rings, the terminal prompt) and on a few key emphasis terms per section.
-- **Hero mesh:** keep the network motif, recolor to faint gray/white lines + nodes with a few amber nodes (drop the blue).
-- **Accent discipline:** moderate — amber on interactive elements + at most a few high-value terms per section (IL levels, product names). Everything else white/gray. (Down from the current copy, which accents many phrases.)
-- **Out of scope:** the Writing/Insights hub (deferred earlier), content rewrites, new sections, font changes, cinematic hero imagery (possible future).
+## Decisions (locked in brainstorming + mockups)
+
+- **Light-dominant (Palantir), dark anchors (Anduril).** Soft off-white canvas; near-black sections used as deliberate anchors for gravity, not zebra-striping.
+- **Off-white base, not pure white.** Pure `#ffffff` is reserved for cards/elevated surfaces — this removes the glare and gives white cards something to sit on.
+- **Single slate accent `#5b6b7d`,** interactive-first (links, buttons, focus rings, terminal prompt) + a few key emphasis terms per section. Barely-there cool, clearly not the old saturated brand blue.
+- **Dark anchors:** the **hero (#top)**, the **Flagship/Glyphon feature (#glyphon)**, and the **Connect/footer (#connect)**. Everything else light.
+- **Hero mesh** kept but recolored mono (the hero is now dark): faint white lines/nodes + a few slate nodes; drop the blue.
+- **Accent discipline:** moderate — slate on interactive + a few high-value terms per section; the rest white/black/gray.
+- **Out of scope:** Writing/Insights hub (deferred), content rewrites, new sections, font changes, cinematic hero imagery (possible future).
 
 ## Aesthetic principles (the bar)
 
-1. **Single value voice per zone.** Dark zones are near-black with subtle value steps; light zones are near-white. No navy, no gradients-as-decoration.
-2. **Color is signal, not decoration.** Amber marks "you can act here" or "this matters," nothing else. If a use of amber is neither interactive nor a deliberate emphasis, it becomes white/gray.
-3. **Type and space carry the page.** Large bold headlines, mono uppercase labels, generous spacing, thin hairline rules. Remove ambient glows/textures that substitute for hierarchy.
-4. **Instrument-panel detailing, sparingly.** The bracket-corner card frames stay (they read as Anduril/HUD); they are recolored mono with amber only on hover/focus.
+1. **Light dominant, dark for intent.** The page reads as a light site. Dark appears only where it means something (open, one feature, close).
+2. **Off-white, never glare-white, as canvas.** Pure white = cards/surfaces only.
+3. **Color is signal, not decoration.** Slate marks "act here" or "this matters." Anything else slate becomes black/white/gray.
+4. **Type and space carry it.** Big bold headlines, mono uppercase labels, hairline rules, generous whitespace. Remove ambient glows/textures.
+5. **Instrument-panel detailing, sparingly.** Bracket-corner card frames stay; recolored per zone (dark on light, light on dark).
 
 ## Color tokens (`src/styles/main.css` `@theme`)
 
-Replace the current palette. Keep token *names* so utilities (`bg-bg`, `text-accent`, etc.) keep working; only values change.
+Keep token *names* so utilities keep working; values change.
 
 | Token | Old | New | Notes |
 |---|---|---|---|
-| `--color-bg` | `#0a0e2a` | `#0a0a0a` | near-black canvas |
-| `--color-surface` | `#14264a` | `#171717` | card/elevated surface (neutral gray) |
-| `--color-surface-2` | `#1f3863` | `#242424` | second elevation |
-| `--color-border` | `rgba(255,255,255,.1)` | `rgba(255,255,255,.12)` | hairline |
-| `--color-accent` | `#00adef` | `#d8792a` | amber signal |
-| `--color-accent-deep` | `#004069` | `#6f3d14` | deep amber (gradients/edges) |
-| `--color-accent-soft` | `rgba(0,173,239,.18)` | `rgba(216,121,42,.15)` | tints |
-| `--color-text` | `#ebe5d5` | `#f4f4f5` | near-white (drop the cream) |
-| `--color-text-dim` | `#939598` | `#a1a1aa` | neutral gray (verify AA per zone) |
-| `--color-gold` | `#c1a066` | `#d8792a` | **collapse gold → amber** (single accent) |
-| `--color-gold-deep` | `#5c4520` | `#6f3d14` | so `.acc-gold` sections become mono+amber, no markup change |
+| `--color-bg` | `#0a0e2a` | `#f4f5f7` | soft off-white canvas |
+| `--color-surface` | `#14264a` | `#ffffff` | pure white = cards only |
+| `--color-surface-2` | `#1f3863` | `#e9ebef` | second elevation (light) |
+| `--color-border` | `rgba(255,255,255,.1)` | `rgba(0,0,0,.12)` | hairline on light |
+| `--color-accent` | `#00adef` | `#5b6b7d` | slate (5.01:1 small on off-white ✓) |
+| `--color-accent-deep` | `#004069` | `#3c4753` | deep slate (8.68:1 — strong-emphasis on light) |
+| `--color-accent-soft` | `rgba(0,173,239,.18)` | `rgba(91,107,125,.12)` | tints |
+| `--color-text` | `#ebe5d5` | `#141414` | near-black (16.9:1 on off-white) |
+| `--color-text-dim` | `#939598` | `#565b63` | gray (6.27:1 on off-white ✓) |
+| `--color-gold` | `#c1a066` | `#5b6b7d` | **collapse gold → slate** (single accent, no markup churn) |
+| `--color-gold-deep` | `#5c4520` | `#3c4753` | so `.acc-gold` sections become mono+slate |
 
-**Amber dual-context caveat (a11y, verified):** `#d8792a` on black is 6.31:1 (passes AA). On **white** it is 3.14:1 — fails AA for small text (ok for large ≥24px / UI components at 3:1). Rule: in white-break sections amber is allowed only on **large text or interactive** elements; for small accented text on white, use a darker amber `--color-accent-on-light: #a85c16` (4.99:1 on white). The axe CI gate (already in place) will catch violations. Verified ratios: white text on black 18:1, gray `#a1a1aa` on darkest band 7:1, near-black on white 18:1.
+## Dark-anchor mechanism (`.section-dark`)
 
-## Dark value bands (`.tint-*`)
+Add a `.section-dark` class that **scopes the tokens** (same CSS-custom-property pattern `.acc-gold` already uses), so every token-based utility inside flips correctly:
 
-Keep the section-banding rhythm built earlier, restated in near-black:
+```css
+.section-dark {
+  --color-text: #f4f4f5;             /* 18:1 on #0a0a0a */
+  --color-text-dim: #a1a1aa;         /* 7.72:1 */
+  --color-surface: #171717;          /* dark cards */
+  --color-border: rgba(255,255,255,.14);
+  --color-accent: #9aa9ba;           /* lighter slate: 8.26:1 small on dark (base #5b6b7d is only 3.62:1) */
+  background-color: #0a0a0a;
+  color: #f4f4f5;
+}
+```
+
+Apply `.section-dark` to `#top`, `#glyphon`, `#connect` in `index.html` (replacing their current `tint-*` classes there). The lighter-slate accent override is the load-bearing a11y detail: slate accent text is unreadable on near-black at the base shade.
+
+## Light value bands (`.tint-*`)
+
+Subtle steps on the off-white, for gentle rhythm between light sections:
 
 | Class | New value |
 |---|---|
-| `.tint-darker` | `#050505` |
-| `.tint-deep` | `#0e0e0e` |
-| `.tint-warm` | `#161616` (neutral, no warm cast now) |
+| `.tint-warm` | `#f4f5f7` (= base) |
+| `.tint-deep` | `#eceef1` |
+| `.tint-darker` | `#e6e8ec` |
 
-## White-break sections (`.section-light`)
+## Light feature section (`.section-light`)
 
-- `.section-light` background `#ffffff`, text `#141414` (Palantir-stark). (Was the warm-then-near-white personal-brand band.)
-- **Two** white breaks for rhythm: **Voices/#endorsements** (already light) **+ About/#about** (narrative/bio reads well Palantir-white). All other sections near-black.
-- In white sections: dark card variant (the dark testimonial card stays as a spotlight in Voices); section chrome (eyebrow, emphasis) uses `--color-accent-on-light` darker amber for small text, near-black for headings.
-- Suppress glow blobs in light sections (already done).
+- Keep `.section-light` = pure `#ffffff`, text `#141414` — used for **Voices/#endorsements** as a crisp white spotlight within the off-white body (the dark testimonial card still floats on it). One light feature; the rest is the off-white bands.
 
 ## Decoration removal / recolor
 
 | Element | Action |
 |---|---|
-| `.glow-blob`, `.glow-blob-deep`, `.glow-blob-gold` | Remove from markup (or `display:none`). No ambient glows. |
-| `.hero-topo` | Remove (navy radial gradient base). |
-| `.dot-grid`, `.dot-grid-accent`, `.dot-grid-gold`, `.dot-grid-fine` | Remove. (If any texture is wanted, a single faint `dot-grid-fine` at very low opacity may stay — default: remove.) |
+| `.glow-blob`, `.glow-blob-deep`, `.glow-blob-gold` | Remove from markup. No ambient glows. |
+| `.hero-topo` | Remove. |
+| `.dot-grid`, `.dot-grid-accent`, `.dot-grid-gold`, `.dot-grid-fine` | Remove. |
 | `.scanlines`, `.diagonal-lines`, `.grain` | Remove if used. |
-| Hero mesh SVG (inline, hardcoded blue) | Recolor: lines/nodes `rgba(255,255,255,.10)`, a few nodes amber `#d8792a`. Drop blue `mesh-node-secondary`. |
-| `.section-watermark*` | Keep as faint mono texture: recolor to `rgba(255,255,255,.04)` (dark) / `rgba(20,20,20,.05)` (light). Removal is an option for max austerity; default keep-faint. |
-| `.corners` bracket frames | Keep. Recolor `--corner-color` to `rgba(255,255,255,.18)`; amber only on hover/focus. |
-| `.divider-gradient` | Recolor to a neutral hairline `rgba(255,255,255,.12)`; drop the gold variant (now redundant). |
+| Hero mesh SVG (inline, hardcoded blue) | Hero is now dark: recolor lines/nodes `rgba(255,255,255,.10)`, a few nodes slate `#9aa9ba`. Drop blue `mesh-node-secondary`. |
+| `.section-watermark*` | Faint texture: `rgba(20,20,20,.05)` on light; `rgba(255,255,255,.05)` inside `.section-dark`. (Removal optional for max austerity; default keep-faint.) |
+| `.corners` bracket frames | Keep. Light zones: corner color `rgba(0,0,0,.28)`. `.section-dark` zones: `rgba(255,255,255,.22)`. Slate on hover/focus. |
+| `.divider-gradient` | Neutral hairline: `rgba(0,0,0,.12)` light / `rgba(255,255,255,.12)` in dark anchors. Drop the gold variant. |
 
 ## Components
 
-- **Buttons:** `btn-primary` = amber fill `#d8792a`, black text; **remove the accent glow box-shadow** (flat or 1px ring only). `btn-ghost` = white/12 ring, white text, hover white/5. Flat, no glow.
-- **Glass cards:** `.glass` = `bg-surface/80` + `ring-white/10` + flat shadow (keep). `.glass-accent` / `.glass-gold` = flatten the navy/gold gradients to `--color-surface` with an optional 1px amber ring for the one "featured" card; no gradient.
-- **Now/ticker bands** (`#now`, `#numbers`): neutral — `border-white/10`, `bg-white/[0.03]`; amber only on the live indicator.
+- **Buttons:** `btn-primary` = slate fill `#5b6b7d`, white text; **flat** (remove the accent glow box-shadow), 1px ring at most. `btn-ghost` = dark ring on light (`inset 0 0 0 1px rgba(0,0,0,.28)`), light ring inside `.section-dark`. White/black text per zone.
+- **Cards (`.glass`):** light zones = `#ffffff` + hairline `rgba(0,0,0,.10)` + soft shadow. `.section-dark .glass` = `#171717` + light hairline + deeper shadow. Drop `backdrop-blur` (no translucency needed). `.glass-accent`/`.glass-gold` gradients flattened to surface + optional 1px slate ring for one "featured" card.
+- **Ticker/now bands (`#now`, `#numbers`):** neutral hairlines (`rgba(0,0,0,.10)`), slate only on the live indicator.
 
 ## Accent-discipline pass (copy/markup)
 
-Per-section, reduce `text-accent` (and the hardcoded gold `text-[#c1a066]`) usage to: interactive elements + **a few key terms per section** (max ~2-3 high-value: IL levels, product/program names). Convert the rest to `text-text` (white) or bold. This is enumerated per section in the implementation plan. Net effect: amber reads as deliberate signal, not highlighter.
+Per section, reduce `text-accent` (and hardcoded gold `text-[#c1a066]`) to: interactive elements + **a few key terms per section** (max ~2–3: IL levels, product/program names). Convert the rest to `text-text` or bold. Enumerated per section in the implementation plan. Net: slate reads as deliberate signal, not highlighter.
 
 ## Typography
 
-No font change. Keep Geist (grotesk) for headlines/body, IBM Plex Mono for uppercase labels/eyebrows/watermarks — both already on-aesthetic. Lean into existing large-bold-headline + mono-eyebrow patterns.
+No font change. Geist (grotesk) headlines/body, IBM Plex Mono uppercase labels/eyebrows/watermarks — both already on-aesthetic. Lean into existing large-headline + mono-eyebrow patterns and more whitespace.
 
 ## Accessibility (gate already in place)
 
-- Re-run the axe CI gate; target zero violations.
-- Verify per-zone contrast: white text on near-black bands (high), gray `#a1a1aa` on each dark band (≥4.5 small), near-black on white (high), amber on black (interactive/large ok), amber-on-white only large/interactive else darker amber.
-- Preserve existing a11y baseline (focus-visible ring now amber, prefers-reduced-motion, sidebar focus trap, skip semantics, touch targets).
+Verified contrast (this spec's values):
+
+| Zone | Pairing | Ratio | AA |
+|---|---|---|---|
+| Light | text `#141414` on off-white | 16.9:1 | ✓ |
+| Light | dim `#565b63` on off-white | 6.27:1 | ✓ |
+| Light | slate `#5b6b7d` small | 5.01:1 | ✓ |
+| Dark anchor | white `#f4f4f5` on `#0a0a0a` | 18:1 | ✓ |
+| Dark anchor | dim `#a1a1aa` on `#0a0a0a` | 7.72:1 | ✓ |
+| Dark anchor | base slate `#5b6b7d` small | 3.62:1 | ✗ → use `#9aa9ba` (8.26:1) |
+
+- Re-run the axe CI gate (added this session); target zero violations across light + dark zones.
+- Focus-visible ring becomes slate (per zone via the scoped accent), still ≥3:1 against its background.
+- Preserve a11y baseline: prefers-reduced-motion, sidebar focus trap, skip semantics, touch targets.
 
 ## Files touched
 
-- `src/styles/main.css` — tokens, tints, section-light, decoration rules, corners, dividers, buttons, cards, watermark, mesh-node colors.
-- `index.html` — remove decoration divs (glow blobs, hero-topo, dot-grids), recolor inline hero-mesh SVG, accent-discipline edits per section, set `#about` to `.section-light`, drop `.acc-gold` where it no longer means anything (optional; tokens collapsed so it's a no-op).
-- No JS changes expected (sidebar, reveal, typewriter, cycler unaffected).
+- `src/styles/main.css` — tokens; new `.section-dark` scope; `.tint-*`; `.section-light`; decoration removal; corners; dividers; buttons; cards; watermark; mesh-node colors.
+- `index.html` — remove decoration divs (glow blobs, hero-topo, dot-grids); add `.section-dark` to `#top`, `#glyphon`, `#connect` (replacing their `tint-*`); recolor inline hero-mesh SVG; accent-discipline edits per section.
+- No JS changes (sidebar, reveal, typewriter, cycler unaffected).
 
 ## Success criteria
 
-- Page reads monochrome black/white with amber as the only color, used as signal.
-- Two clean white-break sections punctuate the dark run.
-- No navy, no blue, no gold, no ambient glows/gradients.
-- axe gate green; contrast verified per zone.
-- Visual parity check via before/after screenshots at desktop + tablet + mobile.
+- Reads as a light, restrained site with slate as the only color, used as signal.
+- Three dark anchors (hero, Flagship, Connect) give gravity; no zebra-striping.
+- No navy, blue, gold, glows, or gradients-as-decoration.
+- axe gate green; contrast verified per zone (table above).
+- Before/after screenshots at desktop + tablet + mobile.
