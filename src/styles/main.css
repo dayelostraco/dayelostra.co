@@ -30,17 +30,17 @@
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* SigilArk family + Accelera Blue accent */
-  --color-bg: #0a0e2a;
-  --color-surface: #14264a;   /* lifted so glass cards read above all section bands */
-  --color-surface-2: #1f3863;
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-accent: #00adef;
-  --color-accent-deep: #004069;
-  --color-accent-soft: rgba(0, 173, 239, 0.18);
-  --color-text: #ebe5d5;
-  --color-text-dim: #939598;
-  --color-gold: #c1a066;
-  --color-gold-deep: #5c4520;
+  --color-bg: #f4f5f7;        /* soft off-white canvas (pure white reserved for cards) */
+  --color-surface: #ffffff;
+  --color-surface-2: #e9ebef;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-accent: #5b6b7d;    /* slate signal (5.01:1 small on off-white) */
+  --color-accent-deep: #3c4753;
+  --color-accent-soft: rgba(91, 107, 125, 0.12);
+  --color-text: #141414;
+  --color-text-dim: #565b63;
+  --color-gold: #5b6b7d;      /* gold collapsed into slate: single accent */
+  --color-gold-deep: #3c4753;
 }
 
 @layer base {
@@ -268,6 +268,21 @@
 /* Tailwind utilities that use the design token will pick up the override:
    text-accent, bg-accent, ring-accent, fill-accent, border-accent, etc. */
 
+/* --- dark anchor sections (scoped token flip, same pattern as .acc-gold) ---
+   Applied to the hero, Flagship, and Connect. Re-declares the color tokens so
+   every token-based utility inside flips to the dark treatment. The accent is a
+   LIGHTER slate here because base #5b6b7d is only 3.62:1 on near-black. */
+.section-dark {
+  --color-text: #f4f4f5;
+  --color-text-dim: #a1a1aa;
+  --color-surface: #171717;
+  --color-border: rgba(255, 255, 255, 0.14);
+  --color-accent: #9aa9ba;
+  --color-accent-deep: #5b6b7d;
+  background-color: #0a0a0a;
+  color: #f4f4f5;
+}
+
 /* --- background tint band variation between sections ---
    A perceptible 3-step value ladder. The previous values were within
    2-5 per channel of the base (#0a0e2a) and of each other, so every
@@ -275,9 +290,9 @@
    endless void. Kept dark and on-brand: cool steps stay navy; tint-warm
    lifts highest with a faint warm cast so the gold `acc-gold` sections
    sit on slightly warmer ground. */
-.tint-darker { background-color: #05060f; }  /* darkest, coolest */
-.tint-deep   { background-color: #0c1234; }  /* mid step, cool navy */
-.tint-warm   { background-color: #15183c; }  /* lightest, faint warm lift */
+.tint-warm   { background-color: #f4f5f7; }  /* = base off-white */
+.tint-deep   { background-color: #eceef1; }  /* one step down */
+.tint-darker { background-color: #e6e8ec; }  /* two steps down */
 
 /* --- light / inverted section ---
    A genuine high-contrast break in the dark run. Warm light ground; the
@@ -287,8 +302,8 @@
    suppressed (they muddy a light ground) and the watermark flips to a
    faint dark mark. */
 .section-light {
-  background-color: #f5f6f8;  /* clean near-white (faint cool), not cream */
-  color: #161922;
+  background-color: #ffffff;  /* pure-white feature spotlight (Voices) within off-white body */
+  color: #141414;
 }
 .section-light .glow-blob,
 .section-light .glow-blob-deep,
