@@ -30,17 +30,17 @@
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* SigilArk family + Accelera Blue accent */
-  --color-bg: #0a0e2a;
-  --color-surface: #14264a;   /* lifted so glass cards read above all section bands */
-  --color-surface-2: #1f3863;
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-accent: #00adef;
-  --color-accent-deep: #004069;
-  --color-accent-soft: rgba(0, 173, 239, 0.18);
-  --color-text: #ebe5d5;
-  --color-text-dim: #939598;
-  --color-gold: #c1a066;
-  --color-gold-deep: #5c4520;
+  --color-bg: #f4f5f7;        /* soft off-white canvas (pure white reserved for cards) */
+  --color-surface: #ffffff;
+  --color-surface-2: #e9ebef;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-accent: #5b6b7d;    /* slate signal (5.01:1 small on off-white) */
+  --color-accent-deep: #3c4753;
+  --color-accent-soft: rgba(91, 107, 125, 0.12);
+  --color-text: #141414;
+  --color-text-dim: #565b63;
+  --color-gold: #5b6b7d;      /* gold collapsed into slate: single accent */
+  --color-gold-deep: #3c4753;
 }
 
 @layer base {
@@ -97,11 +97,16 @@
   @apply inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium transition-all duration-200;
 }
 @utility btn-primary {
-  @apply btn bg-accent text-bg hover:bg-accent/90 shadow-[0_0_0_1px_rgba(0,173,239,0.3),0_8px_32px_-8px_rgba(0,173,239,0.5)];
+  @apply btn bg-accent text-white hover:bg-accent-deep;
 }
 @utility btn-ghost {
-  @apply btn ring-1 ring-white/20 text-text hover:bg-white/5 hover:ring-white/40;
+  @apply btn ring-1 ring-black/25 text-text hover:bg-black/5 hover:ring-black/40;
 }
+.section-dark .btn-ghost { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28); }
+.section-dark .btn-ghost:hover { background-color: rgba(255,255,255,0.06); }
+/* primary button bg is the lighter slate in dark anchors → needs dark text */
+.section-dark .btn-primary { color: #0a0a0a; }
+.section-dark .btn-primary:hover { background-color: #c2cdd9; }
 
 /* --- typography helpers --- */
 @utility eyebrow {
@@ -113,24 +118,31 @@
 
 /* --- glass cards --- */
 @utility glass {
-  @apply relative overflow-hidden bg-surface/80 ring-1 ring-white/15 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.7)];
+  @apply relative overflow-hidden bg-surface ring-1 ring-black/10 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_10px_30px_-18px_rgba(0,0,0,0.30)];
 }
 @utility glass-hover {
-  @apply transition-all duration-300 hover:-translate-y-1 hover:bg-surface/85 hover:ring-accent/40 hover:shadow-[0_12px_40px_-12px_rgba(0,173,239,0.3)];
+  @apply transition-all duration-300 hover:-translate-y-1 hover:ring-black/20 hover:shadow-[0_16px_40px_-20px_rgba(0,0,0,0.35)];
 }
 @utility glass-accent {
-  @apply relative overflow-hidden bg-gradient-to-br from-accent-deep/30 via-surface to-bg ring-1 ring-accent/20 backdrop-blur-sm;
+  @apply relative overflow-hidden bg-surface ring-1 ring-black/10;
 }
 @utility glass-gold {
-  @apply relative overflow-hidden bg-gradient-to-br from-gold-deep/35 via-surface to-bg ring-1 ring-gold/25 backdrop-blur-sm;
+  @apply relative overflow-hidden bg-surface ring-1 ring-black/10;
+}
+/* dark-anchor card treatment */
+.section-dark .glass,
+.section-dark .glass-accent,
+.section-dark .glass-gold {
+  --tw-ring-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 10px 30px -18px rgba(0, 0, 0, 0.6);
 }
 
 /* --- glow --- */
 @utility glow-accent {
-  box-shadow: 0 0 0 1px rgba(0, 173, 239, 0.25), 0 8px 40px -8px rgba(0, 173, 239, 0.45);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 14px 40px -18px rgba(0, 0, 0, 0.30);
 }
 @utility glow-gold {
-  box-shadow: 0 0 0 1px rgba(193, 160, 102, 0.3), 0 8px 40px -8px rgba(193, 160, 102, 0.5);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 14px 40px -18px rgba(0, 0, 0, 0.30);
 }
 
 /* --- background textures --- */
@@ -174,11 +186,11 @@
 
 /* --- corner frame brackets (Accelera-style) --- */
 .corners {
-  --corner-color: rgba(0, 173, 239, 0.4);
+  --corner-color: rgba(0, 0, 0, 0.28);
 }
-.acc-gold .corners,
-.corners.acc-gold {
-  --corner-color: rgba(193, 160, 102, 0.45);
+.section-dark .corners,
+.section-dark.corners {
+  --corner-color: rgba(255, 255, 255, 0.22);
 }
 .corners > .cf-tl,
 .corners > .cf-tr,
@@ -216,10 +228,11 @@
   position: absolute;
   inset: 0 0 auto 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(0, 173, 239, 0.5), transparent);
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.12), transparent);
 }
-.acc-gold.divider-gradient::before {
-  background: linear-gradient(to right, transparent, rgba(193, 160, 102, 0.5), transparent);
+.section-dark .divider-gradient::before,
+.section-dark.divider-gradient::before {
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.12), transparent);
 }
 
 /* --- section watermark (oversized mono numeral / label as bg)
@@ -243,30 +256,48 @@
 }
 .section-watermark::before {
   letter-spacing: -0.05em;
-  color: rgba(0, 173, 239, 0.07);
+  color: transparent;  /* watermarks hidden on light; shown faint only in .section-dark */
   font-size: clamp(8rem, 20vw, 22rem);
 }
 .section-watermark-text::before {
   letter-spacing: -0.02em;
-  color: rgba(235, 229, 213, 0.05);
+  color: transparent;  /* watermarks hidden on light; shown faint only in .section-dark */
   font-size: clamp(4rem, 10vw, 11rem);
   text-transform: uppercase;
 }
 .section-watermark-text { display: none; }
 @media (min-width: 768px) { .section-watermark-text { display: block; } }
-.acc-gold .section-watermark::before,
-.acc-gold .section-watermark-text::before {
-  color: rgba(193, 160, 102, 0.09);
+.section-dark .section-watermark::before,
+.section-dark .section-watermark-text::before {
+  color: rgba(255, 255, 255, 0.05);
 }
 
 /* --- per-section accent override: shadows --color-accent inside scope --- */
+/* .acc-gold is now a no-op: gold collapsed into slate. Kept so existing
+   markup classes resolve; all three tokens equal the base slate accent. */
 .acc-gold {
   --color-accent: var(--color-gold);
   --color-accent-deep: var(--color-gold-deep);
-  --color-accent-soft: rgba(193, 160, 102, 0.18);
+  --color-accent-soft: rgba(91, 107, 125, 0.18);
 }
 /* Tailwind utilities that use the design token will pick up the override:
    text-accent, bg-accent, ring-accent, fill-accent, border-accent, etc. */
+
+/* --- dark anchor sections (scoped token flip, same pattern as .acc-gold) ---
+   Applied to the hero, Flagship, and Connect. Re-declares the color tokens so
+   every token-based utility inside flips to the dark treatment. The accent is a
+   LIGHTER slate here because base #5b6b7d is only 3.62:1 on near-black. */
+.section-dark {
+  --color-bg: #0a0a0a;              /* so text-bg/bg-bg read dark in this zone (pill cut-out) */
+  --color-text: #f4f4f5;
+  --color-text-dim: #a1a1aa;
+  --color-surface: #171717;
+  --color-border: rgba(255, 255, 255, 0.14);
+  --color-accent: #9aa9ba;
+  --color-accent-deep: #5b6b7d;
+  background-color: #0a0a0a;
+  color: #f4f4f5;
+}
 
 /* --- background tint band variation between sections ---
    A perceptible 3-step value ladder. The previous values were within
@@ -275,9 +306,9 @@
    endless void. Kept dark and on-brand: cool steps stay navy; tint-warm
    lifts highest with a faint warm cast so the gold `acc-gold` sections
    sit on slightly warmer ground. */
-.tint-darker { background-color: #05060f; }  /* darkest, coolest */
-.tint-deep   { background-color: #0c1234; }  /* mid step, cool navy */
-.tint-warm   { background-color: #15183c; }  /* lightest, faint warm lift */
+.tint-warm   { background-color: #f4f5f7; }  /* = base off-white */
+.tint-deep   { background-color: #eceef1; }  /* one step down */
+.tint-darker { background-color: #e6e8ec; }  /* two steps down */
 
 /* --- light / inverted section ---
    A genuine high-contrast break in the dark run. Warm light ground; the
@@ -287,17 +318,17 @@
    suppressed (they muddy a light ground) and the watermark flips to a
    faint dark mark. */
 .section-light {
-  background-color: #f5f6f8;  /* clean near-white (faint cool), not cream */
-  color: #161922;
+  background-color: #ffffff;  /* pure-white feature spotlight (Voices) within off-white body */
+  color: #141414;
 }
 .section-light .glow-blob,
 .section-light .glow-blob-deep,
 .section-light .glow-blob-gold { display: none; }
 .section-light .section-watermark::before,
-.section-light .section-watermark-text::before { color: rgba(20, 24, 40, 0.06); }
+.section-light .section-watermark-text::before { color: transparent; }
 
 /* --- hero mesh node colors --- */
-.mesh-node-secondary { fill: rgba(0, 173, 239, 0.7); }
+.mesh-node-secondary { fill: rgba(154, 169, 186, 0.7); }
 
 /* --- vertical timeline rule for missions --- */
 .timeline-rule {
@@ -305,7 +336,7 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(0, 173, 239, 0.4) 10%, rgba(0, 173, 239, 0.4) 90%, transparent);
+  background: linear-gradient(to bottom, transparent, rgba(91, 107, 125, 0.4) 10%, rgba(91, 107, 125, 0.4) 90%, transparent);
   pointer-events: none;
 }
 .timeline-dot {
@@ -314,7 +345,7 @@
   height: 9px;
   border-radius: 50%;
   background: var(--color-accent);
-  box-shadow: 0 0 0 4px rgba(0, 173, 239, 0.15), 0 0 0 8px rgba(0, 173, 239, 0.06);
+  box-shadow: 0 0 0 4px rgba(91, 107, 125, 0.15), 0 0 0 8px rgba(91, 107, 125, 0.06);
   transform: translate(-50%, 0);
 }
 
@@ -424,4 +455,21 @@
   }
   #subhead { transition: none !important; }
   #cursor { transition: none; opacity: 1; }
+}
+
+/* --- decoration removed for the redesign (was navy ambient texture) --- */
+.glow-blob, .glow-blob-deep, .glow-blob-gold, .hero-topo { display: none !important; }
+.dot-grid, .dot-grid-accent, .dot-grid-gold, .dot-grid-fine,
+.scanlines, .diagonal-lines, .grain { background-image: none !important; }
+
+/* --- primary nav: transparent (light text) over the dark hero, light bar on scroll --- */
+nav[aria-label="Primary"] { transition: background-color .3s ease, border-color .3s ease; }
+nav[aria-label="Primary"]:not(.nav-scrolled) {
+  --color-text: #f4f4f5;        /* wordmark, links, hamburger read light over the dark hero */
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+nav[aria-label="Primary"].nav-scrolled {
+  background-color: rgba(244, 245, 247, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
 }
