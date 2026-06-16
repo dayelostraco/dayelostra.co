@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  /* {{FONT_DIR}} is replaced at render time with an absolute file:// path
+     so fonts resolve regardless of machine. */
+  @font-face {
+    font-family: 'Geist';
+    font-weight: 100 900;
+    src: url('{{FONT_DIR}}/geist-variable.woff2') format('woff2-variations');
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-weight: 400;
+    src: url('{{FONT_DIR}}/ibm-plex-mono-400.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-weight: 500;
+    src: url('{{FONT_DIR}}/ibm-plex-mono-500.woff2') format('woff2');
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { width: 1200px; height: 630px; }
+
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    background: #0a0a0a;
+    color: #f4f4f5;
+    font-family: 'Geist', system-ui, sans-serif;
+    padding: 72px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* bracket corners */
+  .cf { position: absolute; width: 26px; height: 26px; border: 1.5px solid rgba(255,255,255,0.22); }
+  .cf-tl { top: 40px; left: 40px; border-right: none; border-bottom: none; }
+  .cf-tr { top: 40px; right: 40px; border-left: none; border-bottom: none; }
+  .cf-bl { bottom: 40px; left: 40px; border-right: none; border-top: none; }
+  .cf-br { bottom: 40px; right: 40px; border-left: none; border-top: none; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #a1a1aa;
+  }
+
+  .headline {
+    font-weight: 600;
+    font-size: 104px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+  }
+  .headline .slate { color: #9aa9ba; }
+
+  .footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .footer .domain { color: #f4f4f5; }
+  .footer .creds { color: #a1a1aa; }
+
+  /* faint slate hairline above the footer */
+  .rule {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(154,169,186,0.35), transparent);
+    margin-bottom: 28px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="cf cf-tl"></span><span class="cf cf-tr"></span>
+    <span class="cf cf-bl"></span><span class="cf cf-br"></span>
+
+    <p class="eyebrow">Dayel Ostraco &middot; CTO, Accelera Solutions</p>
+
+    <h1 class="headline">A <span class="slate">CTO</span> who still ships.</h1>
+
+    <div>
+      <div class="rule"></div>
+      <div class="footer">
+        <span class="domain">dayelostra.co</span>
+        <span class="creds">CISSP &middot; DoD Secret &middot; Federal AI</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
