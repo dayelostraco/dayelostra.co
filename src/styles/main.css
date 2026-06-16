@@ -461,3 +461,15 @@
 .glow-blob, .glow-blob-deep, .glow-blob-gold, .hero-topo { display: none !important; }
 .dot-grid, .dot-grid-accent, .dot-grid-gold, .dot-grid-fine,
 .scanlines, .diagonal-lines, .grain { background-image: none !important; }
+
+/* --- primary nav: transparent (light text) over the dark hero, light bar on scroll --- */
+nav[aria-label="Primary"] { transition: background-color .3s ease, border-color .3s ease; }
+nav[aria-label="Primary"]:not(.nav-scrolled) {
+  --color-text: #f4f4f5;        /* wordmark, links, hamburger read light over the dark hero */
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+nav[aria-label="Primary"].nav-scrolled {
+  background-color: rgba(244, 245, 247, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
