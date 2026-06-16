@@ -256,12 +256,12 @@
 }
 .section-watermark::before {
   letter-spacing: -0.05em;
-  color: rgba(20, 20, 20, 0.05);
+  color: transparent;  /* watermarks hidden on light; shown faint only in .section-dark */
   font-size: clamp(8rem, 20vw, 22rem);
 }
 .section-watermark-text::before {
   letter-spacing: -0.02em;
-  color: rgba(20, 20, 20, 0.05);
+  color: transparent;  /* watermarks hidden on light; shown faint only in .section-dark */
   font-size: clamp(4rem, 10vw, 11rem);
   text-transform: uppercase;
 }
@@ -325,7 +325,7 @@
 .section-light .glow-blob-deep,
 .section-light .glow-blob-gold { display: none; }
 .section-light .section-watermark::before,
-.section-light .section-watermark-text::before { color: rgba(20, 24, 40, 0.06); }
+.section-light .section-watermark-text::before { color: transparent; }
 
 /* --- hero mesh node colors --- */
 .mesh-node-secondary { fill: rgba(154, 169, 186, 0.7); }
