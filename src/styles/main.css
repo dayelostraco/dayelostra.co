@@ -31,8 +31,8 @@
 
   /* SigilArk family + Accelera Blue accent */
   --color-bg: #0a0e2a;
-  --color-surface: #0f1f3a;
-  --color-surface-2: #1a2d4f;
+  --color-surface: #14264a;   /* lifted so glass cards read above all section bands */
+  --color-surface-2: #1f3863;
   --color-border: rgba(255, 255, 255, 0.1);
   --color-accent: #00adef;
   --color-accent-deep: #004069;
@@ -113,7 +113,7 @@
 
 /* --- glass cards --- */
 @utility glass {
-  @apply relative overflow-hidden bg-surface/65 ring-1 ring-white/15 backdrop-blur-md shadow-[0_4px_24px_-12px_rgba(0,0,0,0.6)];
+  @apply relative overflow-hidden bg-surface/80 ring-1 ring-white/15 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.7)];
 }
 @utility glass-hover {
   @apply transition-all duration-300 hover:-translate-y-1 hover:bg-surface/85 hover:ring-accent/40 hover:shadow-[0_12px_40px_-12px_rgba(0,173,239,0.3)];
@@ -216,7 +216,10 @@
   position: absolute;
   inset: 0 0 auto 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(0, 173, 239, 0.35), transparent);
+  background: linear-gradient(to right, transparent, rgba(0, 173, 239, 0.5), transparent);
+}
+.acc-gold.divider-gradient::before {
+  background: linear-gradient(to right, transparent, rgba(193, 160, 102, 0.5), transparent);
 }
 
 /* --- section watermark (oversized mono numeral / label as bg)
@@ -240,12 +243,12 @@
 }
 .section-watermark::before {
   letter-spacing: -0.05em;
-  color: rgba(0, 173, 239, 0.12);
+  color: rgba(0, 173, 239, 0.07);
   font-size: clamp(8rem, 20vw, 22rem);
 }
 .section-watermark-text::before {
   letter-spacing: -0.02em;
-  color: rgba(235, 229, 213, 0.08);
+  color: rgba(235, 229, 213, 0.05);
   font-size: clamp(4rem, 10vw, 11rem);
   text-transform: uppercase;
 }
@@ -253,7 +256,7 @@
 @media (min-width: 768px) { .section-watermark-text { display: block; } }
 .acc-gold .section-watermark::before,
 .acc-gold .section-watermark-text::before {
-  color: rgba(193, 160, 102, 0.14);
+  color: rgba(193, 160, 102, 0.09);
 }
 
 /* --- per-section accent override: shadows --color-accent inside scope --- */
@@ -265,10 +268,33 @@
 /* Tailwind utilities that use the design token will pick up the override:
    text-accent, bg-accent, ring-accent, fill-accent, border-accent, etc. */
 
-/* --- background tint band variation between sections --- */
-.tint-deep   { background-color: #080b22; }
-.tint-warm   { background-color: #0c1133; }
-.tint-darker { background-color: #060819; }
+/* --- background tint band variation between sections ---
+   A perceptible 3-step value ladder. The previous values were within
+   2-5 per channel of the base (#0a0e2a) and of each other, so every
+   section read as the same flat dark value and the page felt like one
+   endless void. Kept dark and on-brand: cool steps stay navy; tint-warm
+   lifts highest with a faint warm cast so the gold `acc-gold` sections
+   sit on slightly warmer ground. */
+.tint-darker { background-color: #05060f; }  /* darkest, coolest */
+.tint-deep   { background-color: #0c1234; }  /* mid step, cool navy */
+.tint-warm   { background-color: #15183c; }  /* lightest, faint warm lift */
+
+/* --- light / inverted section ---
+   A genuine high-contrast break in the dark run. Warm light ground; the
+   dark content card floats on it as a focal "spotlight." Card internals
+   use fixed color utilities (text-text / text-accent), so the section
+   `color` only recolors chrome that inherits it (the h2). Glow blobs are
+   suppressed (they muddy a light ground) and the watermark flips to a
+   faint dark mark. */
+.section-light {
+  background-color: #f5f6f8;  /* clean near-white (faint cool), not cream */
+  color: #161922;
+}
+.section-light .glow-blob,
+.section-light .glow-blob-deep,
+.section-light .glow-blob-gold { display: none; }
+.section-light .section-watermark::before,
+.section-light .section-watermark-text::before { color: rgba(20, 24, 40, 0.06); }
 
 /* --- hero mesh node colors --- */
 .mesh-node-secondary { fill: rgba(0, 173, 239, 0.7); }
