@@ -69,8 +69,8 @@
   }
 
   ::selection {
-    background-color: var(--color-accent);
-    color: var(--color-bg);
+    background-color: var(--color-signature);   /* hot-pink signature on text selection */
+    color: #ffffff;
   }
 
   /* a11y: accessible focus indicator for keyboard navigation (WCAG 2.4.7 / 1.4.11) */
@@ -133,6 +133,19 @@
 @utility glass-hover {
   @apply transition-all duration-300 hover:-translate-y-1 hover:ring-black/20 hover:shadow-[0_16px_40px_-20px_rgba(0,0,0,0.35)];
 }
+/* hot-pink top-edge reveal on card hover: scarce pink, only on interaction */
+.glass-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 2;
+  background: linear-gradient(to right, transparent, var(--color-signature), transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+.glass-hover:hover::before { opacity: 1; }
 @utility glass-accent {
   @apply relative overflow-hidden bg-surface ring-1 ring-black/10;
 }
@@ -388,8 +401,8 @@
   pointer-events: none;
   border-radius: 9999px;
   filter: blur(100px);
-  opacity: 0.38;
-  background: radial-gradient(circle, rgba(255, 6, 181, 0.5), transparent 70%);
+  opacity: 0.5;
+  background: radial-gradient(circle, rgba(255, 6, 181, 0.6), transparent 70%);
 }
 /* --- hero topographic: federal-tactical base layer --- */
 .hero-topo {
@@ -480,6 +493,17 @@
 .section-dark .glow-blob-deep,
 .section-dark .glow-blob-gold,
 .section-dark .glow-blob-pink { display: block !important; }
+/* light-section ambient depth: re-enable the killed blobs inside the tint
+   bands, dialed to a faint wide wash so light grounds gain dimensionality
+   and accent color without reading as a glow. Kills the flat feel. */
+.tint-warm .glow-blob, .tint-deep .glow-blob, .tint-darker .glow-blob,
+.tint-warm .glow-blob-deep, .tint-deep .glow-blob-deep, .tint-darker .glow-blob-deep,
+.tint-warm .glow-blob-gold, .tint-deep .glow-blob-gold, .tint-darker .glow-blob-gold,
+.tint-warm .glow-blob-pink, .tint-deep .glow-blob-pink, .tint-darker .glow-blob-pink {
+  display: block !important;
+  opacity: 0.24;
+  filter: blur(120px);
+}
 .dot-grid, .dot-grid-accent, .dot-grid-gold, .dot-grid-fine,
 .scanlines, .diagonal-lines, .grain { background-image: none !important; }
 
