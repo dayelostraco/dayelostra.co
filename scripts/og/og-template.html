@@ -62,7 +62,13 @@
     letter-spacing: -0.02em;
     max-width: 18ch;
   }
-  .headline .slate { color: #9aa9ba; }
+  .headline .sig { color: #ff06b5; }
+
+  /* ambient brand glows (echo the site hero): cyan field + one pink note */
+  .glow { position: absolute; border-radius: 9999px; filter: blur(90px); pointer-events: none; z-index: 0; }
+  .glow-cyan { width: 640px; height: 640px; top: -240px; right: -170px; background: radial-gradient(circle, rgba(57,215,255,0.34), transparent 70%); }
+  .glow-pink { width: 540px; height: 540px; bottom: -250px; left: 24%; background: radial-gradient(circle, rgba(255,6,181,0.30), transparent 70%); }
+  .card > .eyebrow, .card > .headline, .card > div { position: relative; z-index: 1; }
 
   .footer {
     display: flex;
@@ -80,7 +86,7 @@
   /* faint slate hairline above the footer */
   .rule {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(154,169,186,0.35), transparent);
+    background: linear-gradient(to right, transparent, rgba(57,215,255,0.45), transparent);
     margin-bottom: 28px;
   }
 </style>
@@ -89,10 +95,11 @@
   <div class="card">
     <span class="cf cf-tl"></span><span class="cf cf-tr"></span>
     <span class="cf cf-bl"></span><span class="cf cf-br"></span>
+    <span class="glow glow-cyan"></span><span class="glow glow-pink"></span>
 
     <p class="eyebrow">Dayel Ostraco &middot; CTO, Accelera Solutions</p>
 
-    <h1 class="headline">A <span class="slate">CTO</span> who still ships.</h1>
+    <h1 class="headline">A <span class="sig">CTO</span> who still ships.</h1>
 
     <div>
       <div class="rule"></div>
