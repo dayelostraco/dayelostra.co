@@ -112,6 +112,11 @@
 /* primary button bg is the lighter slate in dark anchors → needs dark text */
 .section-dark .btn-primary { color: #0a0a0a; }
 .section-dark .btn-primary:hover { background-color: #c2cdd9; }
+/* primary CTA interaction peak: pink glow + ring (transient, not the resting state) */
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  box-shadow: 0 0 0 1px var(--color-signature), 0 10px 34px -8px rgba(255, 6, 181, 0.55);
+}
 
 /* --- typography helpers --- */
 @utility eyebrow {
