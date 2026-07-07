@@ -29,18 +29,23 @@
   --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  /* SigilArk family + Accelera Blue accent */
+  /* Two-tier accent system: cyan workhorse + pink signature.
+     Light-ground text accent is the deepened teal (>=4.5:1); vivid cyan and
+     pink are for decoration / large text / dark grounds only. */
   --color-bg: #f4f5f7;        /* soft off-white canvas (pure white reserved for cards) */
   --color-surface: #ffffff;
   --color-surface-2: #e9ebef;
   --color-border: rgba(0, 0, 0, 0.12);
-  --color-accent: #5b6b7d;    /* slate signal (5.01:1 small on off-white) */
-  --color-accent-deep: #3c4753;
-  --color-accent-soft: rgba(91, 107, 125, 0.12);
+  --color-accent: #0e7490;    /* deepened teal — 4.9:1 on off-white, workhorse small-text accent */
+  --color-accent-deep: #0b566a;
+  --color-accent-soft: rgba(57, 215, 255, 0.12);   /* vivid-cyan tint, fills only */
+  --color-accent-vivid: #39d7ff;                    /* vivid cyan: decoration / large / dark grounds */
+  --color-signature: #ff06b5;                       /* hot pink: scarce signature, never deepened */
+  --color-signature-soft: rgba(255, 6, 181, 0.14);
   --color-text: #141414;
   --color-text-dim: #565b63;
-  --color-gold: #5b6b7d;      /* gold collapsed into slate: single accent */
-  --color-gold-deep: #3c4753;
+  --color-gold: #0e7490;      /* gold retired: repointed to teal so any stray ref stays on-palette */
+  --color-gold-deep: #0b566a;
 }
 
 @layer base {
@@ -275,11 +280,9 @@
 /* --- per-section accent override: shadows --color-accent inside scope --- */
 /* .acc-gold is now a no-op: gold collapsed into slate. Kept so existing
    markup classes resolve; all three tokens equal the base slate accent. */
-.acc-gold {
-  --color-accent: var(--color-gold);
-  --color-accent-deep: var(--color-gold-deep);
-  --color-accent-soft: rgba(91, 107, 125, 0.18);
-}
+/* .acc-gold retired: gold collapsed into the teal/cyan accent system.
+   Kept as an empty rule so existing markup classes resolve harmlessly. */
+.acc-gold { /* no accent override — inherits base or .section-dark tokens */ }
 /* Tailwind utilities that use the design token will pick up the override:
    text-accent, bg-accent, ring-accent, fill-accent, border-accent, etc. */
 
@@ -293,8 +296,9 @@
   --color-text-dim: #a1a1aa;
   --color-surface: #171717;
   --color-border: rgba(255, 255, 255, 0.14);
-  --color-accent: #9aa9ba;
-  --color-accent-deep: #5b6b7d;
+  --color-accent: #39d7ff;          /* vivid cyan — 11.2:1 on near-black, safe as text here */
+  --color-accent-deep: #7ee5ff;
+  --color-accent-soft: rgba(57, 215, 255, 0.16);
   background-color: #0a0a0a;
   color: #f4f4f5;
 }
@@ -336,7 +340,7 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(91, 107, 125, 0.4) 10%, rgba(91, 107, 125, 0.4) 90%, transparent);
+  background: linear-gradient(to bottom, transparent, rgba(57, 215, 255, 0.4) 10%, rgba(57, 215, 255, 0.4) 90%, transparent);
   pointer-events: none;
 }
 .timeline-dot {
@@ -345,7 +349,7 @@
   height: 9px;
   border-radius: 50%;
   background: var(--color-accent);
-  box-shadow: 0 0 0 4px rgba(91, 107, 125, 0.15), 0 0 0 8px rgba(91, 107, 125, 0.06);
+  box-shadow: 0 0 0 4px rgba(57, 215, 255, 0.15), 0 0 0 8px rgba(57, 215, 255, 0.06);
   transform: translate(-50%, 0);
 }
 
