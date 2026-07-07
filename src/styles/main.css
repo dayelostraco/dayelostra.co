@@ -328,9 +328,17 @@
    endless void. Kept dark and on-brand: cool steps stay navy; tint-warm
    lifts highest with a faint warm cast so the gold `acc-gold` sections
    sit on slightly warmer ground. */
-.tint-warm   { background-color: #f4f5f7; }  /* = base off-white */
-.tint-deep   { background-color: #eceef1; }  /* one step down */
-.tint-darker { background-color: #e6e8ec; }  /* two steps down */
+/* Section-ground rhythm: each tint carries a subtle brand color cast and a
+   perceptible value step; the existing per-section assignment (warm/deep/
+   darker) becomes a repeating pink / neutral / cyan cadence down the page.
+   Depth comes from organic fractal-noise grain (non-repeating to the eye,
+   unlike a tiled dot grid) shared across all three. */
+.tint-warm, .tint-deep, .tint-darker {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+.tint-warm   { background-color: #f7f0f5; }  /* faint pink cast, lightest */
+.tint-deep   { background-color: #edeff3; }  /* neutral, mid step */
+.tint-darker { background-color: #e6eef2; }  /* faint cyan cast, deepest */
 
 /* --- light / inverted section ---
    A genuine high-contrast break in the dark run. Warm light ground; the
