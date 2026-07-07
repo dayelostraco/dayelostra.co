@@ -360,7 +360,7 @@
   border-radius: 9999px;
   filter: blur(80px);
   opacity: 0.55;
-  background: radial-gradient(circle, rgba(0, 173, 239, 0.45), transparent 70%);
+  background: radial-gradient(circle, rgba(57, 215, 255, 0.42), transparent 70%);
 }
 .glow-blob-deep {
   position: absolute;
@@ -368,7 +368,7 @@
   border-radius: 9999px;
   filter: blur(100px);
   opacity: 0.4;
-  background: radial-gradient(circle, rgba(0, 64, 105, 0.6), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 116, 144, 0.55), transparent 70%);
 }
 .glow-blob-gold {
   position: absolute;
@@ -376,7 +376,15 @@
   border-radius: 9999px;
   filter: blur(90px);
   opacity: 0.5;
-  background: radial-gradient(circle, rgba(193, 160, 102, 0.5), transparent 70%);
+  background: radial-gradient(circle, rgba(57, 215, 255, 0.30), transparent 70%);
+}
+.glow-blob-pink {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.38;
+  background: radial-gradient(circle, rgba(255, 6, 181, 0.5), transparent 70%);
 }
 /* --- hero topographic: federal-tactical base layer --- */
 .hero-topo {
@@ -462,7 +470,11 @@
 }
 
 /* --- decoration removed for the redesign (was navy ambient texture) --- */
-.glow-blob, .glow-blob-deep, .glow-blob-gold, .hero-topo { display: none !important; }
+.glow-blob, .glow-blob-deep, .glow-blob-gold, .glow-blob-pink, .hero-topo { display: none !important; }
+.section-dark .glow-blob,
+.section-dark .glow-blob-deep,
+.section-dark .glow-blob-gold,
+.section-dark .glow-blob-pink { display: block !important; }
 .dot-grid, .dot-grid-accent, .dot-grid-gold, .dot-grid-fine,
 .scanlines, .diagonal-lines, .grain { background-image: none !important; }
 
