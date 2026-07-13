@@ -4,7 +4,9 @@ Ideas accumulate here; publishing contract is in [PUBLISHING.md](PUBLISHING.md).
 
 ## Ready to write
 
-- **The human-oversight ladder.** Advisory / human-in-the-loop / human-on-the-loop / supervised autonomy as a consequence-to-oversight mapping written into the agent's scope. Aimed squarely at authorizing officials. Currently four bullets in "Your Agents Are Accounts"; deserves the full treatment (when each tier is defensible, how the mapping gets approved, why irreversible actions never rise above HITL). Candidate for Agent Governance part 5.
+- **Minimum Necessary Is a Boundary, Not a Policy** (part 5, tracked in #38). The data plane as the fourth enforcement surface: regulated data confined to an isolated enclave, one mediated bridge, DLP in both directions, inbound as minimum-necessary/CUI handling enforced structurally. Production-tested pattern; pull-quote candidate: the prompt asks the model not to look; the boundary decides what there is to see.
+
+- **The human-oversight ladder.** Advisory / human-in-the-loop / human-on-the-loop / supervised autonomy as a consequence-to-oversight mapping written into the agent's scope. Aimed squarely at authorizing officials. Currently four bullets in "Your Agents Are Accounts"; deserves the full treatment (when each tier is defensible, how the mapping gets approved, why irreversible actions never rise above HITL). Candidate for Agent Governance part 6 (tracked in #39).
 - **Audit at machine speed.** What the SIEM story looks like when one actor emits ten thousand identity-attributed spans an hour: delegation-chain attribution (org -> app -> user -> agent), deny streams as first-class evidence, making audit human-digestible at agent velocity, AU-2/AU-10 without a new control story. The most technical of the backlog; pairs well with an illustrative span diagram.
 
 ## Sketches
