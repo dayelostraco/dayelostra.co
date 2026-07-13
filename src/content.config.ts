@@ -18,7 +18,14 @@ const insights = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/insights' }),
     schema: ({ image }) => z.object({
         title: z.string(),
+        // Optional query-shaped <title> tag override (editorial `title`
+        // stays the H1/OG headline). Pattern: "Editorial Line: keyword
+        // clause". Falls back to `title` when unset.
+        seoTitle: z.string().optional(),
         date: z.coerce.date(),
+        // Optional last-substantive-edit date. Feeds BlogPosting
+        // dateModified (falls back to `date`).
+        updated: z.coerce.date().optional(),
         summary: z.string().min(60).max(280),
         tags: z.array(z.string()).optional(),
         readTime: z.string().optional(),

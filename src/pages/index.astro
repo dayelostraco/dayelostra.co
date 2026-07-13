@@ -746,11 +746,11 @@ const fmtDate = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', mo
                   {post.data.readTime && <span>&nbsp;&middot;&nbsp;{post.data.readTime}</span>}
                 </time>
                 <h3 class="mt-4 text-xl font-semibold tracking-tight md:text-2xl">
-                  <a href={`/insights/${post.id}`} class="transition-colors hover:text-accent">{post.data.title}</a>
+                  <a href={`/insights/${post.id}/`} class="transition-colors hover:text-accent">{post.data.title}</a>
                 </h3>
                 <p class="mt-3 leading-relaxed text-text-dim">{post.data.summary}</p>
                 <p class="mt-5">
-                  <a href={`/insights/${post.id}`} class="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-accent transition-colors hover:text-accent-deep">
+                  <a href={`/insights/${post.id}/`} class="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-accent transition-colors hover:text-accent-deep">
                     Read the post
                     <span aria-hidden="true">&rarr;</span>
                   </a>
@@ -760,7 +760,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', mo
           </div>
 
           <p class="mt-10" data-reveal data-reveal-delay="300">
-            <a href="/insights" class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent transition-colors hover:text-accent-deep">
+            <a href="/insights/" class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent transition-colors hover:text-accent-deep">
               All insights
               <span aria-hidden="true">&rarr;</span>
             </a>

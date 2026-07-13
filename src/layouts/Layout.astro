@@ -14,6 +14,9 @@ interface Props {
   twitterDescription?: string;
   robots?: string;
   jsonLd?: boolean;
+  // Page-specific schema.org object (e.g. BlogPosting on article pages),
+  // emitted as its own ld+json block alongside the optional Person block.
+  extraJsonLd?: Record<string, unknown>;
   bodyClass?: string;
 }
 
@@ -30,6 +33,7 @@ const {
   twitterDescription,
   robots,
   jsonLd = false,
+  extraJsonLd,
   bodyClass = 'overflow-x-hidden',
 } = Astro.props;
 
@@ -111,7 +115,8 @@ const resolvedTwitterDescription = twitterDescription ?? resolvedOgDescription;
       },
       "sameAs": [
         "https://www.linkedin.com/in/dayelostraco",
-        "https://github.com/dayelostraco"
+        "https://github.com/dayelostraco",
+        "https://www.accelerasolutions.com/our-team#dayel-ostraco"
       ],
       "alumniOf": {
         "@type": "CollegeOrUniversity",
@@ -157,6 +162,10 @@ const resolvedTwitterDescription = twitterDescription ?? resolvedOgDescription;
         }
       ]
     })} />
+  )}
+
+  {extraJsonLd && (
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(extraJsonLd)} />
   )}
 
   <!-- a11y: ensure data-reveal content is visible if JS fails or is disabled (Section 508 §1194.22(l)) -->

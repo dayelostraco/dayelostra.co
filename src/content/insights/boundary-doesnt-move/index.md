@@ -1,5 +1,6 @@
 ---
 title: "Agents Are Just Identities. The Boundary Hasn't Moved."
+seoTitle: "Agents Are Just Identities: AI Agent IAM and NIST 800-53 in Federal IT"
 date: 2026-06-08
 summary: "Federal IT already owns every primitive an agent needs: identity, authorization, lifecycle, audit. The new work is governance at machine speed, not a new IAM tier. Most of what the agent-platform market is selling is a layer you do not need."
 tags: [ai, agents, ato, federal, identity, iam]

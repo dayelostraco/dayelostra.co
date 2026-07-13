@@ -1,5 +1,6 @@
 ---
 title: "The Agent Can't Run That Command. That's Least Privilege."
+seoTitle: "The Agent Can't Run That Command: Least Privilege Command Allow-Lists for AI Agents"
 date: 2026-07-07
 summary: "Least privilege at the OS layer is not a posture. It is a list. A deny-by-default command allow-list that scopes what an agent may run, the layers that enforce it, and the escalation paths it forecloses."
 tags: [ai, agents, cyber, least-privilege, nist, federal]
@@ -13,7 +14,7 @@ You have heard this one. An AI agent, working in a production environment, delet
 
 Maybe it happened exactly as told. Maybe the story grew in the retelling. I do not care, and neither should you, because the story survives on the strength of a real failure mode. The failure was structural, not behavioral. Someone wrote "do not delete the database" into a prompt and treated that sentence as a control. It was never a control.
 
-In [Agents Are Just Identities](/insights/boundary-doesnt-move) I argued that agents are not a new actor class and that the boundary already knows how to hold them. Buried in that essay, in about thirty words, was the claim that the same discipline holds at the OS layer: a policy that names which commands an agent may run forecloses both destructive operations and privilege escalation. This essay is that sentence, expanded.
+In [Agents Are Just Identities](/insights/boundary-doesnt-move/) I argued that agents are not a new actor class and that the boundary already knows how to hold them. Buried in that essay, in about thirty words, was the claim that the same discipline holds at the OS layer: a policy that names which commands an agent may run forecloses both destructive operations and privilege escalation. This essay is that sentence, expanded.
 
 At the OS layer, least privilege is not a posture. It is a list.
 
@@ -91,7 +92,7 @@ The failure mode is where the design proves itself. An agent attempts a command 
 
 ## The two layers reinforce each other
 
-I made the case at the [API plane](/insights/boundary-doesnt-move) first: every agent action a discrete, named operation with a discrete, named scope. This is the same discipline one layer down, at the OS plane, expressed as the commands an agent may run. The two stack. Scope discipline on the API plane and an enforced allow-list on the OS plane are the same idea applied at two boundaries, and an agent that has to pass both has very little room to surprise you.
+I made the case at the [API plane](/insights/boundary-doesnt-move/) first: every agent action a discrete, named operation with a discrete, named scope. This is the same discipline one layer down, at the OS plane, expressed as the commands an agent may run. The two stack. Scope discipline on the API plane and an enforced allow-list on the OS plane are the same idea applied at two boundaries, and an agent that has to pass both has very little room to surprise you.
 
 That leaves one line worth keeping, the line the deleted database was missing.
 

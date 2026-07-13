@@ -63,7 +63,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', mo
               <li class="group corners glass glass-hover">
                 <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
                 {post.data.heroImage && (
-                  <a href={`/insights/${post.id}`} class="block overflow-hidden">
+                  <a href={`/insights/${post.id}/`} class="block overflow-hidden">
                     <Image
                       src={post.data.heroImage}
                       alt={post.data.heroImageAlt ?? ''}
@@ -85,7 +85,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', mo
                     </time>
                   </div>
                   <h3 class="mt-4 text-xl font-semibold tracking-tight md:text-2xl">
-                    <a href={`/insights/${post.id}`} class="transition-colors hover:text-accent">{post.data.title}</a>
+                    <a href={`/insights/${post.id}/`} class="transition-colors hover:text-accent">{post.data.title}</a>
                   </h3>
                   <p class="mt-3 leading-relaxed text-text-dim">{post.data.summary}</p>
                   {post.data.tags && post.data.tags.length > 0 && (
@@ -98,7 +98,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', mo
                     </ul>
                   )}
                   <p class="mt-5">
-                    <a href={`/insights/${post.id}`} class="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-accent transition-colors hover:text-accent-deep">
+                    <a href={`/insights/${post.id}/`} class="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-accent transition-colors hover:text-accent-deep">
                       Read the post
                       <span aria-hidden="true">&rarr;</span>
                     </a>

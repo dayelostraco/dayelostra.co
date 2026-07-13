@@ -1,5 +1,6 @@
 ---
 title: "The CLI Is the New API. Govern It Like One."
+seoTitle: "The CLI Is the New API: Governing AI Agent Command-Line Access"
 date: 2026-06-23
 summary: "For an agent, the command line is a first-class invocation surface. It now needs what every API already has: a stable contract, structured output, authorization per call, and audit. Here is the gap I keep finding, and how to close it."
 tags: [ai, agents, cli, api, governance, federal]
@@ -55,7 +56,7 @@ Structured output also closes a quieter hole. Scraped text routinely contains co
 
 **Typed errors and exit semantics.** An API reports failure in a structured, documented way. CLI exit codes and stderr are inconsistent from one tool to the next, so an agent often cannot tell success from failure without guessing. An agent needs a deterministic signal, not a vibe. The failure that hurts is the silent one: a tool that exits zero on partial failure, or writes the real error to a stream the agent never checks. The agent records success and builds the next step on a foundation that is not there.
 
-**Authorization per invocation.** An API authorizes each call against a scope. The CLI historically inherits the operator's ambient shell privilege, which is to say everything the human could do. I made the identity-plane version of this argument in [Agents Are Just Identities](/insights/boundary-doesnt-move): every action a discrete, named operation with a discrete, named scope. The command line is that same surface one layer down, and it inherits the same rule. A deny-by-default allow-list of permitted commands, [the subject of its own essay](/insights/least-privilege-is-a-list), is how the rule lands at the OS layer. This is AC-3 (access enforcement) and AC-6 (least privilege), applied to a surface that usually enforces neither.
+**Authorization per invocation.** An API authorizes each call against a scope. The CLI historically inherits the operator's ambient shell privilege, which is to say everything the human could do. I made the identity-plane version of this argument in [Agents Are Just Identities](/insights/boundary-doesnt-move/): every action a discrete, named operation with a discrete, named scope. The command line is that same surface one layer down, and it inherits the same rule. A deny-by-default allow-list of permitted commands, [the subject of its own essay](/insights/least-privilege-is-a-list/), is how the rule lands at the OS layer. This is AC-3 (access enforcement) and AC-6 (least privilege), applied to a surface that usually enforces neither.
 
 **Audit as a first-class output.** An API emits structured, identity-attributed events. CLI history is scattered shell logs nobody reconstructs at agent velocity. At human speed an auditor could piece together what happened from shell history and memory. At agent velocity there is too much, too fast, and no narrator in the chair. The audit has to be generated as it happens, not reconstructed afterward. Every invocation should arrive as one attributable event, AU-2 (event logging) and AU-10 (non-repudiation), carried on OpenTelemetry the same way the program's API calls already are.
 
