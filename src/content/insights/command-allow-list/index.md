@@ -73,7 +73,7 @@ Destructive operations lose their reach. The deleted-database category is forecl
 
 None of this is a new control story, and nobody should sell it to you as one. The allow-list implements families already in the program's baseline.
 
-AC-3, access enforcement, is the allow-list itself: the enforcement point is the access decision, made on every command. AC-6, least privilege, is the deny-by-default posture: named commands only, nothing implicit, nothing inherited. SC-7, boundary protection, is the enforcement point's position: the agent operates behind a boundary it cannot route around, and the boundary is where the command is allowed or denied.
+AC-3, access enforcement, is the allow-list itself: the enforcement point is the access decision, made on every command. AC-6, least privilege, is the deny-by-default posture: named commands only, nothing implicit, nothing inherited. SC-7, boundary protection, is the enforcement point's position: the agent operates behind a perimeter it cannot route around, and that perimeter is where the command is allowed or denied.
 
 An assessor already knows these controls. The work is not inventing a control family for agents. The work is presenting the allow-list as the implementation of families that are already accredited.
 

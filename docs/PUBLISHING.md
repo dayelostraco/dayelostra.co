@@ -58,6 +58,26 @@ npm test                 # OG card-data unit tests
 
 The full pre-publish gate: `npm run check && npm run build && npm run og:render:posts && npm run a11y:test && npm test`.
 
+## Review gates for essays
+
+Every essay (and any external bylined submission: public comments, framework
+contributions, op-eds) passes two review stages before publish, both run as
+adversarial persona reviews with findings triaged and fixed before deploy:
+
+1. **Substance review.** One or two personas drawn from the essay's actual
+   audience (e.g. ATO engineer, GS-15 program executive, framework
+   maintainer). They attack claims: process accuracy, overclaims,
+   self-serving reads, missing beats.
+2. **Editor review.** A single editor persona attacks the writing, not the
+   claims: flab, buried ledes, unclear antecedents, register drift, grammar,
+   AND cross-corpus repetition (constructions or aphorisms reused from
+   already-published essays on either site; the sibling-essay structure makes
+   repeated tics visible to anyone reading both). Also verifies the standing
+   style rules: no em-dashes, definition sentence present, summary within
+   60-280 chars.
+
+Repo docs, commit messages, and issue text do not need these gates.
+
 Publishing = flip `draft: false` (or remove it), commit, push to `main`. The deploy workflow renders OG cards, builds, syncs S3, and invalidates CloudFront.
 
 ## Renaming a slug
