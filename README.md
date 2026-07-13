@@ -91,7 +91,7 @@ Auth uses GitHub Actions OIDC, not long-lived AWS access keys. The workflow exch
 
 The workflow sets two profiles:
 - HTML: `max-age=300, must-revalidate` — users pick up new builds within 5 minutes.
-- Hashed assets: `max-age=31536000, immutable` — Vite hashes filenames, safe to cache forever.
+- Hashed assets: `max-age=31536000, immutable` — Astro hashes filenames under `_astro/`, safe to cache forever.
 
 CloudFront invalidation runs `/*` on each deploy, flushing edge caches immediately.
 
