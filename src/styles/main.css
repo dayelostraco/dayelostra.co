@@ -673,3 +673,66 @@ nav[aria-label="Primary"].nav-scrolled {
   background-color: rgba(244, 245, 247, 0.85);
   border-bottom: 1px solid rgba(0, 0, 0, 0.10);
 }
+
+/* ---------------------------------------------------------------------------
+ * Print — essays print as clean black-on-white prose. The audience for these
+ * pieces prints for briefing packets; chrome, ornament, and dark grounds are
+ * stripped, and external link targets are printed after the link text.
+ * ------------------------------------------------------------------------- */
+@media print {
+  nav,
+  footer,
+  [data-sidebar],
+  #cursor,
+  .section-watermark,
+  .section-watermark-text,
+  [class*="glow-blob"],
+  .grain,
+  .dot-grid,
+  .dot-grid-fine,
+  .cf-tl, .cf-tr, .cf-bl, .cf-br,
+  a[href="#main-content"] {
+    display: none !important;
+  }
+
+  html, body,
+  .section-dark,
+  .section-light,
+  .tint-warm, .tint-deep, .tint-darker,
+  .glass, .glass-accent {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    border-color: #ccc !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .article-prose, .article-prose * {
+    color: #000 !important;
+  }
+
+  .article-prose pre.astro-code,
+  .article-prose pre.astro-code span {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #999 !important;
+  }
+
+  .article-prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #333;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+  pre, blockquote, figure {
+    break-inside: avoid;
+  }
+}

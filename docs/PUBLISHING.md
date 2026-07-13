@@ -78,7 +78,9 @@ adversarial persona reviews with findings triaged and fixed before deploy:
 
 Repo docs, commit messages, and issue text do not need these gates.
 
-Publishing = flip `draft: false` (or remove it), commit, push to `main`. The deploy workflow renders OG cards, builds, syncs S3, and invalidates CloudFront.
+Publishing = flip `draft: false` (or remove it), commit, push to `main`. The deploy workflow renders OG cards, builds, runs the blocking accessibility gate, syncs S3, and invalidates CloudFront.
+
+**On substantive revisions:** set (or bump) `updated:` in the frontmatter. It feeds the sitemap's `lastmod` and the article's `dateModified` schema, and freshness signals only work if the field gets used. Copyedits do not need it; anything that changes an argument, adds a section, or would make a returning reader notice does.
 
 ## Renaming a slug
 
