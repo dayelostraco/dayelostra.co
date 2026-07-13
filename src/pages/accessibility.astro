@@ -1,26 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
 
-  <title>Accessibility · Dayel Ostraco</title>
-  <meta name="description" content="Accessibility statement for dayelostra.co: built to WCAG 2.1 AA and checked by an automated axe-core gate on every change.">
-  <meta name="robots" content="index,follow">
-
-  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png?v=3">
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/icon/apple-touch-icon-152x152.png?v=3">
-
-  <!-- Self-hosted fonts (Geist + IBM Plex Mono via main.css) -->
-  <link rel="preload" href="/assets/fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- Pulls in main.css (and the null-guarded site scripts) -->
-  <script type="module" src="/src/scripts/main.js"></script>
-</head>
-<body class="min-h-screen">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+<Layout
+  title="Accessibility · Dayel Ostraco"
+  description="Accessibility statement for dayelostra.co: built to WCAG 2.1 AA and checked by an automated axe-core gate on every change."
+  robots="index,follow"
+  bodyClass="min-h-screen"
+>
+  <Navbar home={false} />
 
   <main id="main-content" tabindex="-1" class="mx-auto max-w-3xl px-6 py-20 lg:py-28">
     <a href="/" class="font-mono text-xs uppercase tracking-[0.24em] text-text-dim transition-colors hover:text-accent">
@@ -67,5 +57,8 @@
 
     <p class="mt-16 font-mono text-xs uppercase tracking-[0.24em] text-text-dim">Last reviewed: June 16, 2026</p>
   </main>
-</body>
-</html>
+
+  <Footer />
+
+  <script src="../scripts/main.js"></script>
+</Layout>

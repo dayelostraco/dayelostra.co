@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="I Am Error."
+  description="That page can't be found. Head back to dayelostra.co."
+  robots="noindex, follow"
+>
+  <Navbar home={false} />
+
+  <main id="main-content" tabindex="-1">
+    <section class="section-dark corners corners-lg relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-12 lg:px-8">
+      <span class="cf-tl"></span><span class="cf-tr"></span><span class="cf-bl"></span><span class="cf-br"></span>
+      <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-[0.18] saturate-50" aria-hidden="true" style="background-image:url('/assets/img/error.png')"></div>
+      <div class="absolute inset-0 -z-[15] bg-bg/70" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 dot-grid opacity-40" aria-hidden="true"></div>
+      <div class="glow-blob-pink glow-drift" aria-hidden="true" style="width:520px;height:520px;top:-10%;right:-8%;"></div>
+      <div class="glow-blob-deep glow-drift-slow" aria-hidden="true" style="width:480px;height:480px;bottom:-12%;left:-10%;"></div>
+
+      <div class="relative mx-auto w-full max-w-4xl text-center">
+        <p class="font-mono text-7xl font-semibold text-signature md:text-9xl" data-reveal>404</p>
+        <h1 class="mt-6 text-3xl font-semibold tracking-tight md:text-5xl" data-reveal data-reveal-delay="150">I Am Error.</h1>
+        <p class="mt-4 text-lg text-text-dim md:text-xl" data-reveal data-reveal-delay="300">That page can't be found. Try heading back to the front page.</p>
+        <div class="mt-10 flex flex-wrap justify-center gap-4" data-reveal data-reveal-delay="450">
+          <a href="/" class="btn-primary">Go home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script src="../scripts/main.js"></script>
+</Layout>

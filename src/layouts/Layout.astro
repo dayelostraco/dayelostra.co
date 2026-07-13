@@ -1,0 +1,180 @@
+---
+import '../styles/main.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  robots?: string;
+  jsonLd?: boolean;
+  bodyClass?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogType = 'website',
+  ogImage = '/assets/img/og.jpg',
+  ogImageAlt = 'Dayel Ostraco, CTO. Secure federal AI and systems architect. CISSP, DoD Secret cleared, TS-eligible.',
+  ogTitle,
+  ogDescription,
+  twitterTitle,
+  twitterDescription,
+  robots,
+  jsonLd = false,
+  bodyClass = 'overflow-x-hidden',
+} = Astro.props;
+
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
+const resolvedOgTitle = ogTitle ?? title;
+const resolvedOgDescription = ogDescription ?? description;
+const resolvedTwitterTitle = twitterTitle ?? resolvedOgTitle;
+const resolvedTwitterDescription = twitterDescription ?? resolvedOgDescription;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalUrl}>
+  {robots && <meta name="robots" content={robots}>}
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content={ogType}>
+  <meta property="og:title" content={resolvedOgTitle}>
+  <meta property="og:description" content={resolvedOgDescription}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:site_name" content="dayelostra.co">
+  <meta property="og:image" content={ogImageUrl}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content={ogImageAlt}>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={resolvedTwitterTitle}>
+  <meta name="twitter:description" content={resolvedTwitterDescription}>
+  <meta name="twitter:image" content={ogImageUrl}>
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/icon/apple-touch-icon-57x57.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/icon/apple-touch-icon-60x60.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/icon/apple-touch-icon-72x72.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/icon/apple-touch-icon-76x76.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/icon/apple-touch-icon-114x114.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/icon/apple-touch-icon-120x120.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/icon/apple-touch-icon-144x144.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/icon/apple-touch-icon-152x152.png?v=3">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
+  <link rel="shortcut icon" href="/favicon.ico?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icon/favicon-96x96.png?v=3">
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/icon/favicon-128.png?v=3">
+  <link rel="icon" type="image/png" sizes="196x196" href="/assets/icon/favicon-196x196.png?v=3">
+  <meta name="msapplication-TileColor" content="#0A0E2A">
+  <meta name="theme-color" content="#0A0E2A">
+
+  <!-- Self-hosted fonts; preload the most-used (Geist Variable) to avoid FOIT -->
+  <link rel="preload" href="/assets/fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
+
+  {jsonLd && (
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dayel Ostraco",
+      "givenName": "Dayel",
+      "familyName": "Ostraco",
+      "jobTitle": "Chief Technology Officer",
+      "url": "https://dayelostra.co/",
+      "image": "https://dayelostra.co/assets/img/bio/dayel-mid.webp",
+      "email": "mailto:dayel.ostraco@proton.me",
+      "description": "DoD-cleared AI engineer and secure systems architect. Currently delivering AI agentic processes to DHA and the U.S. Navy. 20 years architecting federal-grade platforms across DoD, DHA, SSA, CMS, and global financial institutions, taking AI from prototype to ATO in months, not years.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Accelera Solutions",
+        "url": "https://www.accelerasolutions.com/"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/dayelostraco",
+        "https://github.com/dayelostraco"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "State University of New York at Purchase",
+        "url": "https://www.purchase.edu/"
+      },
+      "knowsAbout": [
+        "Generative AI",
+        "Large Language Models",
+        "Multi-provider LLM Orchestration",
+        "Zero Trust Architecture",
+        "RMF (Risk Management Framework)",
+        "Authority to Operate (ATO)",
+        "FedRAMP High",
+        "AWS GovCloud",
+        "Federal Software Engineering",
+        "DoD Secure Systems"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "name": "B.S. Mathematics",
+          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "State University of New York at Purchase" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "name": "B.S. Computer Science",
+          "recognizedBy": { "@type": "CollegeOrUniversity", "name": "State University of New York at Purchase" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "certification",
+          "name": "CISSP",
+          "recognizedBy": { "@type": "Organization", "name": "(ISC)²" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "security clearance",
+          "name": "DoD Secret (TS-eligible)",
+          "recognizedBy": { "@type": "Organization", "name": "U.S. Department of Defense" }
+        }
+      ]
+    })} />
+  )}
+
+  <!-- a11y: ensure data-reveal content is visible if JS fails or is disabled (Section 508 §1194.22(l)) -->
+  <noscript>
+    <style>
+      [data-reveal] { opacity: 1 !important; transform: none !important; filter: none !important; }
+      #cursor { display: none; }
+    </style>
+  </noscript>
+</head>
+<body class={bodyClass}>
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-accent focus:text-bg focus:px-4 focus:py-2">Skip to content</a>
+
+  <slot />
+
+  <!-- Cloudflare Web Analytics -->
+  <script is:inline defer src="/assets/js/beacon.min.js" integrity="sha384-OngJu5CJZ5lWGKcpmuxzX/oKa+Gcbcw0xdBkaOPd+KAe6c0poNtwdci1DEIrrtF/" data-cf-beacon='{"token": "cb97cb0f5ec24361b6a0b180db7aad61"}'></script>
+
+</body>
+</html>

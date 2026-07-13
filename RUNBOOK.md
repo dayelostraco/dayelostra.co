@@ -135,7 +135,7 @@ To re-set: `printf '%s' '<value>' | gh secret set <NAME> --repo dayelostraco/day
 | OG / Twitter card | `public/assets/img/og.jpg` (1200×630) | Generate from any photo: `sips -s format jpeg -Z 1200 src.jpg --out og.png && sips -c 630 1200 og.png --out og.jpg`. |
 | Brand marks | `public/assets/brands/{glyphon,colophon,vallark,affirmark,sigilark}-mark.svg` | Pull fresh from sibling repo: `cp ~/Development/GitHub/<product>/<product>-branding/marks/<file>.svg public/assets/brands/<product>-mark.svg`. |
 | Favicon set | `public/assets/icon/` | Multi-size; if updating, regenerate all (favicon-16/32/96/128/196, apple-touch-icon-57/60/72/76/114/120/144/152, mstile, .ico). |
-| Cloudflare beacon | `public/assets/js/beacon.min.js` + SRI hash in `index.html`/`error.html` | Refresh: `curl -sLo public/assets/js/beacon.min.js https://static.cloudflareinsights.com/beacon.min.js && openssl dgst -sha384 -binary public/assets/js/beacon.min.js \| openssl base64 -A`. Update the `integrity="sha384-…"` value in both HTML files. |
+| Cloudflare beacon | `public/assets/js/beacon.min.js` + SRI hash in `src/layouts/Layout.astro` | Refresh: `curl -sLo public/assets/js/beacon.min.js https://static.cloudflareinsights.com/beacon.min.js && openssl dgst -sha384 -binary public/assets/js/beacon.min.js \| openssl base64 -A`. Update the `integrity="sha384-…"` value in `Layout.astro`. |
 
 ## Adding a new section
 

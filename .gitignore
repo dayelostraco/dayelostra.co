@@ -71,9 +71,10 @@ test/coverage
 ################
 *.sh
 
-# Vite build output
+# Build output
 dist/
 .vite/
+.astro/
 
 # Playwright MCP scratch
 .playwright-mcp/
