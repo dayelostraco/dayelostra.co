@@ -4,6 +4,9 @@ seoTitle: "Your Agents Are Accounts: AI Agent IAM and NIST 800-53 in Federal IT"
 date: 2026-06-08
 summary: "Every agent-platform pitch claims your IAM cannot hold agents. I keep asking which NIST 800-53 control stops working when the account belongs to an agent, and nobody answers. Agents are accounts. The real work is governing them at machine speed."
 tags: [ai, agents, ato, federal, identity, iam]
+series:
+  name: "Agent Governance"
+  part: 1
 readTime: "7 min read"
 draft: false
 ogAccent: "The Boundary Hasn't Moved."

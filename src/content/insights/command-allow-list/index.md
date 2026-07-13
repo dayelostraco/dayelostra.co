@@ -4,6 +4,9 @@ seoTitle: "Least Privilege Is a List: Command Allow-Lists for AI Agents"
 date: 2026-07-07
 summary: "A prompt that says do not drop the database is a request. A deny-by-default command allow-list, enforced beneath the agent, is a control. What the list looks like in practice, where it must be enforced, and the escalation paths it forecloses."
 tags: [ai, agents, cyber, least-privilege, nist, federal]
+series:
+  name: "Agent Governance"
+  part: 3
 readTime: "6 min read"
 draft: false
 ogAccent: "Not a Prompt."

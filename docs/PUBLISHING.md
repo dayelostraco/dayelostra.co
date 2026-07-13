@@ -18,6 +18,9 @@ date: 2026-07-07          # required. Publish date, date-only, treated as UTC mi
 updated: 2026-08-01       # optional. Set on substantive edits; feeds BlogPosting dateModified + sitemap lastmod.
 summary: "One to two sentences, 60-280 chars."           # required. Card text, meta description, RSS description.
 tags: [ai, agents, federal]                              # optional. Rendered as pills; feeds BlogPosting keywords.
+series:                   # optional. Posts sharing a name get a "Part N of M" badge and
+  name: "Agent Governance"  # ordered prev/next navigation (replaces recency-based Read next).
+  part: 3                 # M is computed from the collection; publishing part 4 updates all siblings.
 readTime: "6 min read"    # optional, manual. No auto-computation; eyeball ~200 wpm.
 heroImage: ./hero.webp    # optional, relative path in the post dir.
 heroImageAlt: "..."       # required if heroImage is set (a11y gate will catch it).

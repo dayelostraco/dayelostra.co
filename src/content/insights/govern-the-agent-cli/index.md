@@ -4,6 +4,9 @@ seoTitle: "The Command Line Is an API Now: Governing AI Agent CLI Access"
 date: 2026-06-23
 summary: "The command line was only ever safe because a human was holding it. With an agent at the keyboard, the CLI needs everything an API already has: a stable contract, structured output, per-call authorization, and audit. Here is the gap, and how I close it."
 tags: [ai, agents, cli, api, governance, federal]
+series:
+  name: "Agent Governance"
+  part: 2
 readTime: "6 min read"
 draft: false
 ogAccent: "Govern It Accordingly."

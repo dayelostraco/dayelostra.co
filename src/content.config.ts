@@ -28,6 +28,14 @@ const insights = defineCollection({
         updated: z.coerce.date().optional(),
         summary: z.string().min(60).max(280),
         tags: z.array(z.string()).optional(),
+        // Optional series membership. Posts sharing a series name get a
+        // "Part N of M" badge and ordered prev/next navigation (M is
+        // computed from the collection, so adding part 4 updates all
+        // siblings automatically).
+        series: z.object({
+            name: z.string(),
+            part: z.number().int().positive(),
+        }).optional(),
         readTime: z.string().optional(),
         // Hero image: co-located with the post directory and referenced
         // via a relative path (e.g., './hero.webp'). image() validates
