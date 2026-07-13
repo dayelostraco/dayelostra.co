@@ -1,20 +1,20 @@
 ---
-title: "The CLI Is the New API. Govern It Like One."
-seoTitle: "The CLI Is the New API: Governing AI Agent Command-Line Access"
+title: "The Command Line Is an API Now. Govern It Accordingly."
+seoTitle: "The Command Line Is an API Now: Governing AI Agent CLI Access"
 date: 2026-06-23
-summary: "For an agent, the command line is a first-class invocation surface. It now needs what every API already has: a stable contract, structured output, authorization per call, and audit. Here is the gap I keep finding, and how to close it."
+summary: "The command line was only ever safe because a human was holding it. With an agent at the keyboard, the CLI needs everything an API already has: a stable contract, structured output, per-call authorization, and audit. Here is the gap, and how I close it."
 tags: [ai, agents, cli, api, governance, federal]
 readTime: "6 min read"
 draft: false
-ogAccent: "Govern It Like One."
+ogAccent: "Govern It Accordingly."
 bodyWatermark: "/GOVERN"
 ---
 
-For three decades the command line was safe, and the reason was never the command line. It was the person holding it. An authenticated human, moving at human speed, reading each result and applying judgment before doing anything irreversible. The operator was the CLI's real contract and its real control. The safety lived in the person, not the interface.
+The safest interface I have ever used is a root shell, and the safety never had anything to do with the shell. It was me. An authenticated human, moving at human speed, reading every result before typing the next command, hesitating everywhere hesitation was owed. For thirty years that person was the command line's real contract and its real control.
 
-That arrangement is over. The keyboard now belongs to an agent that runs at machine speed, does not pause, and does not read output the way a person does. Every guarantee the CLI quietly borrowed from the human in the chair has to become explicit, because the human is no longer in the chair.
+I no longer get to assume that person exists. On my own teams, the keyboard increasingly belongs to an agent: it runs at machine speed, it does not pause, and it does not read output the way I do. Every guarantee the CLI quietly borrowed from the human in the chair now has to be written down, because the chair is empty.
 
-Which is the whole point. To an agent, the command line is not a console. It is an interface it calls, the same way software calls an API. So the honest move is to stop treating the CLI as a human convenience and start treating it as what it has become: an invocation surface. The CLI is the new API. Govern it like one.
+That reframe is the whole essay. To an agent, the command line is not a console. It is an interface it calls, the same way software calls an API. So stop treating the CLI as a human convenience and treat it as what it has become: an invocation surface. The command line is an API now. Govern it accordingly.
 
 ## What the human silently provided
 
@@ -56,7 +56,7 @@ Structured output also closes a quieter hole. Scraped text routinely contains co
 
 **Typed errors and exit semantics.** An API reports failure in a structured, documented way. CLI exit codes and stderr are inconsistent from one tool to the next, so an agent often cannot tell success from failure without guessing. An agent needs a deterministic signal, not a vibe. The failure that hurts is the silent one: a tool that exits zero on partial failure, or writes the real error to a stream the agent never checks. The agent records success and builds the next step on a foundation that is not there.
 
-**Authorization per invocation.** An API authorizes each call against a scope. The CLI historically inherits the operator's ambient shell privilege, which is to say everything the human could do. I made the identity-plane version of this argument in [Agents Are Just Identities](/insights/boundary-doesnt-move/): every action a discrete, named operation with a discrete, named scope. The command line is that same surface one layer down, and it inherits the same rule. A deny-by-default allow-list of permitted commands, [the subject of its own essay](/insights/least-privilege-is-a-list/), is how the rule lands at the OS layer. This is AC-3 (access enforcement) and AC-6 (least privilege), applied to a surface that usually enforces neither.
+**Authorization per invocation.** An API authorizes each call against a scope. The CLI historically inherits the operator's ambient shell privilege, which is to say everything the human could do. I made the identity-plane version of this argument in [Your Agents Are Accounts](/insights/agents-are-accounts/): every action a discrete, named operation with a discrete, named scope. The command line is that same surface one layer down, and it inherits the same rule. A deny-by-default allow-list of permitted commands, [the subject of its own essay](/insights/command-allow-list/), is how the rule lands at the OS layer. This is AC-3 (access enforcement) and AC-6 (least privilege), applied to a surface that usually enforces neither.
 
 **Audit as a first-class output.** An API emits structured, identity-attributed events. CLI history is scattered shell logs nobody reconstructs at agent velocity. At human speed an auditor could piece together what happened from shell history and memory. At agent velocity there is too much, too fast, and no narrator in the chair. The audit has to be generated as it happens, not reconstructed afterward. Every invocation should arrive as one attributable event, AU-2 (event logging) and AU-10 (non-repudiation), carried on OpenTelemetry the same way the program's API calls already are.
 
@@ -70,12 +70,12 @@ And when you evaluate a tool for agent use, structured output and a stable contr
 
 This is also where the industry is already converging. Wrapping a tool with a schema and structured output, the pattern behind MCP, is precisely the act of giving a command surface API properties: a declared interface, typed inputs and outputs, and a place to enforce and observe. The protocols are arriving. The governance posture has to arrive with them.
 
-## Govern it like one
+## Govern it accordingly
 
-For an authorizing official or an ISSO, the two questions that already govern the API surface now govern the command surface. What is this agent allowed to invoke, and can you prove what it invoked. If the answer to either is a shrug, there is an ungoverned interface running inside an accredited boundary.
+When I sit across from an authorizing official or an ISSO, the two questions that already govern the API surface now govern the command surface. What is this agent allowed to invoke, and can you prove what it invoked. If the answer to either is a shrug, there is an ungoverned interface running inside an accredited boundary.
 
-And it is inside the boundary, whether or not anyone modeled it as an interface. The assumption to retire is that the command line is a trusted human tool. It was, right up until the human stopped being the one using it. The controls do not change. AC-3 and AC-6 scope the invocation, AU-2 and AU-10 make it accountable, and the surface that used to lean on a person now stands on its own.
+And it is inside the boundary, whether or not anyone modeled it as an interface. The assumption I want retired is that the command line is a trusted human tool. It was, right up until the human stopped being the one using it. The controls do not change. AC-3 and AC-6 scope the invocation, AU-2 and AU-10 make it accountable, and the surface that used to lean on a person now stands on its own.
 
 That is the through line across this series. At the API plane and at the command plane, the discipline is identical, because to an agent they are the same kind of thing.
 
-> An API is a contract. A CLI is a habit. An agent will hold you to the contract you never wrote.
+> An API is a contract. A CLI is a habit. Your agent will hold you to the contract you never wrote.

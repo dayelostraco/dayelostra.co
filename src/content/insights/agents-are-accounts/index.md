@@ -1,8 +1,8 @@
 ---
-title: "Agents Are Just Identities. The Boundary Hasn't Moved."
-seoTitle: "Agents Are Just Identities: AI Agent IAM and NIST 800-53 in Federal IT"
+title: "Your Agents Are Accounts. The Boundary Hasn't Moved."
+seoTitle: "Your Agents Are Accounts: AI Agent IAM and NIST 800-53 in Federal IT"
 date: 2026-06-08
-summary: "Federal IT already owns every primitive an agent needs: identity, authorization, lifecycle, audit. The new work is governance at machine speed, not a new IAM tier. Most of what the agent-platform market is selling is a layer you do not need."
+summary: "Every agent-platform pitch claims your IAM cannot hold agents. I keep asking which NIST 800-53 control stops working when the account belongs to an agent, and nobody answers. Agents are accounts. The real work is governing them at machine speed."
 tags: [ai, agents, ato, federal, identity, iam]
 readTime: "7 min read"
 draft: false
@@ -10,13 +10,13 @@ ogAccent: "The Boundary Hasn't Moved."
 bodyWatermark: "/BOUNDARY"
 ---
 
-Two camps are selling federal agent strategy in 2026, and I keep ending up in rooms with both of them. One is mostly wrong.
+I sat through another agent-platform pitch a few weeks ago. Same deck as the last one, different logo: agents are a third actor class, neither human nor service, your identity stack cannot hold them, buy our control plane. I have spent twenty years inside accredited federal boundaries, and I now ask every one of these vendors the same question. Which NIST 800-53 control, exactly, stops working when the account belongs to an agent?
 
-The wrong camp is selling a new IAM tier. New agent-identity platforms, new agent-IAM control planes, new agent-account types. The pitch is always the same: agents are a third actor class, neither human nor service, so your identity stack needs a new layer to hold them.
+I am still waiting on my first answer.
 
-The camp I belong to is quieter. Federal IT has run identity, authorization, lifecycle, and audit for three decades on a control catalog that never asks what kind of entity sits behind an account. The boundary already knows how to hold a new actor. The work is not new infrastructure. The work is applying discipline we already have, with more rigor, at machine speed.
+Because the boring truth is that federal IT has run identity, authorization, lifecycle, and audit for three decades on a control catalog that never asks what kind of entity sits behind an account. The boundary already knows how to hold a new actor. The work in front of us is not new infrastructure. It is discipline we already have, applied with more rigor, at machine speed.
 
-Here is why I keep saying that.
+This essay is the long version of the question I keep asking.
 
 ## Same primitive: agents are identities
 
@@ -84,4 +84,6 @@ If I were the federal CTO, IPT lead, or GS-15 across the table from an agentic A
 
 One more thing, because it gets skipped: identity discipline runs underneath your AI governance regime, it does not replace it. The agent that passes all four questions still owes an entry in the AI use-case inventory, a Chief AI Officer review, and an impact assessment if it touches rights or safety. Two gates, not one.
 
-Agents are not a new actor class. They are identities, scoped and audited like every other actor the boundary already knows how to hold. The new work is governance at machine speed. The old work is what it has always been.
+So no, agents are not a new actor class, and I have stopped being diplomatic about it. They are accounts: scoped, audited, and held by the same boundary that has held every other actor for thirty years. The new work is governance at machine speed. The old work is what it has always been.
+
+The next time a deck tells you otherwise, ask my question. Which control stops working? The silence is the answer.

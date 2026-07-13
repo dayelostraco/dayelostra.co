@@ -7,7 +7,7 @@ import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 
 const BASE = (process.env.A11Y_URL || 'http://localhost:4321/').replace(/\/+$/, '');
-const PAGES = ['/', '/accessibility', '/insights', '/insights/boundary-doesnt-move', '/insights/cli-is-the-new-api'];
+const PAGES = ['/', '/accessibility', '/insights', '/insights/agents-are-accounts', '/insights/govern-the-agent-cli'];
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 
 const browser = await chromium.launch();
