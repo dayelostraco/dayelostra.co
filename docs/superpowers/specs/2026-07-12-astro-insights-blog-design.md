@@ -107,11 +107,12 @@ Rework rules:
   CloudFront invalidation unchanged (HTML 300s cache, hashed assets
   immutable — Astro's `_astro/` hashed assets fit the existing rule;
   sync patterns adjusted as needed).
-- **Clean URLs:** Astro emits `insights/<slug>/index.html`; the S3 REST
-  origin doesn't resolve subdirectory index documents. Add a CloudFront
-  Function (viewer-request) rewriting `/insights/<slug>/` and other
-  directory URIs to `.../index.html`. Applied to production directly
-  (authorized) and documented in `iac/terraform/` + RUNBOOK.
+- **Clean URLs:** Astro emits `insights/<slug>/index.html`. CORRECTED
+  during implementation (2026-07-12): the CloudFront origin is the S3
+  WEBSITE endpoint (not REST), whose IndexDocument serves directory
+  URLs natively. No CloudFront Function is needed or deployed; the
+  behavior and the REST-migration caveat are documented in
+  `iac/terraform/main.tf` and RUNBOOK.md instead.
 - CSP stays at the CloudFront response-headers policy; verify Astro
   output complies (no inline scripts; inline styles already allowed).
   Do not adopt Astro's per-page CSP meta.

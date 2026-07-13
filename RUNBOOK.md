@@ -179,6 +179,7 @@ No paging is set up today — this is a personal portfolio. If you want SLO-styl
 
 - **CloudFront updates are asynchronous.** After `update-distribution` or `update-response-headers-policy`, status will be `InProgress` for 5-15 minutes. The previous config keeps serving until propagation completes.
 - **S3 website endpoint vs REST endpoint.** This site uses the website endpoint (`s3-website-us-east-1.amazonaws.com`) so error-document handling works. Don't switch CloudFront's origin to the REST endpoint without also configuring custom error responses.
+- **Clean URLs depend on the website endpoint.** Astro emits directory-style pages (`insights/<slug>/index.html`). The S3 website endpoint's `IndexDocument` setting serves them at `/insights/<slug>/`, and requests without a trailing slash get S3's own 302 redirect to the slashed form. No CloudFront Function is involved. If the origin ever moves to the REST endpoint, directory URLs break site-wide: add a viewer-request CloudFront Function that rewrites `/` and extensionless URIs to `.../index.html` before or with that change.
 - **Cache headers from origin are honored** because the cache policy is `UseOriginCacheControlHeaders`. If you change the workflow's `aws s3 sync` `--cache-control` value, browsers will pick up the new TTL on next request after invalidation.
 - **The CSP allows `'unsafe-inline'` for styles** because we use `style="background-image:url(...)"` extensively in section backgrounds. Removing that requires moving every inline background to a CSS class.
 
