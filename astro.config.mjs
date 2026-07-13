@@ -2,6 +2,19 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import { readdirSync, readFileSync, existsSync } from 'node:fs';
+import matter from 'gray-matter';
+
+// slug -> lastmod (updated ?? date) for sitemap entries. Read straight
+// from frontmatter because astro:content isn't importable in config.
+const insightsLastmod = new Map(
+  readdirSync('./src/content/insights', { withFileTypes: true })
+    .filter((d) => d.isDirectory() && existsSync(`./src/content/insights/${d.name}/index.md`))
+    .map((d) => {
+      const { data } = matter(readFileSync(`./src/content/insights/${d.name}/index.md`, 'utf8'));
+      return [d.name, new Date(data.updated ?? data.date)];
+    }),
+);
 
 export default defineConfig({
   site: 'https://dayelostra.co',
@@ -25,6 +38,13 @@ export default defineConfig({
   },
   // Exclude the 404 page: it is noindex and is relocated to
   // dist/error.html by the postbuild step, so /error/ is a dead URL.
-  integrations: [sitemap({ filter: (page) => !page.includes('/error') })],
+  integrations: [sitemap({
+    filter: (page) => !page.includes('/error'),
+    serialize(item) {
+      const m = new URL(item.url).pathname.match(/^\/insights\/([^/]+)\/$/);
+      const lastmod = m && insightsLastmod.get(m[1]);
+      return lastmod ? { ...item, lastmod: lastmod.toISOString() } : item;
+    },
+  })],
   vite: { plugins: [tailwindcss()] },
 });

@@ -16,7 +16,7 @@ People always want to litigate whether it really happened. Wrong question. I hav
 
 In [Your Agents Are Accounts](/insights/agents-are-accounts/) I argued that agents are not a new actor class and that the boundary already knows how to hold them. Buried in that essay, in about thirty words, was the claim that the same discipline holds at the OS layer: a policy that names which commands an agent may run forecloses both destructive operations and privilege escalation. This essay is that sentence, expanded.
 
-At the OS layer, least privilege is not a posture. It is a list.
+At the OS layer, least privilege is not a posture. It is a list. Specifically: a command allow-list is a deny-by-default policy that names the exact commands, arguments, and resolved paths an agent may execute; everything not named is denied, and enforcement sits beneath the agent where it cannot be routed around.
 
 ## The list, in practice
 

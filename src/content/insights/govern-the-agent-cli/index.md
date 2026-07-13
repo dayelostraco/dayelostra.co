@@ -14,7 +14,7 @@ The safest interface I have ever used is a root shell, and the safety never had 
 
 I no longer get to assume that person exists. On my own teams, the keyboard increasingly belongs to an agent: it runs at machine speed, it does not pause, and it does not read output the way I do. Every guarantee the CLI quietly borrowed from the human in the chair now has to be written down, because the chair is empty.
 
-That reframe is the whole essay. To an agent, the command line is not a console. It is an interface it calls, the same way software calls an API. So stop treating the CLI as a human convenience and treat it as what it has become: an invocation surface. The command line is an API now. Govern it accordingly.
+That reframe is the whole essay. To an agent, the command line is not a console. It is an interface it calls, the same way software calls an API. So stop treating the CLI as a human convenience and treat it as what it has become: an invocation surface. Defined plainly, an agent-facing command line is an interface that needs a stable contract, structured output, per-invocation authorization, and audit, exactly as an API does. The command line is an API now. Govern it accordingly.
 
 ## What the human silently provided
 

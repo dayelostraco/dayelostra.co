@@ -27,6 +27,9 @@ jobs:
 
       - run: npm run build
 
+      - name: Check internal links in built site
+        run: npm run links:check
+
       - name: Serve build and run axe-core audit
         run: |
           npm run preview &

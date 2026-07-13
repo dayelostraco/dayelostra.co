@@ -16,7 +16,7 @@ I am still waiting on my first answer.
 
 Because the boring truth is that federal IT has run identity, authorization, lifecycle, and audit for three decades on a control catalog that never asks what kind of entity sits behind an account. The boundary already knows how to hold a new actor. The work in front of us is not new infrastructure. It is discipline we already have, applied with more rigor, at machine speed.
 
-This essay is the long version of the question I keep asking.
+This essay is the long version of the question I keep asking. The thesis in one sentence: an AI agent's identity is an account in your existing IAM, scoped, credentialed, audited, and lifecycle-managed under the same NIST 800-53 controls that already govern humans and services.
 
 ## Same primitive: agents are identities
 
