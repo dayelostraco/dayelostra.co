@@ -34,6 +34,22 @@ jobs:
 
       - run: npm run build
 
+      # The accessibility statement promises that a build with any WCAG A/AA
+      # violation does not ship. This gate makes that literally true: the
+      # deploy stops here on violations instead of racing the parallel
+      # Accessibility workflow. Chromium is already installed above for the
+      # OG render step.
+      - name: Accessibility gate (blocks deploy on violations)
+        run: |
+          npm run preview &
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:4321 >/dev/null && break
+            sleep 1
+          done
+          npm run a11y:test
+        env:
+          A11Y_URL: http://localhost:4321/
+
       - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE }}

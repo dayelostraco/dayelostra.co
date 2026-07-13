@@ -7,13 +7,25 @@ import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 
 const BASE = (process.env.A11Y_URL || 'http://localhost:4321/').replace(/\/+$/, '');
-const PAGES = ['/', '/accessibility', '/insights', '/insights/agents-are-accounts', '/insights/govern-the-agent-cli'];
+const PAGES = [
+  '/',
+  '/accessibility',
+  '/error.html',
+  '/insights',
+  '/insights/agents-are-accounts',
+  '/insights/govern-the-agent-cli',
+  '/insights/command-allow-list',
+  '/insights/swap-the-model-keep-the-ato',
+];
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 
 const browser = await chromium.launch();
 let totalViolations = 0;
 try {
-  const context = await browser.newContext();
+  // reducedMotion kills the data-reveal fade-in so axe never samples text
+  // mid-animation (a mid-fade sample reads as a color-contrast violation).
+  // Motion handling itself is covered by the prefers-reduced-motion CSS.
+  const context = await browser.newContext({ reducedMotion: 'reduce' });
   const page = await context.newPage();
 
   for (const path of PAGES) {
