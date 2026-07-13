@@ -139,8 +139,8 @@ To re-set: `printf '%s' '<value>' | gh secret set <NAME> --repo dayelostraco/day
 
 ## Adding a new section
 
-1. Add `<section id="…">` to `index.html`. Match an existing pattern: corner brackets, glow blob(s), texture layer, watermark span (`/SECTION-NAME`), eyebrow + h2 + content, optional `acc-gold` for gold-tinted treatment.
-2. Register the anchor in both nav lists: top nav (around line 67) and mobile sidebar (around line 90).
+1. Add `<section id="…">` to `src/pages/index.astro`. Match an existing pattern: corner brackets, glow blob(s), texture layer, watermark span (`/SECTION-NAME`), eyebrow + h2 + content, optional `acc-gold` for gold-tinted treatment.
+2. Register the anchor once in the `links` array in `src/components/Navbar.astro`. That single array drives both the desktop nav and the mobile sidebar.
 3. Use `data-reveal` (with optional `data-reveal-delay="ms"`) on elements that fade in on scroll.
 
 ## Updating the security headers

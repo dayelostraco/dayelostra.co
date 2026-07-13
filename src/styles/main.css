@@ -517,9 +517,9 @@
 
 /* -----------------------------------------------------------------
    Article prose ornaments — applied to the .article-prose container
-   on Insights post detail pages. Layers the base Tailwind Typography
-   `prose` styles (see the `prose prose-lg` classes on the container
-   in the template) with five editorial ornaments:
+   on Insights post detail pages. Tailwind Typography is not installed;
+   `.article-prose` is a hand-rolled container with five editorial
+   ornaments layered directly on it:
 
      1. Drop cap on the first paragraph's first letter (signature pink).
      2. Auto-numbered H2 sections (mono eyebrow above the heading).
@@ -631,17 +631,18 @@
   line-height: 1;
 }
 
-/* Fenced code blocks (Shiki output, class `.astro-code`). Shiki colors
-   every token with an inline `style` attribute, but the site CSP
-   (style-src has no 'unsafe-inline' beyond the hashed inline stylesheet)
-   strips those, so per-token syntax color never applies. Per-token color
-   is not achievable under the CSP, so we pin one deliberate, high-contrast
-   terminal treatment here instead (ships in the hashed inline <style>, so
-   it is CSP-safe). One readable foreground color, near-black background,
+/* Fenced code blocks (Shiki output, class `.astro-code`). Shiki emits an
+   inline `style` attribute on the <pre> and on every token <span>, and the
+   site's production CSP allows 'unsafe-inline' styles, so those inline
+   styles are honored (not stripped) and win over the stylesheet on
+   specificity/source-order grounds alone. Rather than fight per-token
+   syntax color under that CSP, we pin one deliberate, high-contrast
+   terminal treatment here and use !important to make it beat Shiki's
+   inline styles. One readable foreground color, near-black background,
    mono face. */
 .article-prose pre.astro-code {
-  background-color: #0a0a0a;
-  color: #f4f4f5;
+  background-color: #0a0a0a !important;
+  color: #f4f4f5 !important;
   border: 1px solid var(--color-border);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
@@ -651,12 +652,12 @@
   font-size: 0.85rem;
   line-height: 1.7;
 }
-/* Neutralize both the blocked Shiki inline colors and the inherited
+/* Neutralize both Shiki's per-token inline colors and the inherited
    text color so all code text reads as the single legible foreground. */
 .article-prose pre.astro-code code,
 .article-prose pre.astro-code code span {
-  color: inherit;
-  background: none;
+  color: inherit !important;
+  background: none !important;
   font-weight: 400;
   font-family: inherit;
 }

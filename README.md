@@ -124,7 +124,7 @@ Per-section accent shift via the `.acc-gold` class — it shadows `--color-accen
 
 1. Add a `<section id="…">` to `src/pages/index.astro`. Match the existing pattern: corners brackets, glow blob(s), texture layer (dot-grid / grain / scanlines / diagonal-lines), section watermark span (`/SECTION-NAME`), eyebrow + h2 + content.
 2. Add `acc-gold` to the section if it should lean gold instead of blue.
-3. Register the anchor in the `links` array in `src/components/Navbar.astro` — it drives both the desktop nav and the mobile sidebar.
+3. Register the anchor in the `links` array in `src/components/Navbar.astro`: it drives both the desktop nav and the mobile sidebar.
 4. Use `data-reveal` (and optional `data-reveal-delay="ms"`) on elements you want to fade in on scroll.
 
 ## Asset replacement

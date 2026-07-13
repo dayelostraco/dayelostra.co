@@ -13,7 +13,7 @@ import { dirname, join, relative } from 'node:path';
 import matter from 'gray-matter';
 import { chromium } from 'playwright';
 import {
-    deriveSlug, formatCardDate, buildEyebrow, applyAccent,
+    deriveSlug, formatCardDate, applyAccent,
     buildMeta, ogFileName,
 } from './post-card-data.mjs';
 
@@ -43,14 +43,13 @@ function loadPosts() {
         if (data.draft === true) return [];
 
         const dateStr = formatCardDate(data.date);
-        const eyebrow = buildEyebrow();
         const { html, found } = applyAccent(String(data.title), data.ogAccent);
         if (data.ogAccent && !found) {
             console.warn(`  ! ogAccent not found in title for insights/${slug} — rendering all-white`);
         }
         const meta = buildMeta({ dateStr, readTime: data.readTime });
 
-        return [{ slug, eyebrow, titleHtml: html, meta, output: ogFileName(slug) }];
+        return [{ slug, titleHtml: html, meta, output: ogFileName(slug) }];
     });
 }
 
@@ -71,10 +70,8 @@ try {
     for (const post of posts) {
         const page = await context.newPage();
         await page.goto(templateUrl, { waitUntil: 'networkidle' });
-        await page.evaluate(({ eyebrow, titleHtml, meta }) => {
-            document.getElementById('eyebrow').textContent = eyebrow;
+        await page.evaluate(({ titleHtml, meta }) => {
             document.getElementById('title').innerHTML = titleHtml;
-            document.getElementById('meta-author').textContent = meta.author;
             document.getElementById('meta-line').textContent = meta.line;
         }, post);
         await page.evaluate(() => document.fonts.ready);
