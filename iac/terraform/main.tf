@@ -21,6 +21,12 @@
 # "/" and extensionless URIs to .../index.html becomes REQUIRED (see
 # RUNBOOK.md "Common gotchas").
 #
+# Alerting (added 2026-07-13): CloudWatch alarm
+# `dayelostra-co-5xx-error-rate` (AWS/CloudFront 5xxErrorRate, dist
+# EZ1G9UFZ84YTV, >=10% avg, 2x 5-min periods, missing data = ok) ->
+# SNS topic `dayelostra-co-alerts` -> email subscription. Manually
+# managed, not in TF state; see RUNBOOK.md "Monitoring".
+#
 # www redirect (fixed 2026-07-13): CloudFront Function
 # `dayelostra-co-www-redirect` (viewer-request, cloudfront-js-2.0) is
 # associated with the default cache behavior. It 301s any

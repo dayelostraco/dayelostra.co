@@ -173,7 +173,7 @@ After update, run a CloudFront invalidation if you want the change live immediat
 | Origin 4xx/5xx | CloudWatch metrics on the distribution | Enable via CloudFront monitoring tab; no alarms set today. |
 | Cert expiry | ACM auto-renews if DNS validation records persist | Verify Route 53 retains the `_<random>.dayelostra.co.` validation CNAME records. |
 
-No paging is set up today — this is a personal portfolio. If you want SLO-style alerting, add CloudWatch alarms on the distribution (5xx rate, total error rate) and route to SNS → email.
+One alarm is set up (2026-07-13): CloudWatch `dayelostra-co-5xx-error-rate` fires when the distribution's 5xxErrorRate averages >= 10% across two consecutive 5-minute periods, and notifies SNS topic `dayelostra-co-alerts` (us-east-1) → email `dayel.ostraco@proton.me`. Missing data is treated as healthy (low-traffic site). ALARM and OK transitions both email. To inspect: `aws cloudwatch describe-alarms --alarm-names dayelostra-co-5xx-error-rate`. If you want more, the next useful additions are TotalErrorRate (catches 4xx storms from bad deploys) and a Requests anomaly alarm.
 
 ## Common gotchas
 
