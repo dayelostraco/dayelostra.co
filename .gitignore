@@ -78,6 +78,9 @@ dist/
 
 # Playwright MCP scratch
 .playwright-mcp/
+
+# Generated per-post OG cards (regenerated on every deploy)
+public/assets/img/og/og-insights-*.png
 # Env files (never commit secrets)
 .env
 .env.local
