@@ -12,6 +12,15 @@
 # It is NOT applied during normal deploys (the GitHub Actions deploy.yml
 # only writes to S3 + invalidates CloudFront — it never touches IAM or
 # response-headers-policy resources).
+#
+# Clean URLs (verified 2026-07-12): the distribution's origin is the S3
+# WEBSITE endpoint, whose IndexDocument=index.html serves Astro's
+# directory-style pages (/insights/<slug>/ -> .../index.html) natively;
+# extensionless requests get S3's 302 to the slashed form. No CloudFront
+# Function association exists or is needed. If the origin ever moves to
+# the REST endpoint, a viewer-request function rewriting "/" and
+# extensionless URIs to .../index.html becomes REQUIRED (see RUNBOOK.md
+# "Common gotchas").
 
 terraform {
   required_version = ">= 1.6.0"

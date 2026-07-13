@@ -135,12 +135,12 @@ To re-set: `printf '%s' '<value>' | gh secret set <NAME> --repo dayelostraco/day
 | OG / Twitter card | `public/assets/img/og.jpg` (1200×630) | Generate from any photo: `sips -s format jpeg -Z 1200 src.jpg --out og.png && sips -c 630 1200 og.png --out og.jpg`. |
 | Brand marks | `public/assets/brands/{glyphon,colophon,vallark,affirmark,sigilark}-mark.svg` | Pull fresh from sibling repo: `cp ~/Development/GitHub/<product>/<product>-branding/marks/<file>.svg public/assets/brands/<product>-mark.svg`. |
 | Favicon set | `public/assets/icon/` | Multi-size; if updating, regenerate all (favicon-16/32/96/128/196, apple-touch-icon-57/60/72/76/114/120/144/152, mstile, .ico). |
-| Cloudflare beacon | `public/assets/js/beacon.min.js` + SRI hash in `index.html`/`error.html` | Refresh: `curl -sLo public/assets/js/beacon.min.js https://static.cloudflareinsights.com/beacon.min.js && openssl dgst -sha384 -binary public/assets/js/beacon.min.js \| openssl base64 -A`. Update the `integrity="sha384-…"` value in both HTML files. |
+| Cloudflare beacon | `public/assets/js/beacon.min.js` + SRI hash in `src/layouts/Layout.astro` | Refresh: `curl -sLo public/assets/js/beacon.min.js https://static.cloudflareinsights.com/beacon.min.js && openssl dgst -sha384 -binary public/assets/js/beacon.min.js \| openssl base64 -A`. Update the `integrity="sha384-…"` value in `Layout.astro`. |
 
 ## Adding a new section
 
-1. Add `<section id="…">` to `index.html`. Match an existing pattern: corner brackets, glow blob(s), texture layer, watermark span (`/SECTION-NAME`), eyebrow + h2 + content, optional `acc-gold` for gold-tinted treatment.
-2. Register the anchor in both nav lists: top nav (around line 67) and mobile sidebar (around line 90).
+1. Add `<section id="…">` to `src/pages/index.astro`. Match an existing pattern: corner brackets, glow blob(s), texture layer, watermark span (`/SECTION-NAME`), eyebrow + h2 + content, optional `acc-gold` for gold-tinted treatment.
+2. Register the anchor once in the `links` array in `src/components/Navbar.astro`. That single array drives both the desktop nav and the mobile sidebar.
 3. Use `data-reveal` (with optional `data-reveal-delay="ms"`) on elements that fade in on scroll.
 
 ## Updating the security headers
@@ -179,6 +179,7 @@ No paging is set up today — this is a personal portfolio. If you want SLO-styl
 
 - **CloudFront updates are asynchronous.** After `update-distribution` or `update-response-headers-policy`, status will be `InProgress` for 5-15 minutes. The previous config keeps serving until propagation completes.
 - **S3 website endpoint vs REST endpoint.** This site uses the website endpoint (`s3-website-us-east-1.amazonaws.com`) so error-document handling works. Don't switch CloudFront's origin to the REST endpoint without also configuring custom error responses.
+- **Clean URLs depend on the website endpoint.** Astro emits directory-style pages (`insights/<slug>/index.html`). The S3 website endpoint's `IndexDocument` setting serves them at `/insights/<slug>/`, and requests without a trailing slash get S3's own 302 redirect to the slashed form. No CloudFront Function is involved. If the origin ever moves to the REST endpoint, directory URLs break site-wide: add a viewer-request CloudFront Function that rewrites `/` and extensionless URIs to `.../index.html` before or with that change.
 - **Cache headers from origin are honored** because the cache policy is `UseOriginCacheControlHeaders`. If you change the workflow's `aws s3 sync` `--cache-control` value, browsers will pick up the new TTL on next request after invalidation.
 - **The CSP allows `'unsafe-inline'` for styles** because we use `style="background-image:url(...)"` extensively in section backgrounds. Removing that requires moving every inline background to a CSS class.
 

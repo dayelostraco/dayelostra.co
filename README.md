@@ -1,23 +1,31 @@
 # dayelostra.co
 
-Personal portfolio for Dayel Ostraco — Full Stack AI Engineer & Secure Systems Architect. Static HTML built with Vite + Tailwind v4, deployed to AWS S3 + CloudFront via GitHub Actions on push to `main`.
+Personal portfolio for Dayel Ostraco — Full Stack AI Engineer & Secure Systems Architect. Astro 6 static site with Tailwind v4, deployed to AWS S3 + CloudFront via GitHub Actions on push to `main`.
 
 ## Local development
 
 ```sh
 npm install
-npm run dev      # http://localhost:5173
+npm run dev      # http://localhost:4321
 npm run build    # outputs to dist/ (gitignored)
-npm run preview  # preview the production build
+npm run preview  # preview the production build (http://localhost:4321)
+npm run check    # astro check (type + template diagnostics)
 ```
 
 ## File layout
 
 ```
 /
-├─ index.html               # main page (11 sections)
-├─ error.html               # 404 page
 ├─ src/
+│  ├─ pages/
+│  │  ├─ index.astro        # main page (11 sections)
+│  │  ├─ accessibility.astro # accessibility statement
+│  │  └─ error.astro        # 404 page (emitted to dist/error.html by postbuild)
+│  ├─ layouts/
+│  │  └─ Layout.astro       # shared <head> (meta/OG/favicons/fonts/JSON-LD) + body shell
+│  ├─ components/
+│  │  ├─ Navbar.astro       # desktop nav + mobile sidebar (home vs deep-link modes)
+│  │  └─ Footer.astro       # footer + accessibility link
 │  ├─ scripts/
 │  │  ├─ main.js            # entry — wires the four modules below on DOMContentLoaded
 │  │  ├─ cycler.js          # rotating subhead in hero
@@ -25,7 +33,7 @@ npm run preview  # preview the production build
 │  │  ├─ sidebar.js         # mobile menu w/ focus trap, ESC, aria-expanded
 │  │  └─ typewriter.js      # terminal-style $ caption
 │  └─ styles/main.css       # Tailwind v4 entry with @theme tokens
-├─ public/assets/           # passthrough to dist/ verbatim (Vite publicDir)
+├─ public/assets/           # passthrough to dist/ verbatim (Astro publicDir)
 │  ├─ brands/               # 9 product brand SVGs (glyphon, colophon, vallark, affirmark, sigilark, +mascots)
 │  ├─ icon/                 # favicons, touch icons, mstile
 │  ├─ img/
@@ -36,7 +44,8 @@ npm run preview  # preview the production build
 │  ├─ resume/               # CV downloads (DOCX + PDF)
 │  ├─ svg/icons.svg         # icon sprite (use href="…#id" everywhere)
 │  └─ robots.txt            # crawler allow-all
-├─ vite.config.js
+├─ astro.config.mjs
+├─ scripts/fix-error-page.mjs # postbuild: dist/error/index.html -> dist/error.html
 ├─ LICENSE                  # All rights reserved
 └─ .github/workflows/deploy.yml
 ```
@@ -113,14 +122,14 @@ Per-section accent shift via the `.acc-gold` class — it shadows `--color-accen
 
 ## Adding a new section
 
-1. Add a `<section id="…">` to `index.html`. Match the existing pattern: corners brackets, glow blob(s), texture layer (dot-grid / grain / scanlines / diagonal-lines), section watermark span (`/SECTION-NAME`), eyebrow + h2 + content.
+1. Add a `<section id="…">` to `src/pages/index.astro`. Match the existing pattern: corners brackets, glow blob(s), texture layer (dot-grid / grain / scanlines / diagonal-lines), section watermark span (`/SECTION-NAME`), eyebrow + h2 + content.
 2. Add `acc-gold` to the section if it should lean gold instead of blue.
-3. Register the anchor in the top nav `<ul>` (`index.html:67-75`) and mobile sidebar `<ul>` (`index.html:90-98`).
+3. Register the anchor in the `links` array in `src/components/Navbar.astro`: it drives both the desktop nav and the mobile sidebar.
 4. Use `data-reveal` (and optional `data-reveal-delay="ms"`) on elements you want to fade in on scroll.
 
 ## Asset replacement
 
-- **Resume:** drop new files at `public/assets/resume/Dayel_Ostraco_Resume_FullStackAI.{docx,pdf}` (filenames are hard-coded in `index.html` so keep these names).
+- **Resume:** drop new files at `public/assets/resume/Dayel_Ostraco_Resume_FullStackAI.{docx,pdf}` (filenames are hard-coded in `src/pages/index.astro` so keep these names).
 - **Portrait:** `public/assets/img/bio/dayel-mid.webp` (used in About card).
 - **OG / Twitter card image:** `public/assets/img/og.jpg` (1200×630).
 - **Brand marks:** `public/assets/brands/{glyphon,colophon,vallark,affirmark,sigilark}-mark.svg`. To pull a fresh version from a sibling repo: `cp ~/Development/GitHub/<product>/<product>-branding/marks/<file>.svg public/assets/brands/<product>-mark.svg`.
@@ -128,7 +137,7 @@ Per-section accent shift via the `.acc-gold` class — it shadows `--color-accen
 
 ## Analytics
 
-Cloudflare Web Analytics. Beacon token inlined in `index.html` and `error.html` as `data-cf-beacon`. The token is a public site identifier (not a secret).
+Cloudflare Web Analytics. The beacon `<script>` (with its `data-cf-beacon` token) lives in `src/layouts/Layout.astro`, so it ships on every page. The token is a public site identifier (not a secret).
 
 ## Accessibility
 

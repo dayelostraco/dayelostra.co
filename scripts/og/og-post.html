@@ -1,0 +1,170 @@
+<!--
+  Per-post Open Graph card template for Insights.
+  Rendered to 1200x630 PNGs (2x DPR -> 2400x1260) by
+  scripts/og/render-posts.mjs via Playwright. Content (#eyebrow, #title,
+  #meta-author, #meta-line) is injected per post; window.__fit() shrinks
+  the title to fit before screenshot. Fonts are self-hosted so rendering
+  needs no network — this template runs on the deploy critical path.
+  Shares the dark-ground / bracket-corner / brand-glow language of
+  scripts/og/og-template.html (the site's hero OG card).
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>OG insights card</title>
+<style>
+  /* {{FONT_DIR}} is replaced at render time with an absolute file:// path
+     so fonts resolve regardless of machine. */
+  @font-face {
+    font-family: 'Geist';
+    font-weight: 100 900;
+    src: url('{{FONT_DIR}}/geist-variable.woff2') format('woff2-variations');
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-weight: 400;
+    src: url('{{FONT_DIR}}/ibm-plex-mono-400.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-weight: 500;
+    src: url('{{FONT_DIR}}/ibm-plex-mono-500.woff2') format('woff2');
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    background: #0a0a0a;
+    color: #f4f4f5;
+    font-family: 'Geist', system-ui, sans-serif;
+    padding: 72px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* bracket corners */
+  .cf { position: absolute; width: 26px; height: 26px; border: 1.5px solid rgba(255,255,255,0.22); }
+  .cf-tl { top: 40px; left: 40px; border-right: none; border-bottom: none; }
+  .cf-tr { top: 40px; right: 40px; border-left: none; border-bottom: none; }
+  .cf-bl { bottom: 40px; left: 40px; border-right: none; border-top: none; }
+  .cf-br { bottom: 40px; right: 40px; border-left: none; border-top: none; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #a1a1aa;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    max-width: 20ch;
+    text-wrap: balance;
+  }
+  .title .accent { color: #39d7ff; }
+
+  /* ambient brand glows (echo the site hero): cyan field + one scarce pink note */
+  .glow { position: absolute; border-radius: 9999px; filter: blur(90px); pointer-events: none; z-index: 0; }
+  .glow-cyan { width: 640px; height: 640px; top: -240px; right: -170px; background: radial-gradient(circle, rgba(57,215,255,0.34), transparent 70%); }
+  .glow-pink { width: 460px; height: 460px; bottom: -230px; left: 22%; background: radial-gradient(circle, rgba(255,6,181,0.22), transparent 70%); }
+  .card > .eyebrow, .card > main, .card > .footer-wrap { position: relative; z-index: 1; }
+
+  .rule {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(57,215,255,0.45), transparent);
+    margin-bottom: 28px;
+  }
+
+  .footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .meta-author {
+    font-weight: 600;
+    font-size: 24px;
+    color: #f4f4f5;
+  }
+  .meta-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a1a1aa;
+    margin-top: 6px;
+  }
+
+  .domain {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #a1a1aa;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="cf cf-tl"></span><span class="cf cf-tr"></span>
+    <span class="cf cf-bl"></span><span class="cf cf-br"></span>
+    <span class="glow glow-cyan"></span><span class="glow glow-pink"></span>
+
+    <p class="eyebrow" id="eyebrow">DAYELOSTRA.CO &middot; INSIGHTS</p>
+
+    <main>
+      <h1 class="title" id="title">&nbsp;</h1>
+    </main>
+
+    <div class="footer-wrap">
+      <div class="rule"></div>
+      <div class="footer">
+        <div class="meta">
+          <div class="meta-author" id="meta-author">Dayel Ostraco</div>
+          <div class="meta-line" id="meta-line"></div>
+        </div>
+        <span class="domain">dayelostra.co</span>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Auto-fit: start at the ceiling, shrink by 2px until the title block
+  // clears the footer by >= MIN_GAP, with a hard floor. Called by the
+  // generator AFTER content injection and document.fonts.ready.
+  window.__fit = function () {
+    const MIN_GAP = 44, MAX = 88, MIN = 40;
+    const title = document.getElementById('title');
+    const footerWrap = document.querySelector('.footer-wrap');
+    let size = MAX;
+    title.style.fontSize = size + 'px';
+    while (size > MIN) {
+      if (title.getBoundingClientRect().bottom <= footerWrap.getBoundingClientRect().top - MIN_GAP) break;
+      size -= 2;
+      title.style.fontSize = size + 'px';
+    }
+    return size;
+  };
+</script>
+</body>
+</html>
