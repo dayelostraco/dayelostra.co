@@ -515,6 +515,152 @@
 .dot-grid, .dot-grid-accent, .dot-grid-gold, .dot-grid-fine,
 .scanlines, .diagonal-lines, .grain { background-image: none !important; }
 
+/* -----------------------------------------------------------------
+   Article prose ornaments — applied to the .article-prose container
+   on Insights post detail pages. Layers the base Tailwind Typography
+   `prose` styles (see the `prose prose-lg` classes on the container
+   in the template) with five editorial ornaments:
+
+     1. Drop cap on the first paragraph's first letter (signature pink).
+     2. Auto-numbered H2 sections (mono eyebrow above the heading).
+     3. Stylized ordered list: large accent numerals in the gutter.
+     4. Lead-paragraph left accent rule.
+     5. Centered horizontal accent above each H2.
+
+   Item numbers are sequential. CSS counters are safe to reset on the
+   container without disturbing page-level counters used elsewhere
+   (each `.article-prose` has its own scope).
+   ----------------------------------------------------------------- */
+
+.article-prose {
+  counter-reset: article-section article-ol;
+  max-width: none;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-text-dim);
+}
+.article-prose > * + * { margin-top: 1.5rem; }
+.article-prose h2, .article-prose h3 { color: var(--color-text); font-weight: 600; letter-spacing: -0.01em; }
+.article-prose h2 { font-size: 1.5rem; }
+.article-prose h3 { font-size: 1.25rem; margin-top: 2.5rem; }
+.article-prose a { color: var(--color-text); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--color-accent); }
+.article-prose a:hover { color: var(--color-accent); }
+.article-prose strong { color: var(--color-text); font-weight: 600; }
+.article-prose ul { list-style: disc; padding-left: 1.5rem; }
+.article-prose ul > li::marker { color: var(--color-accent); }
+.article-prose blockquote {
+  border-left: 2px solid var(--color-accent);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background-color: var(--color-surface-2);
+  padding: 0.25rem 1.5rem;
+  font-style: normal;
+  color: var(--color-text);
+}
+.article-prose code { color: var(--color-text); background: var(--color-surface-2); border-radius: 0.25rem; padding: 0.15rem 0.4rem; font-size: 0.9em; }
+.article-prose img { border-radius: 0.75rem; box-shadow: 0 0 0 1px var(--color-border); }
+
+/* 1 + 4 — Drop cap + left accent rule on the lede. Targets the first
+   direct-child paragraph so an article that opens with a heading or
+   figure cleanly skips the drop cap. The drop cap is the one permitted
+   use of the scarce signature pink in this container. */
+.article-prose > p:first-child {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1.25rem;
+  font-size: 1.1875rem;
+  color: var(--color-text);
+}
+.article-prose > p:first-child::first-letter {
+  float: left;
+  margin: 0.35rem 0.85rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--color-signature);
+}
+
+/* 2 + 5 — Auto-numbered H2 eyebrow with a centered accent divider
+   above it. Sits above the heading text as a mono, uppercase caption. */
+.article-prose h2 {
+  counter-increment: article-section;
+  margin-top: 3.5rem;
+  padding-top: 2.25rem;
+  background-image: linear-gradient(to right, transparent, var(--color-accent-soft) 50%, transparent);
+  background-size: 120px 2px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.article-prose h2::before {
+  content: counter(article-section, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* 3 — Stylized ordered list. Hides the native counter, replaces with
+   large mono numerals in the gutter. */
+.article-prose ol {
+  list-style: none;
+  counter-reset: article-ol;
+  padding-left: 0;
+  margin: 1.75rem 0;
+}
+.article-prose ol > li {
+  counter-increment: article-ol;
+  position: relative;
+  padding-left: 3.25rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.6;
+}
+.article-prose ol > li > p { margin: 0; line-height: inherit; }
+.article-prose ol > li::before {
+  content: counter(article-ol, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* Fenced code blocks (Shiki output, class `.astro-code`). Shiki colors
+   every token with an inline `style` attribute, but the site CSP
+   (style-src has no 'unsafe-inline' beyond the hashed inline stylesheet)
+   strips those, so per-token syntax color never applies. Per-token color
+   is not achievable under the CSP, so we pin one deliberate, high-contrast
+   terminal treatment here instead (ships in the hashed inline <style>, so
+   it is CSP-safe). One readable foreground color, near-black background,
+   mono face. */
+.article-prose pre.astro-code {
+  background-color: #0a0a0a;
+  color: #f4f4f5;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+/* Neutralize both the blocked Shiki inline colors and the inherited
+   text color so all code text reads as the single legible foreground. */
+.article-prose pre.astro-code code,
+.article-prose pre.astro-code code span {
+  color: inherit;
+  background: none;
+  font-weight: 400;
+  font-family: inherit;
+}
+
 /* --- primary nav: transparent (light text) over the dark hero, light bar on scroll --- */
 nav[aria-label="Primary"] { transition: background-color .3s ease, border-color .3s ease; }
 nav[aria-label="Primary"]:not(.nav-scrolled) {
