@@ -16,11 +16,19 @@
 # Clean URLs (verified 2026-07-12): the distribution's origin is the S3
 # WEBSITE endpoint, whose IndexDocument=index.html serves Astro's
 # directory-style pages (/insights/<slug>/ -> .../index.html) natively;
-# extensionless requests get S3's 302 to the slashed form. No CloudFront
-# Function association exists or is needed. If the origin ever moves to
-# the REST endpoint, a viewer-request function rewriting "/" and
-# extensionless URIs to .../index.html becomes REQUIRED (see RUNBOOK.md
-# "Common gotchas").
+# extensionless requests get S3's 302 to the slashed form. If the origin
+# ever moves to the REST endpoint, a viewer-request function rewriting
+# "/" and extensionless URIs to .../index.html becomes REQUIRED (see
+# RUNBOOK.md "Common gotchas").
+#
+# www redirect (fixed 2026-07-13): CloudFront Function
+# `dayelostra-co-www-redirect` (viewer-request, cloudfront-js-2.0) is
+# associated with the default cache behavior. It 301s any
+# www.dayelostra.co request to https://dayelostra.co + path + query in
+# one hop. Source of record: iac/cloudfront/www-redirect-function.js
+# (see that file's header for why the old bucket-level redirect was
+# broken: http downgrade + /index.html target). Manually managed like
+# the distribution itself; not in TF state.
 
 terraform {
   required_version = ">= 1.6.0"
