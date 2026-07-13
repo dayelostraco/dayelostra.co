@@ -15,6 +15,8 @@ export default defineConfig({
   },
   trailingSlash: 'ignore',
   compressHTML: true,
-  integrations: [sitemap()],
+  // Exclude the 404 page: it is noindex and is relocated to
+  // dist/error.html by the postbuild step, so /error/ is a dead URL.
+  integrations: [sitemap({ filter: (page) => !page.includes('/error') })],
   vite: { plugins: [tailwindcss()] },
 });
