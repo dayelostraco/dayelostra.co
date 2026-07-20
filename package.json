@@ -18,7 +18,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@axe-core/playwright": "^4.11.3",
-    "@tailwindcss/vite": "^4.3.2",
+    "@tailwindcss/vite": "^4.3.3",
     "gray-matter": "^4.0.3",
     "linkinator": "^7.6.1",
     "markdown-it": "^14.3.0",
