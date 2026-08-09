@@ -18,7 +18,7 @@ export async function GET(context: APIContext) {
 
   const body = `# Dayel Ostraco
 
-> Personal site of Dayel Ostraco: DoD-cleared AI engineer and secure systems architect, CTO of Accelera Solutions, CISSP. Twenty years architecting federal-grade platforms across DoD, DHA, SSA, and CMS; currently delivering agentic AI for the Defense Health Agency and the U.S. Navy. The site's essays argue that AI agents are governable with the identity, authorization, and audit primitives federal IT already runs.
+> Personal site of Dayel Ostraco: DoD-cleared AI engineer and secure systems architect, Chief AI Officer of Accelera Solutions, CISSP. Twenty years architecting federal-grade platforms across DoD, DHA, SSA, and CMS; currently delivering agentic AI for the Defense Health Agency and the U.S. Navy. The site's essays argue that AI agents are governable with the identity, authorization, and audit primitives federal IT already runs.
 
 ## Essays
 
