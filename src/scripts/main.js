@@ -18,7 +18,6 @@ function boot() {
     items: [
       'Architected and built. Not just managed.',
       'Federal AI from prototype to ATO in months, not years.',
-      'Systems that move billions and survive the audit.',
       'Multi-provider LLM orchestration validated at IL5.',
       '20 years inside the federal trust boundary.',
       'Zero Trust by design. Compliance stops being a tax.',
