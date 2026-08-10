@@ -1,7 +1,7 @@
 ---
 title: "Compliance Is a Byproduct, Not a Phase."
 seoTitle: "Inside Colophon: a governed AI software factory for authorized federal delivery"
-date: 2026-08-09
+date: 2026-07-20
 summary: "Federal software treats compliance as a phase you survive at the end. I built Colophon to invert that: a governed AI agent bench that emits the RMF artifact set as a byproduct of every shipped increment. Humans decide, the bench ships."
 tags: [ai, agents, ato, federal, compliance, rmf, colophon]
 readTime: "8 min read"
