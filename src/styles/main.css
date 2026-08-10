@@ -449,6 +449,10 @@
   transform: none;
   filter: none;
 }
+/* Snappier reveal on phones so fast scrolls never sit on a half-faded card. */
+@media (max-width: 640px) {
+  [data-reveal] { transition-duration: 480ms; }
+}
 
 /* --- typewriter cursor --- */
 #caption {
