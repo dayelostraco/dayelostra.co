@@ -12,7 +12,9 @@ bodyWatermark: "/FACTORY"
 
 The [case study](/insights/compliance-is-a-byproduct/) made a claim: a governed AI factory can emit its authorization evidence as a byproduct of shipping, not reconstruct it in a scramble at the end. The routing essay explained how the model calls get made: boundary first, failure mode second, disagreement as the eval that counts. Both are true. Both are also the kind of claim a serious evaluator is right to distrust until they can see the machine underneath.
 
-So this is the machine. Not the source, not the prompts, not the thresholds, but the shape of the system: how work coordinates, where it is contained, which gates it clears, and how the whole thing is measured. The test I hold it to is simple. If I handed this description to an ISSO who had never seen the platform, could they trace how a change moves from an agent's first keystroke to a production system, and name the control at every step. If they can, the architecture is doing its job. If they cannot, the "governed" in governed factory is marketing.
+So this is the machine. Not the source, not the prompts, not the thresholds, but the shape of the system: how work coordinates, where it is contained, which gates it clears, and how the whole thing is measured. One sentence carries the whole design, the same one the case study closes on: humans decide, the bench ships. What follows is that sentence rendered as architecture.
+
+The test I hold it to is simple. If I handed this description to an ISSO who had never seen the platform, could they trace how a change moves from an agent's first keystroke to a production system, and name the control at every step. If they can, the architecture is doing its job. If they cannot, the "governed" in governed factory is marketing.
 
 ## The coordination plane
 
@@ -72,17 +74,17 @@ Underneath all of it sits Decretum, an append-only store of decisions and preced
 
 ## State, isolation, and the rule an agent cannot break
 
-An agent is not a general intelligence roaming the codebase. It is a scoped worker with least privilege by default. It sees the inputs its task requires and no more, it runs in an isolated context, and its capabilities are granted for the job in front of it rather than held ambiently. This is the same discipline we apply to human operators in an accredited environment, expressed for non-human actors.
+We do not turn an agent loose as a general intelligence roaming the codebase. We scope it to least privilege by default: it sees the inputs its task requires and no more, it runs in an isolated context, and its capabilities are granted for the job in front of it rather than held ambiently. This is the same discipline we apply to human operators in an accredited environment, expressed for non-human actors.
 
-Isolation is not only about what an agent can see. It is about what it can do. An agent operates inside a sandbox that is torn down when its task ends, so state does not leak from one unit of work into the next, and one agent's mistake does not silently become another's starting assumption. Two agents working the same area do not share a mutable scratch space they can each corrupt. They coordinate through Colloquy and settle differences through escalation, which is the whole reason the coordination plane exists. Shared state is a channel, and every channel in this system is typed and recorded.
+We isolate more than what an agent can see. We isolate what it can do. An agent operates inside a sandbox that is torn down when its task ends, so state does not leak from one unit of work into the next, and one agent's mistake does not silently become another's starting assumption. Two agents working the same area do not share a mutable scratch space they can each corrupt. They coordinate through Colloquy and settle differences through escalation, which is the whole reason the coordination plane exists. Shared state is a channel, and every channel in this system is typed and recorded.
 
-The boundary rule from the routing essay lives here as structure, not policy. CUI-bearing inputs never cross into a commercial endpoint, and that is enforced by static analysis and network egress control, not by an agent's good judgment. An agent cannot choose to route sensitive data outward, because the path is not reachable from where it runs. Sovereignty is a property of the topology, not a checkbox the agent is trusted to honor.
+We enforce the boundary rule from the routing essay here as structure, not policy. CUI-bearing inputs never cross into a commercial endpoint, and we hold that line with static analysis and network egress control, not with an agent's good judgment. An agent cannot choose to route sensitive data outward, because the path is not reachable from where it runs. Sovereignty is a property of the topology, not a checkbox the agent is trusted to honor.
 
 The rule that ties isolation to governance is the one that matters most: an agent cannot reach around a gate. There is no side door where a change reaches production without passing review, because merge and deploy are not capabilities an agent holds. The only path forward is through the gate chain, and the gate chain answers to people. An agent that wanted to skip review would find nothing to skip to.
 
 ## The gate chain
 
-Every increment an agent authors enters the same chain, and the chain is adversarial by construction. Five review lenses look at it, each with a different question. Code review asks whether it is correct and maintainable. An adversarial reviewer tries to break it. Test-quality review asks whether the tests would actually catch a regression. Static application security testing hunts the vulnerability. Continuous-integration parity confirms it behaves the same in the pipeline as it did in development. Anything user-facing adds an accessibility lens. A change that cannot survive its own reviewers does not advance.
+Every increment an agent authors enters the same chain, and we build that chain to be adversarial. Five review lenses look at it, each with a different question. Code review asks whether it is correct and maintainable. An adversarial reviewer tries to break it. Test-quality review asks whether the tests would actually catch a regression. Static application security testing hunts the vulnerability. Continuous-integration parity confirms it behaves the same in the pipeline as it did in development. Anything user-facing adds an accessibility lens. A change that cannot survive its own reviewers does not advance.
 
 When a change is production-impacting, cross-cutting, or touches the compliance domain, it does not merge on the strength of clean reviews alone. It goes to the human Change Control Board. The board is where the judgment agents are not entitled to make gets made: what ships, at what risk, and who accepts it. The reviews inform that decision. They do not replace it.
 
@@ -148,7 +150,7 @@ The part that makes this a governed factory rather than merely a fast one is wha
 
 ## Provenance, rollback, and failure containment
 
-A governed system is judged less by how it behaves when everything works than by what happens when something does not. So here is the failure story.
+We judge a governed system less by how it behaves when everything works than by what happens when something does not. So here is the failure story.
 
 Provenance is total because Decretum is append-only. Every change carries an unbroken chain from the decision that authorized it to the artifact that shipped, and that chain is queryable after the fact. When someone asks why a thing is the way it is, the answer is a record, not a reconstruction.
 
