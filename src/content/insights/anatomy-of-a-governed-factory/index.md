@@ -1,7 +1,7 @@
 ---
 title: "Anatomy of a Governed AI Factory"
 seoTitle: "Anatomy of a governed AI factory: reference architecture + eval methodology for federal agentic delivery"
-date: 2026-08-07
+date: 2026-08-18
 summary: "The Colophon case study made the claim and the routing essay made the model calls; this is the architecture that makes a governed AI factory real and auditable, from the coordination plane to the eval loop."
 tags: [ai, agents, architecture, governance, evals, federal]
 readTime: "~9 min read"
