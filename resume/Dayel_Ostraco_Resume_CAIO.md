@@ -25,7 +25,7 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 - Secured multiple ATOs for bleeding-edge platforms (Iroha2 Blockchain, OpenWebUI, NestJS, Ollama) across RMF, STIGs, and Zero Trust; deployed distroless FIPS 140-3 images (Iron Bank/Chainguard) on Zero-CVE baselines.
 - Built a User Authorization service atop DoD federated identity (iAS, DS Logon), extending OAuth roles per application for fine-grained access control in mission-critical workflows.
 
-### Chief AI Officer — Catapult.io (US, DBA SigilArk), Charleston, SC
+### Chief AI Officer — SigilArk (Catapult.io US), Charleston, SC
 
 **May 2025 – May 2026**
 
@@ -50,7 +50,7 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 
 - Designed and built **mSTAX**, a secure modular full-stack platform for the Department of the Navy and DHA to evaluate and operationalize AI/ML and LLM inference in mission-critical environments; authored the codebase in Python and JavaScript with model scoring, benchmarking, and GPU/CPU analytics.
 - Integrated AWS SageMaker and Gluon for predictive clinical models (echocardiograms, stress tests) for early atrial-fibrillation detection; achieved a successful ATO under HIPAA and MEDCOI. mSTAX showcased at the 2018 DHA Open House as "the future of all mobile and web technologies for the DoD."
-- Built the dLoc platform (blockchain + NFC-linked document twins) for tamper-resistant digital documents; deployed containerized microservices across AWS and Azure for cross-cloud identity assurance.
+- Built the Linxens dLoc platform (blockchain + NFC-linked document twins) for tamper-resistant digital documents; deployed containerized microservices across AWS and Azure for cross-cloud identity assurance.
 
 ### Chief Engineer — CACI International, Charleston, SC
 
