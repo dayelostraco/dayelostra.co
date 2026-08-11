@@ -25,10 +25,11 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 - Secured multiple ATOs for bleeding-edge platforms (Iroha2 Blockchain, OpenWebUI, NestJS, Ollama) across RMF, STIGs, and Zero Trust; deployed distroless FIPS 140-3 images (Iron Bank/Chainguard) on Zero-CVE baselines.
 - Built a User Authorization service atop DoD federated identity (iAS, DS Logon), extending OAuth roles per application for fine-grained access control in mission-critical workflows.
 
-### Chief AI Officer — Catapult.io, Charleston, SC
+### Chief AI Officer — Catapult.io (US, DBA SigilArk), Charleston, SC
 
 **May 2025 – May 2026**
 
+- Led the development work for **DHA's agency-wide EMPIRE software factory**, delivering the governed AI delivery capability now in production across the agency.
 - Architected **Glyphon**, a multi-provider AI agent orchestration platform producing deterministic, reproducible compliance artifacts across OpenAI, Claude, Gemini, and AWS Bedrock; 50 production agents across 7 playbooks (CVE resolution, AMI/container hardening, eMASS POAM, FedRAMP SSP); IL5 control baseline tested on AWS GovCloud with Llama 4 Maverick, April 2026.
 - Built **Colophon**, a governed AI software factory (specialist agent bench + Claude Code skills) that emits the RMF artifact set as a byproduct of delivery, with every merge clearing antagonist peer review and Human CCB under cATO discipline.
 - Delivered four federal programs with **zero Critical, High, or Medium findings** (10 Low total); shipped **Vallark**, an ATO-capable .mil mobile framework compressing 12 months of compliance plumbing to ~4 weeks, with two IL4 systems in production since March 2026 and ATOs held without lapse.
@@ -43,13 +44,13 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 - Delivered with full FedRAMP and HIPAA compliance under SSA sponsorship, meeting FISMA/NIST controls, while holding SOX and FCRA throughout.
 - Coordinated rapid disaster-relief data solutions (DSNAP) with the State of Florida during Hurricane Ian, enabling real-time identity/income verification under urgent conditions.
 
-### Founder & CIO — Catapult.io, Charleston, SC & Singapore
+### Founder & CIO — Catapult.io (Singapore), Charleston, SC & Singapore
 
-**July 2017 – Sold to Linxens, June 2019**
+**July 2017 – Acquired, June 2019**
 
 - Designed and built **mSTAX**, a secure modular full-stack platform for the Department of the Navy and DHA to evaluate and operationalize AI/ML and LLM inference in mission-critical environments; authored the codebase in Python and JavaScript with model scoring, benchmarking, and GPU/CPU analytics.
 - Integrated AWS SageMaker and Gluon for predictive clinical models (echocardiograms, stress tests) for early atrial-fibrillation detection; achieved a successful ATO under HIPAA and MEDCOI. mSTAX showcased at the 2018 DHA Open House as "the future of all mobile and web technologies for the DoD."
-- Built the Linxens dLoc platform (blockchain + NFC-linked document twins) for tamper-resistant digital documents; deployed containerized microservices across AWS and Azure for cross-cloud identity assurance.
+- Built the dLoc platform (blockchain + NFC-linked document twins) for tamper-resistant digital documents; deployed containerized microservices across AWS and Azure for cross-cloud identity assurance.
 
 ### Chief Engineer — CACI International, Charleston, SC
 
