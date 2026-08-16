@@ -61,7 +61,7 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 
 ### Founder & CTO — Qonceptual, Inc., Charleston, SC
 
-**June 2014 – Sold, December 2016**
+**April 2013 – Sold, December 2016** (founded April 2013; full-time from June 2014)
 
 - Scaled from a single-person operation to a 15-developer, $6.5M/year engineering firm serving federal and commercial clients with cloud-native solutions, culminating in acquisition.
 - Architected a microservices infrastructure of reusable, modular APIs to accelerate time-to-market and optimize cloud cost and margin.
@@ -72,7 +72,7 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 
 - Led architecture of the SPG mobile platform (iOS, Android, Apple Watch) used by millions; the SPG Watch app was featured during Apple's 2014 keynote. Designed the first mobile check-in/keyless-room system (BLE/NFC + hybrid cloud).
 
-### Director of Software Engineering — Booz Allen Hamilton, Charleston, SC
+### Senior Director of Software Engineering — Booz Allen Hamilton, Charleston, SC
 
 **February 2011 – July 2013**
 
