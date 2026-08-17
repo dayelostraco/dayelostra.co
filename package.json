@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "a11y:test": "node tests/a11y/run.mjs",
+    "reveal:test": "node tests/reveal/run.mjs",
     "links:check": "linkinator ./dist --recurse --skip \"^https?://(?!localhost)\" --verbosity error",
     "og:render": "node scripts/og/render.mjs",
     "og:render:posts": "node scripts/og/render-posts.mjs",
