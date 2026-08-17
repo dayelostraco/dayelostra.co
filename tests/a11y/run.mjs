@@ -16,6 +16,9 @@ const PAGES = [
   '/insights/govern-the-agent-cli',
   '/insights/command-allow-list',
   '/insights/swap-the-model-keep-the-ato',
+  '/insights/compliance-is-a-byproduct',
+  '/insights/i-have-a-routing-table',
+  '/insights/anatomy-of-a-governed-factory',
 ];
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 
