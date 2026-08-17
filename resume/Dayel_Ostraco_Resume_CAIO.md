@@ -19,7 +19,7 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 
 **May 2026 – Present**
 
-- Lead Accelera's technology organization (97 people, scaling to 140), running **Glyphon** and the **Colophon** software factory in production to deliver the current **U.S. Navy and DHA** federal AI engagement, first established with mSTAX in 2018.
+- Provide technology leadership across Accelera's 97-person organization (scaling to 140), running **Glyphon** and the **Colophon** software factory in production to deliver the current **U.S. Navy and DHA** federal AI engagement, first established with mSTAX in 2018.
 - Own all AI strategy, delivery, and engineering across the organization.
 - Deploy AI/ML services within secure DHA enclaves using Llama 4, Llama Vision, Ollama, and Mistral, integrated with PostgreSQL, MongoDB, and CosmosDB for decisioning and inference pipelines.
 - Secured multiple ATOs for bleeding-edge platforms (Iroha2 Blockchain, OpenWebUI, NestJS, Ollama) across RMF, STIGs, and Zero Trust; deployed distroless FIPS 140-3 images (Iron Bank/Chainguard) on Zero-CVE baselines.
