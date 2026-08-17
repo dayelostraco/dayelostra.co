@@ -4,10 +4,14 @@
 # Builds the 3-source corpus (LinkedIn + site/essays + resume), runs N samples of the
 # Morgan Reyes rubric through `codex exec`, and prints per-dimension medians.
 #
-# Usage: scripts/recruiter-panel.sh [samples]   (default 3)
+# Usage: scripts/recruiter-panel.sh [samples] [persona-file]
+#   samples      default 3
+#   persona-file default docs/prompts/recruiter-panel.md
+#                (also: docs/prompts/ai-engineer-panel-{commercial,defense}.md)
 set -euo pipefail
 
 SAMPLES="${1:-3}"
+PERSONA="${2:-docs/prompts/recruiter-panel.md}"
 MODEL="${RECRUITER_PANEL_MODEL:-gpt-5.4}"
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 WORK="$(mktemp -d)"
@@ -19,9 +23,9 @@ cd "$REPO"
 echo "building site..."
 npm run build >/dev/null
 
-python3 - "$REPO" "$WORK" <<'PYEOF'
+python3 - "$REPO" "$WORK" "$PERSONA" <<'PYEOF'
 import sys, re, os, glob, html
-repo, work = sys.argv[1], sys.argv[2]
+repo, work, persona = sys.argv[1], sys.argv[2], sys.argv[3]
 
 def strip(p):
     h = open(p, encoding='utf-8').read()
@@ -34,7 +38,7 @@ def strip(p):
             out.append(line)
     return html.unescape('\n'.join(out))
 
-prompt = open(f'{repo}/docs/prompts/recruiter-panel.md', encoding='utf-8').read()
+prompt = open(f'{repo}/{persona}' if not persona.startswith('/') else persona, encoding='utf-8').read()
 # everything from the "# PROMPT" marker down is the actual prompt; the rest is runbook
 prompt = prompt[prompt.index('# PROMPT'):].replace('# PROMPT\n', '', 1)
 
@@ -50,7 +54,7 @@ if os.path.exists(f'{repo}/dist/llms.txt'):
 open(f'{work}/run.md', 'w', encoding='utf-8').write('\n'.join(parts))
 PYEOF
 
-echo "running $SAMPLES samples on $MODEL..."
+echo "running $SAMPLES samples on $MODEL ($PERSONA)..."
 for i in $(seq 1 "$SAMPLES"); do
   ( cd /tmp && codex exec -m "$MODEL" --skip-git-repo-check -s read-only \
       < "$WORK/run.md" > "$WORK/out-$i.txt" 2>&1 ) &
