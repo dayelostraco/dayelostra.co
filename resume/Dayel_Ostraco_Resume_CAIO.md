@@ -9,7 +9,7 @@ https://dayelostra.co · https://www.linkedin.com/in/dayelostraco/ · GitHub: @d
 
 ## SUMMARY
 
-Chief AI Officer and secure-systems architect with 20 years designing and delivering secure, full-stack platforms for federal, defense, and public-sector missions. I run an AI software factory: a governed bench of specialist agents where Claude Code and Codex drive development, UX, and adversarial review across a multi-model stack (Claude, Codex, Llama 4 Maverick, Kimi K2, Gemini, Mistral), and every change ships through antagonist peer review and Human CCB. Hands-on daily, I turn that discipline into audit-ready outcomes: **zero Critical, High, or Medium findings across four federal programs**, 83.5% CVE auto-resolution (101 of 121), 99.6% (246 of 247) of the Windows Server 2022 STIG passing, AMI-hardened and STIG Viewer-verified, and platforms tested against the IL5 control baseline on AWS GovCloud. Five production DHA healthcare workloads were hardened to near-zero CVE on RHEL UBI 9 Minimal at a 93.2% STIG-checklist auto-pass rate (verified in STIG Viewer via Semgrep, Gitleaks, Trivy, and StackRox); the remaining checks were handled manually to protect OS and application stability. The delivery methodology was adopted program-wide by DHA Cyber Command and earned a PI Award. Trusted by the DoD, DHA, SSA, and CMS, and by global financial institutions, to architect systems that move billions in transactions, scale to millions of daily users, and survive the audit afterward. CISSP; active DoD Secret clearance, TS-eligible.
+Chief AI Officer and secure-systems architect with 20 years designing and delivering secure, full-stack platforms for federal, defense, and public-sector missions. I run an AI software factory: a governed bench of specialist agents where Claude Code and Codex drive development, UX, and adversarial review across a multi-model stack (Claude, Codex, Llama 4 Maverick, Kimi K2, Gemini, Mistral), and every change ships through antagonist peer review and Human CCB. Hands-on daily, I turn that discipline into audit-ready outcomes: **zero Critical, High, or Medium findings across four federal programs**, 83.5% CVE auto-resolution (101 of 121), 99.6% (246 of 247) of the Windows Server 2022 STIG passing, AMI-hardened and STIG Viewer-verified, and platforms tested against the IL5 control baseline on AWS GovCloud. Five production DHA healthcare workloads were hardened to near-zero CVE on RHEL UBI 9 Minimal at a 93.2% STIG-checklist auto-pass rate (verified in STIG Viewer via Semgrep, Gitleaks, Trivy, and StackRox); the remaining checks were handled manually to protect OS and application stability. The delivery methodology was adopted program-wide by DHA Cyber Command in 2025-2026 and earned a PI Award. Trusted by the DoD, DHA, SSA, and CMS, and by global financial institutions, to architect systems that move billions in transactions, The Work Number among them, and survive the audit afterward. CISSP; active DoD Secret clearance, TS-eligible.
 
 ---
 
@@ -19,7 +19,7 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 
 **May 2026 – Present**
 
-- Lead Accelera's technology organization (97 people, scaling to 140), running **Glyphon** and the **Colophon** software factory in production to deliver the current **U.S. Navy and DHA** federal AI engagement, first established with mSTAX in 2018.
+- Provide technology leadership across Accelera's 97-person organization (scaling to 140), running **Glyphon** and the **Colophon** software factory in production to deliver the current **U.S. Navy and DHA** federal AI engagement, first established with mSTAX in 2018.
 - Own all AI strategy, delivery, and engineering across the organization.
 - Deploy AI/ML services within secure DHA enclaves using Llama 4, Llama Vision, Ollama, and Mistral, integrated with PostgreSQL, MongoDB, and CosmosDB for decisioning and inference pipelines.
 - Secured multiple ATOs for bleeding-edge platforms (Iroha2 Blockchain, OpenWebUI, NestJS, Ollama) across RMF, STIGs, and Zero Trust; deployed distroless FIPS 140-3 images (Iron Bank/Chainguard) on Zero-CVE baselines.
@@ -29,7 +29,7 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 
 **May 2025 – May 2026**
 
-- Led the development work for **DHA's agency-wide EMPIRE software factory**, delivering the governed AI delivery capability now in production across the agency.
+- Led the development work for **DHA's agency-wide EMPIRE software factory**, delivering the governed AI delivery capability now in production across the agency. The delivery methodology was adopted program-wide by DHA Cyber Command and earned a PI Award.
 - Architected **Glyphon**, a multi-provider AI agent orchestration platform producing deterministic, reproducible compliance artifacts across OpenAI, Claude, Gemini, and AWS Bedrock; 50 production agents across 7 playbooks (CVE resolution, AMI/container hardening, eMASS POAM, FedRAMP SSP); IL5 control baseline tested on AWS GovCloud with Llama 4 Maverick, April 2026.
 - Built **Colophon**, a governed AI software factory (specialist agent bench + Claude Code skills) that emits the RMF artifact set as a byproduct of delivery, with every merge clearing antagonist peer review and Human CCB under cATO discipline.
 - Delivered four federal programs with **zero Critical, High, or Medium findings** (10 Low total); shipped **Vallark**, an ATO-capable .mil mobile framework compressing 12 months of compliance plumbing to ~4 weeks, with two IL4 systems in production since March 2026 and ATOs held without lapse.
@@ -38,7 +38,8 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 
 **June 2019 – May 2025**
 
-- Directed development of a secure Income and Identity Verification platform for Equifax Government Services, delivering Web and API services to state and federal agencies (CMS, SSA); supported 10M+ daily transactions and $1.7B+ in cumulative program revenue.
+- Directed development of a secure Income and Identity Verification platform for Equifax Government Services, delivering Web and API services to state and federal agencies (CMS, SSA); The Work Number peaked above 10M daily transactions, and the platform carried $1.7B+ in cumulative program revenue across 2019-2025.
+- Directed product and sold on the ground, launching several new products that expanded penetration into the social-services agencies of **39 states** and the federal government.
 - Led end-to-end design of an AI/ML decisioning platform automating social-service eligibility with GenAI models, federal policy logic, and real-time data, delivering measurable reductions in backlog, fraud, and determination time.
 - Architected scalable pipelines on Apache NiFi, Kafka, and MLflow, integrating Equifax data services with federal APIs for real-time adjudication and model inference; integrated Ollama, Google Gemini, and Vertex AI for explainable, policy-aligned determinations.
 - Delivered with full FedRAMP and HIPAA compliance under SSA sponsorship, meeting FISMA/NIST controls, while holding SOX and FCRA throughout.
