@@ -40,3 +40,8 @@ jobs:
           npm run a11y:test
         env:
           A11Y_URL: http://localhost:4321/
+
+      - name: Reveal gate (no content left permanently hidden after a fling)
+        run: npm run reveal:test
+        env:
+          REVEAL_URL: http://localhost:4321/
