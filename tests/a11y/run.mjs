@@ -26,11 +26,27 @@ try {
   // mid-animation (a mid-fade sample reads as a color-contrast violation).
   // Motion handling itself is covered by the prefers-reduced-motion CSS.
   const context = await browser.newContext({ reducedMotion: 'reduce' });
+
+  // Block third-party requests. The Cloudflare RUM beacon posts to
+  // cloudflareinsights.com and that request never settles here, so waiting on
+  // the network would hang on an external host the gate does not care about.
+  // The site itself is self-hosted under a strict CSP, so nothing off-origin
+  // contributes to the accessibility of the page under test.
+  await context.route('**/*', (route) => {
+    const host = new URL(route.request().url()).hostname;
+    const local = host === 'localhost' || host === '127.0.0.1' || host.endsWith('dayelostra.co');
+    return local ? route.continue() : route.abort();
+  });
+
   const page = await context.newPage();
 
   for (const path of PAGES) {
     const url = BASE + path;
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+    // 'load' rather than 'networkidle': networkidle waits for a quiet network,
+    // which a page with any long-lived or third-party request never reaches, and
+    // Playwright discourages it. Everything axe inspects exists at load; the
+    // fonts and images that arrive later do not change the tree it walks.
+    await page.goto(url, { waitUntil: 'load', timeout: 30000 });
     const { violations, passes } = await new AxeBuilder({ page }).withTags(TAGS).analyze();
 
     if (violations.length > 0) {
