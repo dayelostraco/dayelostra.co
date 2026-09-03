@@ -32,7 +32,7 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 - Secured multiple ATOs for bleeding-edge platforms (Iroha2 Blockchain, OpenWebUI, NestJS, Ollama) across RMF, STIGs, and Zero Trust; deployed distroless FIPS 140-3 images (Iron Bank/Chainguard) on Zero-CVE baselines.
 - Built a User Authorization service atop DoD federated identity (iAS, DS Logon), extending OAuth roles per application for fine-grained access control in mission-critical workflows.
 
-### Founder & Chief AI Officer — SigilArk, Charleston, SC
+### Founder — SigilArk, Charleston, SC
 
 **May 2025 – Present**
 
