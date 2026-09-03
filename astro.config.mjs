@@ -46,5 +46,14 @@ export default defineConfig({
       return lastmod ? { ...item, lastmod: lastmod.toISOString() } : item;
     },
   })],
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    plugins: [tailwindcss()],
+    build: {
+      // Vite 8 raised the default CSS baseline past Safari 18, which drops
+      // -webkit-backdrop-filter from the three .backdrop-blur* rules and
+      // flattens every .glass panel on iOS 17 and older. Pin the target so
+      // the prefix keeps being emitted.
+      cssTarget: ['safari16', 'chrome107', 'firefox104', 'edge107'],
+    },
+  },
 });

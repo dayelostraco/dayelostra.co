@@ -93,7 +93,7 @@ The part that makes this a governed factory rather than merely a fast one is wha
 <figure class="not-prose overflow-x-auto" role="img" aria-label="Change lifecycle: an agent-authored increment passes a five-lens review then a human Change Control Board gate before it ships; a failed gate returns the increment for rollback, while RMF artifacts are emitted as a byproduct into an evidence corpus.">
 <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;min-width:600px;display:block;margin-inline:auto">
 <title>Change lifecycle and gate chain</title>
-<desc>Left to right: an agent-authored increment enters a five-lens review (code, adversarial, test-quality, SAST, CI-parity, accessibility), then a human Change Control Board gate, then ships to production. A dashed branch returns a failed change for rollback. Below, the review emits RMF artifacts (system security plan, POA&M, STIG checklist) as a byproduct that flows into an evidence corpus.</desc>
+<desc>Left to right: an agent-authored increment enters a five-lens review (code, adversarial, test-quality, SAST, CI-parity, accessibility), then a human Change Control Board gate, then ships to production. A dashed branch returns a failed change for rollback. Below, the review emits RMF artifacts (system security plan, POA&amp;M, STIG checklist) as a byproduct that flows into an evidence corpus.</desc>
 <defs>
 <marker id="d2-hp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#39d7ff"/></marker>
 <marker id="d2-cc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker>
