@@ -24,6 +24,8 @@
     "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.11.3",
     "@tailwindcss/vite": "^4.3.2",
+    "@types/markdown-it": "^14.2.0",
+    "@types/sanitize-html": "^2.16.1",
     "gray-matter": "^4.0.3",
     "linkinator": "^7.6.1",
     "markdown-it": "^14.3.0",
