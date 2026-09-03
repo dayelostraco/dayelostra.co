@@ -22,6 +22,11 @@ jobs:
 
       - run: npm ci
 
+      # Runs before the build so a type error fails in seconds rather than
+      # after Chromium has been installed. Kept at zero as of #57.
+      - name: Type check (astro check)
+        run: npm run check
+
       - name: Install Chromium for Playwright
         run: npx playwright install --with-deps chromium
 
