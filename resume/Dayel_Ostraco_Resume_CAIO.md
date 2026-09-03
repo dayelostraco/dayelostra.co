@@ -15,19 +15,26 @@ Chief AI Officer and secure-systems architect with 20 years designing and delive
 
 ## PROFESSIONAL EXPERIENCE
 
+### Chief AI Officer — Pacific Technologies and Solutions, Charleston, SC
+
+**September 2026 – Present**
+
+- Own all technology and AI responsibility across the company: technology strategy, AI strategy, delivery, and engineering, plus the technical shape of new federal pursuits.
+- Pacific Technologies and Solutions is an SBA-certified 8(a) Native Hawaiian Organization delivering program and contract management, high-end systems integration, and logistics to federal customers in remote and hard-to-reach locations worldwide.
+- Standing up the governed AI delivery capability, carrying forward the agent bench, antagonist review, and cATO discipline proven on prior federal programs.
+
 ### Chief AI Officer — Accelera Solutions, Charleston, SC
 
-**May 2026 – Present**
+**May 2026 – September 2026**
 
-- Provide technology leadership across Accelera's 97-person organization (scaling to 140), running **Glyphon** and the **Colophon** software factory in production to deliver the current **U.S. Navy and DHA** federal AI engagement, first established with mSTAX in 2018.
-- Own all AI strategy, delivery, and engineering across the organization.
-- Deploy AI/ML services within secure DHA enclaves using Llama 4, Llama Vision, Ollama, and Mistral, integrated with PostgreSQL, MongoDB, and CosmosDB for decisioning and inference pipelines.
+- Owned all AI strategy, delivery, and engineering across the organization, running **Glyphon** and the **Colophon** software factory in production to deliver the **U.S. Navy and DHA** federal AI engagement, first established with mSTAX in 2018.
+- Deployed AI/ML services within secure DHA enclaves using Llama 4, Llama Vision, Ollama, and Mistral, integrated with PostgreSQL, MongoDB, and CosmosDB for decisioning and inference pipelines.
 - Secured multiple ATOs for bleeding-edge platforms (Iroha2 Blockchain, OpenWebUI, NestJS, Ollama) across RMF, STIGs, and Zero Trust; deployed distroless FIPS 140-3 images (Iron Bank/Chainguard) on Zero-CVE baselines.
 - Built a User Authorization service atop DoD federated identity (iAS, DS Logon), extending OAuth roles per application for fine-grained access control in mission-critical workflows.
 
-### Chief AI Officer — SigilArk, Charleston, SC
+### Founder — SigilArk, Charleston, SC
 
-**May 2025 – May 2026**
+**May 2025 – Present**
 
 - Led the development work for **DHA's agency-wide EMPIRE software factory**, delivering the governed AI delivery capability now in production across the agency. The delivery methodology was adopted program-wide by DHA Cyber Command and earned a PI Award.
 - Architected **Glyphon**, a multi-provider AI agent orchestration platform producing deterministic, reproducible compliance artifacts across OpenAI, Claude, Gemini, and AWS Bedrock; 50 production agents across 7 playbooks (CVE resolution, AMI/container hardening, eMASS POAM, FedRAMP SSP); IL5 control baseline tested on AWS GovCloud with Llama 4 Maverick, April 2026.

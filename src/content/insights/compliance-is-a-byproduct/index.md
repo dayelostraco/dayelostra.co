@@ -54,4 +54,4 @@ Three people can do the work of a hundred this way, but only because the three a
 
 I still ship every day. I just ship authorized.
 
-*Colophon is Accelera Solutions' internal delivery platform. More on the platform itself at [colophon.build](https://colophon.build).*
+*Colophon is SigilArk's governed delivery platform, run in production on federal programs. More on the platform itself at [colophon.build](https://colophon.build).*
