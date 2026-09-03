@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,13 +14,14 @@
     "check": "astro check",
     "a11y:test": "node tests/a11y/run.mjs",
     "reveal:test": "node tests/reveal/run.mjs",
+    "parity:shots": "node tests/parity/snapshot.mjs",
     "links:check": "linkinator ./dist --recurse --skip \"^https?://(?!localhost)\" --verbosity error",
     "og:render": "node scripts/og/render.mjs",
     "og:render:posts": "node scripts/og/render-posts.mjs",
     "test": "node --test scripts/og/*.test.mjs"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
+    "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.11.3",
     "@tailwindcss/vite": "^4.3.2",
     "gray-matter": "^4.0.3",
@@ -32,10 +36,6 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^6.4.8"
-  },
-  "overrides": {
-    "vite": "^7.3.3",
-    "postcss": "^8.5.18"
+    "astro": "^7.3.1"
   }
 }
