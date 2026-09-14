@@ -29,7 +29,7 @@
     "gray-matter": "^4.0.3",
     "linkinator": "^7.6.1",
     "markdown-it": "^14.3.0",
-    "playwright": "^1.62.1",
+    "playwright": "^1.63.0",
     "sanitize-html": "^2.17.6",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.13",
